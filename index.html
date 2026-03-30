@@ -23,6 +23,12 @@
     .navbar-brand {
       font-weight: 600;
     }
+
+.card:hover {
+  transform: translateY(-3px);
+  transition: transform 0.2s ease;
+}
+
   </style>
 </head>
 
@@ -107,29 +113,54 @@
     <div class="row g-4">
 
       <!-- Project 1 -->
-    <div class="d-flex gap-2">
-  <a
-    href="project-twin-rocks.html"
-    class="btn btn-sm btn-outline-primary"
-  >
-    View Project
-  </a>
-  <a
-    href="https://github.com/example/twin-rocks-analysis"
-    class="btn btn-sm btn-outline-dark"
-    target="_blank"
-  >
-    Source Code
-  </a>
-  <a
-    href="https://www.researchgate.net/publication/393413200_Fewer_but_bigger_fish_Examining_the_long-term_effects_of_protection_in_a_marine_sanctuary_in_Verde_Island_Passage"
-    class="btn btn-sm btn-outline-secondary"
-    target="_blank"
-  >
-    Article
-  </a>
-</div>
+<!-- Project 1 -->
+<div class="col-md-4">
+  <div class="card h-100 shadow-sm position-relative">
 
+    <img
+      src="images/projects/1.jpg"
+      class="card-img-top"
+      alt="Twin Rocks Marine Sanctuary analysis"
+    />
+
+    <div class="card-body d-flex flex-column">
+
+      <h5 class="fw-semibold">Fewer but Bigger Fish?</h5>
+
+      <p class="text-muted flex-grow-1">
+        Long‑term ecological data analysis in R examining how marine
+        protection affects reef fish abundance and biomass.
+      </p>
+
+      <!-- Full-card link -->
+      <a
+        href="https://github.com/JoanMaquinano/twinrocks-mpa-analysis"
+        class="stretched-link"
+        aria-label="View full analysis"
+      ></a>
+
+      <!-- Buttons ABOVE stretched-link -->
+      <div class="d-flex gap-2 mt-2 position-relative" style="z-index: 2;">
+        <a
+          href="https://joanmaquinano.github.io/twinrocks-mpa-analysis/twinrocks-mpa-analysis/notebooks/TwinRocks-longterm-monitoring.html"
+          class="btn btn-outline-primary btn-sm"
+          target="_blank"
+        >
+          Source Code
+        </a>
+
+        <a
+          href="https://www.researchgate.net/publication/393413200_Fewer_but_bigger_fish_Examining_the_long-term_effects_of_protection_in_a_marine_sanctuary_in_Verde_Island_Passage"
+          class="btn btn-outline-dark btn-sm"
+          target="_blank"
+        >
+          Article
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
       <!-- Project 2 -->
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
