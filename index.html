@@ -24,6 +24,18 @@
       font-weight: 600;
     }
 
+    .project-in-progress {
+  opacity: 0.6;
+}
+
+.project-in-progress img {
+  filter: grayscale(100%);
+}
+
+.project-in-progress .btn {
+  pointer-events: none;
+}
+
 .card:hover {
   transform: translateY(-3px);
   transition: transform 0.2s ease;
@@ -194,33 +206,34 @@
         </div>
       </div>
 
-      <!-- Project 3 -->
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <a href="https://example.github.io/project3" target="_blank">
-            <img src="images/projects/3.jpg" class="card-img-top" alt="Project 3">
-          </a>
-          <div class="card-body d-flex flex-column">
-            <h5 class="fw-semibold">Scientific Data Analysis (R)</h5>
-            <p class="text-muted flex-grow-1">
-              Statistical analysis of ecological datasets using R.
-            </p>
-            <div class="d-flex gap-2">
-              <a href="https://github.com/example/project3" target="_blank" class="btn btn-outline-primary btn-sm">
-                Source Code
-              </a>
-              <a href="https://example.com/article3" target="_blank" class="btn btn-outline-secondary btn-sm">
-                Article
-              </a>
-            </div>
-          </div>
-        </div>
+    <!-- Project 3 (In Progress) -->
+<div class="col-md-4">
+  <div class="card h-100 shadow-sm project-in-progress">
+
+    <img
+      src="images/projects/3.jpg"
+      class="card-img-top"
+      alt="Sales Analysis Project in SQL (To be posted)"
+        <span class="badge bg-secondary ms-2">In Progress</span>
+      </h5>
+
+      <p class="text-muted flex-grow-1">
+        Exploratory sales analysis using SQL, focused on trend identification,
+        metric validation, and query‑based reporting.
+      </p>
+
+      <div class="d-flex gap-2">
+        <button class="btn btn-outline-primary btn-sm" disabled>
+          Source Code
+        </button>
+        <button class="btn btn-outline-secondary btn-sm" disabled>
+          Article
+        </button>
       </div>
-
     </div>
-  </div>
-</section>
 
+  </div>
+</div>
   
 <!-- Real Estate Exploratory Modal -->
 <div
