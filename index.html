@@ -175,9 +175,9 @@
             <img src="images/projects/2.jpg" class="card-img-top" alt="Project 2">
           </a>
           <div class="card-body d-flex flex-column">
-            <h5 class="fw-semibold">ESG Data Quality & Audits</h5>
+            <h5 class="fw-semibold">Secondary Market Condo Listings</h5>
             <p class="text-muted flex-grow-1">
-              QA workflows and post‑publication audits ensuring ESG data integrity.
+               Exploratory data compilation and quality assessment of secondary‑market condominium listings in Makati, focused on price comparability and analytical readiness.
             </p>
             <div class="d-flex gap-2">
               <a href="https://github.com/example/project2" target="_blank" class="btn btn-outline-primary btn-sm">
@@ -218,6 +218,100 @@
   </div>
 </section>
 
+  
+<!-- Real Estate Exploratory Modal -->
+<div
+  class="modal fade"
+  id="realEstateModal"
+  tabindex="-1"
+  aria-labelledby="realEstateModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="realEstateModalLabel">
+          Secondary Market Condo Listings
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- Context -->
+        <h6 class="fw-semibold">Context</h6>
+        <p class="text-muted">
+          Secondary‑market real estate data is highly fragmented, with inconsistent listing standards and limited historical depth. This project examines the feasibility of price‑based analysis using publicly available listings under realistic market constraints.
+        </p>
+
+        <!-- Objective -->
+        <h6 class="fw-semibold mt-3">Objective</h6>
+        <p class="text-muted">
+          To construct a structured dataset of available secondary‑market condominium units in Makati within a 1–3M PHP budget, and assess whether listing‑level data alone is sufficient to support value‑oriented decision analysis.
+        </p>
+
+        <!-- Scope -->
+        <h6 class="fw-semibold mt-3">Scope</h6>
+        <ul class="text-muted">
+          <li>~30 condominium developments in Makati</li>
+          <li>Currently listed units for sale only</li>
+          <li>Manually collected from public sources</li>
+          <li>No proprietary or transaction‑level data</li>
+        </ul>
+
+        <!-- Methodology -->
+        <h6 class="fw-semibold mt-3">Methodology</h6>
+        <ul class="text-muted">
+          <li>Manual data collection and validation</li>
+          <li>Standardization of price, unit attributes, and development identifiers</li>
+          <li>Identification of missing, non‑comparable, and inconsistent fields</li>
+        </ul>
+
+        <!-- Key Findings -->
+        <h6 class="fw-semibold mt-3">Key Observations</h6>
+        <ul class="text-muted">
+          <li>Listing completeness varies significantly across developments</li>
+          <li>Asking prices without transaction history limit fair‑value inference</li>
+          <li>Additional temporal and contextual data is required for valuation</li>
+        </ul>
+
+        <!-- Explicit Boundary -->
+        <h6 class="fw-semibold mt-3">Analytical Boundaries</h6>
+        <p class="text-muted">
+          This project does not perform price prediction, valuation modeling, or investment recommendation. Its focus is on data readiness, comparability, and analytical feasibility.
+        </p>
+
+        <!-- Next Steps -->
+        <h6 class="fw-semibold mt-3">Next Steps</h6>
+        <ul class="text-muted">
+          <li>Incorporate historical transaction or price‑change data</li>
+          <li>Track listing duration and revisions over time</li>
+          <li>Augment with location‑level and development‑level context</li>
+        </ul>
+
+      </div>
+
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-outline-secondary btn-sm"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  
 <!-- SKILLS -->
 <section id="skills" class="py-5 bg-light">
   <div class="container">
