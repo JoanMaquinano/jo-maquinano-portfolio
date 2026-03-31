@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,55 +25,32 @@
       font-weight: 600;
     }
 
+    .card:hover {
+      transform: translateY(-3px);
+      transition: transform 0.2s ease;
+    }
+
+    /* In‑progress project styling */
     .project-in-progress {
-  opacity: 0.6;
-}
+      opacity: 0.6;
+    }
 
-.project-in-progress img {
-  filter: grayscale(100%);
-}
+    .project-in-progress img {
+      filter: grayscale(100%);
+    }
 
-.project-in-progress .btn {
-  pointer-events: none;
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  transition: transform 0.2s ease;
-}
-    /* Project card image consistency */
-#projects .card-img-top {
-  height: 200px;
-  object-fit: cover;
-}
-
-/* Tighter card layout */
-#projects .card-body h5 {
-  margin-bottom: 0.5rem;
-}
-
-/* In-progress project styling (already discussed) */
-.project-in-progress {
-  opacity: 0.6;
-}
-
-.project-in-progress img {
-  filter: grayscale(100%);
-}
-
-.project-in-progress .btn {
-  pointer-events: none;
-}
-
+    .project-in-progress .btn {
+      pointer-events: none;
+    }
   </style>
 </head>
 
 <body>
 
-<!-- Anchor for Home -->
+<!-- Anchor -->
 <div id="top"></div>
 
-<!-- Navigation Bar -->
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
   <div class="container">
     <a class="navbar-brand" href="#top">Jo Maquinano</a>
@@ -95,10 +73,8 @@
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
         <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <a class="nav-link" href="#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        <li class="nav-item">
-  
       </ul>
     </div>
   </div>
@@ -110,34 +86,23 @@
     <div class="row align-items-center">
 
       <div class="col-md-5 text-center mb-4 mb-md-0">
-        <img
-          src="images/about/1.jpg"
-          alt="Professional portrait"
-          class="img-fluid rounded-4 shadow"
-        />
+        <img src="images/about/1.jpg" alt="Professional portrait" class="img-fluid rounded-4 shadow" />
       </div>
 
       <div class="col-md-7">
         <h2 class="fw-bold mb-3">About Me</h2>
-        
+
         <p class="text-muted">
-         I hold a BS in Biology major in Zoology from the University of the Philippines Los Baños (UPLB), with formal training in scientific research and long‑term ecological analysis. When field research was disrupted during the pandemic, I transitioned into data work, applying the same rigor, skepticism, and methodological discipline to structured datasets.
+          I hold a BS in Biology (Zoology) from the University of the Philippines Los Baños (UPLB), with formal training in scientific research and long‑term ecological analysis. When field research was disrupted during the pandemic, I transitioned into data work, applying the same rigor and methodological discipline to structured datasets.
         </p>
 
         <p class="text-muted">
-         I am currently an Analyst in the Data team at Institutional Shareholder Services (ISS), where I validate and quality‑assure sustainability data for over 5,000 companies. My work involves applying structured data collection and interpretation methods across high‑volume ESG datasets. Through systematic data verification and structured cross‑checks, I consistently deliver 99%+ accuracy in high‑stakes reporting environments.
+          I am currently an Analyst at Institutional Shareholder Services (ISS), validating sustainability data for over 5,000 companies. My work focuses on structured verification and cross‑checks, consistently delivering 99%+ accuracy in high‑stakes environments.
         </p>
 
-         <p class="text-muted">
-          In parallel, I develop my technical skill set through hands‑on projects in SQL, Python, AI, Power BI, and Tableau, and through independent data research. I am particularly drawn to roles that prioritize data integrity, traceability, and sound interpretation over surface‑level metrics.
-           </p>
-
         <p class="text-muted">
-          Outside of my day‑to‑day role, I trade in the forex market and research real estate secondary‑market data, building simulations and backtests to understand risk, valuation, and long‑term patterns. I continue studying in my free time because data skills compound, and curiosity allows for growth.
-           </p>
-
-        <p class="text-muted">
-          My goal is to contribute to credible data systems that generate meaningful insights, support business decisions, and create real-life positive impact.
+          My goal is to contribute to credible data systems that support sound decision‑making and real‑world impact.
+        </p>
       </div>
 
     </div>
@@ -145,15 +110,12 @@
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="py-5">
+<section id="projects" class="py-5 bg-light">
   <div class="container">
 
-    <!-- Header -->
     <div class="text-center mb-5">
       <h2 class="fw-bold">Projects</h2>
-      <p class="text-muted">
-        Selected projects in data science, sustainability, and research.
-      </p>
+      <p class="text-muted">Selected projects in data science, sustainability, and research.</p>
     </div>
 
     <div class="row g-4">
@@ -162,342 +124,64 @@
       <div class="col-md-4">
         <div class="card h-100 shadow-sm position-relative">
 
-          <img
-            src="images/projects/1.jpg"
-            class="ex-column">
-            <h5 class="fw-semibold">Fewer but Bigger Fish?</h5>
+          <div class="ratio ratio-16x9">
+            <img src="images/projects/1.jpg" class="card-img-top" alt="Twin Rocks Marine Sanctuary analysis">
+          </div>
 
+          <div class="card-body d-flex flex-column">
+            <h5 class="fw-semibold">Fewer but Bigger Fish?</h5>
             <p class="text-muted flex-grow-1">
-              Long‑term ecological data analysis in R examining how marine
-              protection affects reef fish abundance and biomass.
+              Long‑term ecological data analysis in R examining how marine protection affects reef fish abundance and biomass.
             </p>
 
-            <!-- Full-card link -->
-            <a
-              href="https://github.com/JoanMaquinano/twinrocks-mpa-analysis"
-              class="stretched-link"
-              aria-label="View full analysis"
-ex: 2;">
-              <a
-                href="https://joanmaquinano.github.io/twinrocks-mpa-analysis/twinrocks-mpa-analysis/notebooks/TwinRocks-longterm-monitoring.html"
-                class="btn btn-outline-primary btn-sm"
-               ww.researchgate.net/publication/393413200_Fewer_but_bigger_fish_Examining_the_long-term_effects_of_protection_in_a_marine_sanctuary_in_Verde_Island_Passage"
-                class="btn btn-outline-dark btn-sm"
-                target="_blank"
-     <!-- Project 2 -->
+            <a href="https://github.com/JoanMaquinano/twinrocks-mpa-analysis" class="stretched-link"></a>
+
+            <div class="d-flex gap-2 mt-2 position-relative" style="z-index:1">
+              <a href="https://joanmaquinano.github.io/twinrocks-mpa-analysis/twinrocks-mpa-analysis/notebooks/TwinRocks-longterm-monitoring.html" target="_blank" class="btn btn-outline-primary btn-sm">Source Code</a>
+              <a href="https://www.researchgate.net/publication/393413200_Fewer_but_bigger_fish_Examining_the_long-term_effects_of_protection_in_a_marine_sanctuary_in_Verde_Island_Passage" target="_blank" class="btn btn-outline-dark btn-sm">Article</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
-
-          <img
-            src="images/projects/2.jpg"
-            class="card-img-top"
-            alt="Secondary Market Condo Listings"
- Condo Listings</h5>
-
+          <div class="ratio ratio-16x9">
+            <img src="images/projects/2.jpg" class="card-img-top" alt="Secondary market condos">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="fw-semibold">Secondary Market Condo Listings</h5>
             <p class="text-muted flex-grow-1">
-              Exploratory data compilation and quality assessment of secondary‑market
-              condominium listings in Makati, focused on price comparability and
-              analytical readiness.
+              Exploratory data compilation and quality assessment of condo listings in Makati, focused on analytical readiness.
             </p>
-
             <div class="d-flex gap-2 mt-2">
-              <a
-                href="https://github.com/example/project2"
-                target="_blank"
-                      href="https://example.com/article2"
-                target="_blank"
-                class="btn btn-outline-secondary btn-sm"
-<!-- Project 3 (In Progress) -->
+              <a href="https://github.com/example/project2" class="btn btn-outline-primary btn-sm" target="_blank">Source Code</a>
+              <a href="https://example.com/article2" class="btn btn-outline-secondary btn-sm" target="_blank">Article</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
       <div class="col-md-4">
         <div class="card h-100 shadow-sm project-in-progress">
-
-          <img
-            src="images/projects/3.jpg"
-            class="card-img-top"
-            alt="Sales Analysis Project in SQL"
-         alysis (SQL)
+          <div class="ratio ratio-16x9">
+            <img src="images/projects/3.jpg" class="card-img-top" alt="Sales analysis in SQL">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="fw-semibold">
+              Sales Analysis (SQL)
               <span class="badge bg-secondary ms-2">In Progress</span>
             </h5>
-
             <p class="text-muted flex-grow-1">
-              Exploratory sales analysis using SQL, focused on trend identification,
-              metric validation, and query‑based reporting.
+              Exploratory sales analysis using SQL, focused on trend validation and query‑based reporting.
             </p>
-
             <div class="d-flex gap-2 mt-2">
-              <button class="btn btn-outline-primary btn-sm" disabled>
-                Source Code
-              </button>
-              <button class="btn btn-outline-secondary btn-sm" disabled>
-                Article
-              </button>
+              <button class="btn btn-outline-primary btn-sm" disabled>Source Code</button>
+              <button class="btn btn-outline-secondary btn-sm" disabled>Article</button>
             </div>
           </div>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section> 
-  
-<!-- Real Estate Exploratory Modal -->
-<div
-  class="modal fade"
-  id="realEstateModal"
-  tabindex="-1"
-  aria-labelledby="realEstateModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h5 class="modal-title fw-bold" id="realEstateModalLabel">
-          Secondary Market Condo Listings
-        </h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-
-      <div class="modal-body">
-
-        <!-- Context -->
-        <h6 class="fw-semibold">Context</h6>
-        <p class="text-muted">
-          Secondary‑market real estate data is highly fragmented, with inconsistent listing standards and limited historical depth. This project examines the feasibility of price‑based analysis using publicly available listings under realistic market constraints.
-        </p>
-
-        <!-- Objective -->
-        <h6 class="fw-semibold mt-3">Objective</h6>
-        <p class="text-muted">
-          To construct a structured dataset of available secondary‑market condominium units in Makati within a 1–3M PHP budget, and assess whether listing‑level data alone is sufficient to support value‑oriented decision analysis.
-        </p>
-
-        <!-- Scope -->
-        <h6 class="fw-semibold mt-3">Scope</h6>
-        <ul class="text-muted">
-          <li>~30 condominium developments in Makati</li>
-          <li>Currently listed units for sale only</li>
-          <li>Manually collected from public sources</li>
-          <li>No proprietary or transaction‑level data</li>
-        </ul>
-
-        <!-- Methodology -->
-        <h6 class="fw-semibold mt-3">Methodology</h6>
-        <ul class="text-muted">
-          <li>Manual data collection and validation</li>
-          <li>Standardization of price, unit attributes, and development identifiers</li>
-          <li>Identification of missing, non‑comparable, and inconsistent fields</li>
-        </ul>
-
-        <!-- Key Findings -->
-        <h6 class="fw-semibold mt-3">Key Observations</h6>
-        <ul class="text-muted">
-          <li>Listing completeness varies significantly across developments</li>
-          <li>Asking prices without transaction history limit fair‑value inference</li>
-          <li>Additional temporal and contextual data is required for valuation</li>
-        </ul>
-
-        <!-- Explicit Boundary -->
-        <h6 class="fw-semibold mt-3">Analytical Boundaries</h6>
-        <p class="text-muted">
-          This project does not perform price prediction, valuation modeling, or investment recommendation. Its focus is on data readiness, comparability, and analytical feasibility.
-        </p>
-
-        <!-- Next Steps -->
-        <h6 class="fw-semibold mt-3">Next Steps</h6>
-        <ul class="text-muted">
-          <li>Incorporate historical transaction or price‑change data</li>
-          <li>Track listing duration and revisions over time</li>
-          <li>Augment with location‑level and development‑level context</li>
-        </ul>
-
-      </div>
-
-      <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-outline-secondary btn-sm"
-          data-bs-dismiss="modal"
-        >
-          Close
-        </button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-  
-<!-- SKILLS -->
-<section id="skills" class="py-5 bg-light">
-  <div class="container">
-
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Skills</h2>
-      <p class="text-muted">
-        Core competencies across sustainability data, analysis, quality assurance, and visualization.
-      </p>
-    </div>
-
-    <div class="row text-center g-4">
-
-      <!-- ESG & Sustainability -->
-      <div class="col-md-3 col-sm-6">
-        <div class="p-4 bg-white shadow-sm rounded h-100">
-          <img src="images/skills/esg.jpg" alt="ESG" width="48" class="mb-3">
-          <h6 class="fw-semibold text-dark">ESG & Sustainability</h6>
-        </div>
-      </div>
-
-      <!-- Data Quality -->
-      <div class="col-md-3 col-sm-6">
-        <div class="p-4 bg-white shadow-sm rounded h-100">
-          <img src="images/skills/excel.png" alt="Excel" width="48" class="mb-3">
-          <h6 class="fw-semibold text-dark">Data Quality & QA</h6>
-        </div>
-      </div>
-
-      <!-- Data Analysis -->
-      <div class="col-md-3 col-sm-6">
-        <div class="p-4 bg-white shadow-sm rounded h-100">
-          <div class="d-flex justify-content-center gap-3 mb-3">
-            <img src="images/skills/sql.png" alt="SQL" width="36">
-            <img src="images/skills/python.png" alt="Python" width="36">
-            <img src="images/skills/r.png" alt="R" width="36">
-          </div>
-          <h6 class="fw-semibold text-dark">Data Analysis</h6>
-        </div>
-      </div>
-
-      <!-- Data Visualization -->
-      <div class="col-md-3 col-sm-6">
-        <div class="p-4 bg-white shadow-sm rounded h-100">
-          <div class="d-flex justify-content-center gap-3 mb-3">
-            <img src="images/skills/tableau.png" alt="Tableau" width="36">
-            <img src="images/skills/powerbi.png" alt="Power BI" width="36">
-          </div>
-          <h6 class="fw-semibold text-dark">Data Visualization</h6>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- EDUCATION & CERTIFICATIONS -->
-<section id="education" class="py-5 bg-light">
-  <div class="container">
-
-    <!-- Header -->
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Education & Certifications</h2>
-      <p class="text-muted">
-        Academic training and professional certifications supporting analytical and sustainability‑focused work.
-      </p>
-    </div>
-
-    <div class="row g-4 justify-content-center">
-
-      <!-- University -->
-      <div class="col-md-10">
-        <div class="bg-white p-4 rounded shadow-sm h-100">
-
-          <div class="d-flex align-items-start gap-3">
-            <img src="images/education/uplb.png" alt="UPLB logo" width="48">
-
-            <div>
-              <h6 class="fw-semibold text-dark mb-1">
-                Bachelor of Science in Biology, Major in Zoology
-              </h6>
-              <p class="text-muted mb-1">
-                University of the Philippines Los Baños · August 2022
-              </p>
-              <p class="text-muted small mb-2">
-                Honors thesis analyzing a decade of reef fish monitoring data using R. Published in
-                <em>IRJIEST</em> (Volume 10, Special Issue 2024).
-              </p>
-              <p class="text-muted small mb-2">
-                Awardee, Department of Science and Technology (DOST) Merit Scholarship.
-              </p>
-
-              <a
-                href="https://drive.google.com/file/d/17AIBUOZ9daZnIDzM9q6BNxEPBhBRr0Bf/view"
-                target="_blank"
-                class="link-dark small text-decoration-underline"
-              >
-                View diploma
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- DataCamp -->
-      <div class="col-md-10">
-        <div class="bg-white p-4 rounded shadow-sm h-100">
-
-          <div class="d-flex align-items-start gap-3">
-            <img src="images/education/datacamp.png" alt="DataCamp logo" width="48">
-
-            <div>
-              <h6 class="fw-semibold text-dark mb-1">
-                Associate Data Analyst in SQL Career Track
-              </h6>
-              <p class="text-muted mb-1">
-                DataCamp · December 2025 · Data Engineering Philippines Scholarship
-              </p>
-              <p class="text-muted small mb-2">
-                Advanced SQL, PostgreSQL, joins & subqueries, window functions, exploratory analysis,
-                statistics, and data‑driven decision‑making.
-              </p>
-
-              <a
-                href="https://www.datacamp.com/certificate/DAA0017289104033"
-                target="_blank"
-                class="link-dark small text-decoration-underline"
-              >
-                View certificate
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Coursera -->
-      <div class="col-md-10">
-        <div class="bg-white p-4 rounded shadow-sm h-100">
-
-          <div class="d-flex align-items-start gap-3">
-            <img src="images/education/coursera.png" alt="Coursera logo" width="48">
-
-            <div>
-              <h6 class="fw-semibold text-dark mb-1">
-                Data Analytics Professional Certificate
-              </h6>
-              <p class="text-muted mb-1">
-                Coursera · April 2023
-              </p>
-              <p class="text-muted small mb-2">
-                Data cleaning, analysis, visualization, spreadsheets, SQL, R, and Tableau.
-              </p>
-
-              <a
-                href="https://www.coursera.org/account/accomplishments/verify/VY7HGU953CTD"
-                target="_blank"
-                class="link-dark small text-decoration-underline"
-              >
-                View certificate
-              </a>
-            </div>
-          </div>
-
         </div>
       </div>
 
@@ -505,31 +189,17 @@ ex: 2;">
   </div>
 </section>
 
-  
 <!-- CONTACT -->
 <section id="contact" class="py-5">
   <div class="container text-center">
     <h2 class="fw-bold mb-4">Contact Me</h2>
-
     <div class="d-flex justify-content-center gap-5 flex-wrap">
-
-      <a
-        href="https://www.linkedin.com/in/jrmaquinano/"
-        target="_blank"
-        class="text-decoration-none text-muted"
-      >
-        <img src="icons/linkedin.png" width="40"><br>
-        LinkedIn
+      <a href="https://www.linkedin.com/in/jrmaquinano/" target="_blank" class="text-decoration-none text-muted">
+        <img src="icons/linkedin.png" width="40"><br>LinkedIn
       </a>
-
-      <a
-        href="mailto:jrmaquinano@alum.up.edu.ph"
-        class="text-decoration-none text-muted"
-      >
-        <img src="icons/gmail.png" width="40"><br>
-        Email
+      <a href="mailto:jrmaquinano@alum.up.edu.ph" class="text-decoration-none text-muted">
+        <img src="icons/gmail.png" width="40"><br>Email
       </a>
-
     </div>
   </div>
 </section>
