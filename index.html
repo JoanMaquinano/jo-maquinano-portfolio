@@ -42,6 +42,16 @@
     .project-in-progress .btn {
       pointer-events: none;
     }
+    
+    /* Upcoming project styling */
+.project-upcoming {
+  opacity: 0.6;
+}
+
+.project-upcoming img {
+  filter: grayscale(100%);
+}
+
   </style>
 </head>
 
@@ -115,7 +125,9 @@
 
     <div class="text-center mb-5">
       <h2 class="fw-bold">Projects</h2>
-      <p class="text-muted">Selected projects in data science, sustainability, and research.</p>
+      <p class="text-muted">
+        Selected projects in data science, sustainability, and research.
+      </p>
     </div>
 
     <div class="row g-4">
@@ -123,63 +135,109 @@
       <!-- Project 1 -->
       <div class="col-md-4">
         <div class="card h-100 shadow-sm position-relative">
-
           <div class="ratio ratio-16x9">
-            <img src="images/projects/1.jpg" class="card-img-top" alt="Twin Rocks Marine Sanctuary analysis">
+            <img
+              src="images/projects/1.jpg"
+              class="card-img-top"
+              alt="Twin Rocks Marine Sanctuary analysis"
+            >
           </div>
 
           <div class="card-body d-flex flex-column">
             <h5 class="fw-semibold">Fewer but Bigger Fish?</h5>
             <p class="text-muted flex-grow-1">
-              Long‑term ecological data analysis in R examining how marine protection affects reef fish abundance and biomass.
+              Long‑term ecological data analysis in R examining how marine protection
+              affects reef fish abundance and biomass.
             </p>
 
-            <a href="https://github.com/JoanMaquinano/twinrocks-mpa-analysis" class="stretched-link"></a>
+            <a
+              href="https://github.com/JoanMaquinano/twinrocks-mpa-analysis"
+              class="stretched-link"
+              aria-label="View full analysis"
+            ></a>
 
             <div class="d-flex gap-2 mt-2 position-relative" style="z-index:1">
-              <a href="https://joanmaquinano.github.io/twinrocks-mpa-analysis/twinrocks-mpa-analysis/notebooks/TwinRocks-longterm-monitoring.html" target="_blank" class="btn btn-outline-primary btn-sm">Source Code</a>
-              <a href="https://www.researchgate.net/publication/393413200_Fewer_but_bigger_fish_Examining_the_long-term_effects_of_protection_in_a_marine_sanctuary_in_Verde_Island_Passage" target="_blank" class="btn btn-outline-dark btn-sm">Article</a>
+              <a
+                href="https://joanmaquinano.github.io/twinrocks-mpa-analysis/twinrocks-mpa-analysis/notebooks/TwinRocks-longterm-monitoring.html"
+                target="_blank"
+                class="btn btn-outline-primary btn-sm"
+              >
+                Source Code
+              </a>
+              <a
+                href="https://www.researchgate.net/publication/393413200_Fewer_but_bigger_fish_Examining_the_long-term_effects_of_protection_in_a_marine_sanctuary_in_Verde_Island_Passage"
+                target="_blank"
+                class="btn btn-outline-dark btn-sm"
+              >
+                Article
+              </a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Project 2 -->
+      <!-- Project 2 (Clickable + In Progress, NOT greyed) -->
       <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
+        <div class="card h-100 shadow-sm position-relative">
           <div class="ratio ratio-16x9">
-            <img src="images/projects/2.jpg" class="card-img-top" alt="Secondary market condos">
+            <img
+              src="images/projects/2.jpg"
+              class="card-img-top"
+              alt="Secondary market condos"
+            >
           </div>
+
           <div class="card-body d-flex flex-column">
-            <h5 class="fw-semibold">Secondary Market Condo Listing Research</h5>
-               <span class="badge bg-secondary ms-2">In Progress</span>
+            <h5 class="fw-semibold">
+              Secondary Market Condo Listing Research
+            </h5>
+
             <p class="text-muted flex-grow-1">
               Exploratory data compilation of condo listings in Makati for investing purposes.
             </p>
-            <div class="d-flex gap-2 mt-2">
-  <a href="https://docs.google.com/spreadsheets/d/13pQfJet9dOGaggijS3Csee3zMkBv8vNgJzy_IqvSXGI/edit?usp=sharing"></a>
+
+            <!-- Full card clickable -->
+            <a
+              href="https://docs.google.com/spreadsheets/d/13pQfJet9dOGaggijS3Csee3zMkBv8vNgJzy_IqvSXGI/edit?usp=sharing"
+              class="stretched-link"
+              aria-label="View real estate dataset"
+            ></a>
+
+            <div class="mt-2 position-relative" style="z-index:1">
+              <span class="btn btn-primary btn-sm disabled">
+                In Progress
+              </span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Project 3 -->
+      <!-- Project 3 (Upcoming) -->
       <div class="col-md-4">
-        <div class="card h-100 shadow-sm project-in-progress">
+        <div class="card h-100 shadow-sm project-upcoming">
           <div class="ratio ratio-16x9">
-            <img src="images/projects/3.jpg" class="card-img-top" alt="Sales analysis in SQL">
+            <img
+              src="images/projects/3.jpg"
+              class="card-img-top"
+              alt="Sales analysis in SQL"
+            >
           </div>
+
           <div class="card-body d-flex flex-column">
             <h5 class="fw-semibold">
               Sales Analysis (SQL)
-              <span class="badge bg-secondary ms-2">In Progress</span>
+              <span class="badge bg-secondary ms-2">Upcoming</span>
             </h5>
+
             <p class="text-muted flex-grow-1">
-              Exploratory sales analysis using SQL, focused on trend validation and query‑based reporting.
+              Exploratory sales analysis using SQL, focused on trend validation
+              and query‑based reporting.
             </p>
-            <div class="d-flex gap-2 mt-2">
-              <button class="btn btn-outline-primary btn-sm" disabled>Source Code</button>
-              <button class="btn btn-outline-secondary btn-sm" disabled>Article</button>
+
+            <div class="mt-2">
+              <button class="btn btn-outline-secondary btn-sm" disabled>
+                Upcoming
+              </button>
             </div>
           </div>
         </div>
@@ -189,6 +247,7 @@
   </div>
 </section>
 
+  
   <!-- SKILLS -->
 <section id="skills" class="py-5 bg-light">
   <div class="container">
