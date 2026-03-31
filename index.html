@@ -40,6 +40,29 @@
   transform: translateY(-3px);
   transition: transform 0.2s ease;
 }
+    /* Project card image consistency */
+#projects .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Tighter card layout */
+#projects .card-body h5 {
+  margin-bottom: 0.5rem;
+}
+
+/* In-progress project styling (already discussed) */
+.project-in-progress {
+  opacity: 0.6;
+}
+
+.project-in-progress img {
+  filter: grayscale(100%);
+}
+
+.project-in-progress .btn {
+  pointer-events: none;
+}
 
   </style>
 </head>
@@ -125,6 +148,7 @@
 <section id="projects" class="py-5">
   <div class="container">
 
+    <!-- Header -->
     <div class="text-center mb-5">
       <h2 class="fw-bold">Projects</h2>
       <p class="text-muted">
@@ -135,105 +159,87 @@
     <div class="row g-4">
 
       <!-- Project 1 -->
-<!-- Project 1 -->
-<div class="col-md-4">
-  <div class="card h-100 shadow-sm position-relative">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm position-relative">
 
-    <img
-      src="images/projects/1.jpg"
-      class="card-img-top"
-      alt="Twin Rocks Marine Sanctuary analysis"
-    />
+          <img
+            src="images/projects/1.jpg"
+            class="ex-column">
+            <h5 class="fw-semibold">Fewer but Bigger Fish?</h5>
 
-    <div class="card-body d-flex flex-column">
+            <p class="text-muted flex-grow-1">
+              Long‑term ecological data analysis in R examining how marine
+              protection affects reef fish abundance and biomass.
+            </p>
 
-      <h5 class="fw-semibold">Fewer but Bigger Fish?</h5>
-
-      <p class="text-muted flex-grow-1">
-        Long‑term ecological data analysis in R examining how marine
-        protection affects reef fish abundance and biomass.
-      </p>
-
-      <!-- Full-card link -->
-      <a
-        href="https://github.com/JoanMaquinano/twinrocks-mpa-analysis"
-        class="stretched-link"
-        aria-label="View full analysis"
-      ></a>
-
-      <!-- Buttons ABOVE stretched-link -->
-      <div class="d-flex gap-2 mt-2 position-relative" style="z-index: 2;">
-        <a
-          href="https://joanmaquinano.github.io/twinrocks-mpa-analysis/twinrocks-mpa-analysis/notebooks/TwinRocks-longterm-monitoring.html"
-          class="btn btn-outline-primary btn-sm"
-          target="_blank"
-        >
-          Source Code
-        </a>
-
-        <a
-          href="https://www.researchgate.net/publication/393413200_Fewer_but_bigger_fish_Examining_the_long-term_effects_of_protection_in_a_marine_sanctuary_in_Verde_Island_Passage"
-          class="btn btn-outline-dark btn-sm"
-          target="_blank"
-        >
-          Article
-        </a>
-      </div>
-
-    </div>
-  </div>
-</div>
-      <!-- Project 2 -->
+            <!-- Full-card link -->
+            <a
+              href="https://github.com/JoanMaquinano/twinrocks-mpa-analysis"
+              class="stretched-link"
+              aria-label="View full analysis"
+ex: 2;">
+              <a
+                href="https://joanmaquinano.github.io/twinrocks-mpa-analysis/twinrocks-mpa-analysis/notebooks/TwinRocks-longterm-monitoring.html"
+                class="btn btn-outline-primary btn-sm"
+               ww.researchgate.net/publication/393413200_Fewer_but_bigger_fish_Examining_the_long-term_effects_of_protection_in_a_marine_sanctuary_in_Verde_Island_Passage"
+                class="btn btn-outline-dark btn-sm"
+                target="_blank"
+     <!-- Project 2 -->
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
-          <a href="https://example.github.io/project2" target="_blank">
-            <img src="images/projects/2.jpg" class="card-img-top" alt="Project 2">
-          </a>
-          <div class="card-body d-flex flex-column">
-            <h5 class="fw-semibold">Secondary Market Condo Listings</h5>
+
+          <img
+            src="images/projects/2.jpg"
+            class="card-img-top"
+            alt="Secondary Market Condo Listings"
+ Condo Listings</h5>
+
             <p class="text-muted flex-grow-1">
-               Exploratory data compilation and quality assessment of secondary‑market condominium listings in Makati, focused on price comparability and analytical readiness.
+              Exploratory data compilation and quality assessment of secondary‑market
+              condominium listings in Makati, focused on price comparability and
+              analytical readiness.
             </p>
-            <div class="d-flex gap-2">
-              <a href="https://github.com/example/project2" target="_blank" class="btn btn-outline-primary btn-sm">
+
+            <div class="d-flex gap-2 mt-2">
+              <a
+                href="https://github.com/example/project2"
+                target="_blank"
+                      href="https://example.com/article2"
+                target="_blank"
+                class="btn btn-outline-secondary btn-sm"
+<!-- Project 3 (In Progress) -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm project-in-progress">
+
+          <img
+            src="images/projects/3.jpg"
+            class="card-img-top"
+            alt="Sales Analysis Project in SQL"
+         alysis (SQL)
+              <span class="badge bg-secondary ms-2">In Progress</span>
+            </h5>
+
+            <p class="text-muted flex-grow-1">
+              Exploratory sales analysis using SQL, focused on trend identification,
+              metric validation, and query‑based reporting.
+            </p>
+
+            <div class="d-flex gap-2 mt-2">
+              <button class="btn btn-outline-primary btn-sm" disabled>
                 Source Code
-              </a>
-              <a href="https://example.com/article2" target="_blank" class="btn btn-outline-secondary btn-sm">
+              </button>
+              <button class="btn btn-outline-secondary btn-sm" disabled>
                 Article
-              </a>
+              </button>
             </div>
           </div>
+
         </div>
       </div>
 
-    <!-- Project 3 (In Progress) -->
-<div class="col-md-4">
-  <div class="card h-100 shadow-sm project-in-progress">
-
-    <img
-      src="images/projects/3.jpg"
-      class="card-img-top"
-      alt="Sales Analysis Project in SQL (To be posted)"
-        <span class="badge bg-secondary ms-2">In Progress</span>
-      </h5>
-
-      <p class="text-muted flex-grow-1">
-        Exploratory sales analysis using SQL, focused on trend identification,
-        metric validation, and query‑based reporting.
-      </p>
-
-      <div class="d-flex gap-2">
-        <button class="btn btn-outline-primary btn-sm" disabled>
-          Source Code
-        </button>
-        <button class="btn btn-outline-secondary btn-sm" disabled>
-          Article
-        </button>
-      </div>
     </div>
-
   </div>
-</div>
+</section> 
   
 <!-- Real Estate Exploratory Modal -->
 <div
