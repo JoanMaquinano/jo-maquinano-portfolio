@@ -151,40 +151,49 @@
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="bg-light">
+<section id="projects" class="py-5 bg-light">
   <div class="container">
 
-    <!-- Projects Header -->
-    <div class="text-center project-header">
-      <h2 class="fw-bold mb-3">Projects</h2>
+    <!-- Header -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Projects</h2>
       <p class="text-muted">
-        A selection of projects showcasing my work in data analysis,
-        machine learning, sustainability research, and structured decision‑making.
+        A curated selection of projects in data analysis, machine learning,
+        sustainability research, and decision‑support systems.
       </p>
     </div>
 
-    <!-- Project Grid -->
     <div class="row g-4">
 
       <!-- Project 1 -->
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
           <div class="ratio ratio-16x9">
-            <img src="images/projects/5.png" class="card-img-top"
-                 alt="Re flex-column">
+            <img
+              src="images/projects/5.png"
+              class="card-img-top"
+              alt="Reinforcement learning stock trading simulation"
+            />
+          </div>
+
+          <div class="card-body d-flex flex-column">
             <h5 class="fw-semibold">
-              Reinforcement Learning Stock Trading (Python)
+              Stock Trading Simulation with Gymnasium (Python)
             </h5>
 
             <p class="text-muted flex-grow-1">
-              Reinforcement learning simulation using a PPO agent to learn
-              buy and sell decisions from historical AAPL price data.
+              Machine‑learning trading simulation that identifies buy and sell opportunities 
+              using historical Apple stock data.
             </p>
 
             <div class="mt-2">
-              <a href="https://www.datacamp.com/datalab/w/37e013a0-9011-42f3-83c7-261bfd0dd201/edit"
-                 target="_blank"
-</a>
+              <a
+                href="https://www.datacamp.com/datalab/w/37e013a0-9011-42f3-83c7-261bfd0dd201/edit"
+                target="_blank"
+                class="btn btn-outline-primary btn-sm"
+              >
+                View Project
+              </a>
             </div>
           </div>
         </div>
@@ -194,29 +203,56 @@
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
           <div class="ratio ratio-16x9">
-            images/projects/1.jpg
+            <img
+              src="images/projects/1.jpg"
+              class="card-img-top"
+              alt="Twin Rocks Marine Sanctuary analysis"
+            />
           </div>
 
           <div class="card-body d-flex flex-column">
-            <h5 class="fw-semibold">Fewer but Bigger Fish?</h5>
+            <h5 class="fw-semibold">Fewer but Bigger Fish? (R) </h5>
 
             <p class="text-muted flex-grow-1">
-              Long‑term ecological data analysis in R examining how marine protection
-              influences reef fish abundance and biomass.
+              Long‑term ecological data analysis in R examining how marine
+              protection influences reef fish abundance and biomass.
             </p>
 
             <div class="d-flex gap-2 mt-2">
-              <a href="https://joanmaquinano.github.io/twinrocks-mpa-analysis/twinrocks-mpa-analysis/notebooks/TwinRocks-longterm-monitoring.html"
-                 target="_blank"
-                 class="3413200_Fewer_but_bigger_fish_Examining_the_long-term_effects_of_protection_in_a_marine_sanctuary_in_Verde_Island_Passage"
-                 target="_blank"
-                 class="btn btn-outlinet 3 -->
+              <a
+                href="https://joanmaquinano.github.io/twinrocks-mpa-analysis/twinrocks-mpa-analysis/notebooks/TwinRocks-longterm-monitoring.html"
+                target="_blank"
+                class="btn btn-outline-primary btn-sm"
+              >
+                Source Code
+              </a>
+
+              <a
+                href="https://www.researchgate.net/publication/393413200_Fewer_but_bigger_fish_Examining_the_long-term_effects_of_protection_in_a_marine_sanctuary_in_Verde_Island_Passage"
+                target="_blank"
+                class="btn btn-outline-dark btn-sm"
+              >
+                Article
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
           <div class="ratio ratio-16x9">
-            <img src="images/projects/3.jpg" class="card-img-top"
-                 alt="Monthly wholesale net        <h5 class="fw-semibold">
-              Monthly Wholesale Net Revenue (SQL)
+            <img
+              src="images/projects/3.jpg"
+              class="card-img-top"
+              alt="Monthly wholesale net revenue SQL analysis"
+            />
+          </div>
+
+          <div class="card-body d-flex flex-column">
+            <h5 class="fw-semibold">
+              Analyzing Motorcycle Part Sales (SQL)
             </h5>
 
             <p class="text-muted flex-grow-1">
@@ -225,7 +261,13 @@
             </p>
 
             <div class="mt-2">
-              https://www.datacamp.com/datalab/w/8fc59fc5-9af6-406e-95e9-f7c98f5de5ad/edit
+              <a
+                href="https://www.datacamp.com/datalab/w/8fc59fc5-9af6-406e-95e9-f7c98f5de5ad/edit"
+                target="_blank"
+                class="btn btn-outline-primary btn-sm"
+              >
+                View Project
+              </a>
             </div>
           </div>
         </div>
@@ -233,14 +275,18 @@
 
       <!-- Project 4 (In Progress) -->
       <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
+        <div class="card h-100 shadow-sm project-in-progress">
           <div class="ratio ratio-16x9">
-            images/projects/2.jpg
+            <img
+              src="images/projects/2.jpg"
+              class="card-img-top"
+              alt="Secondary market condo research"
+            />
           </div>
 
           <div class="card-body d-flex flex-column">
             <h5 class="fw-semibold mb-1">
-              Secondary Market Condo Listing Research
+              Secondary Market Condo Listing Research (Excel)
             </h5>
 
             <span class="badge bg-primary align-self-start mb-2">
@@ -248,30 +294,68 @@
             </span>
 
             <p class="text-muted flex-grow-1">
-              Data collection and cleaning of Makati condo listings to support
+              Data compilation and cleaning of Makati condo listings to support
               secondary‑market investment analysis.
             </p>
 
             <div class="mt-2">
-              <a href="https://docs.google.com/spreadsheets/d/13pQfJet9dOGaggijS3C8vNgJzy_IqvSXGI/edit?usp=sharing
+              <a
+                href="https://docs.google.com/spreadsheets/d/13pQfJet9dOGaggijS3Csee3zMkBv8vNgJzy_IqvSXGI/edit"
+                target="_blank"
+                class="btn btn-outline-primary btn-sm"
+              >
+                See Draft Material
+              </a>
             </div>
           </div>
         </div>
       </div>
+      
+<!-- Project 5 (Upcoming) -->
+<div class="col-md-4">
+  <div class="card h-100 shadow-sm project-upcoming">
+    <div class="ratio ratio-16x9">
+      <img
+        src="images/projects/6.jpg"
+        class="card-img-top"
+        alt="Power BI sales performance dashboard"
+      />
+    </div>
 
-      <!-- Project 5 (Upcoming) -->
+    <div class="card-body d-flex flex-column">
+      <h5 class="fw-semibold">
+        Sales Performance Dashboard (Power BI)
+        <span class="badge bg-secondary ms-2">Upcoming</span>
+      </h5>
+
+      <p class="text-muted flex-grow-1">
+        Interactive Power BI dashboard designed to visualize sales trends,
+        key performance metrics, and business performance insights.
+      </p>
+    </div>
+  </div>
+</div>
+      
+      <!-- Project 6 (Upcoming) -->  
       <div class="col-md-4">
         <div class="card h-100 shadow-sm project-upcoming">
           <div class="ratio ratio-16x9">
-            <img src="images/projects/4.png" class="card-img  <div class="card-body d-flex flex-column">
+            <img
+              src="images/projects/4.png"
+              class="card-img-top"
+              alt="Omnibus disclosures analysis"
+            />
+          </div>
+
+          <div class="card-body d-flex flex-column">
             <h5 class="fw-semibold">
               Omnibus Disclosures Analysis
               <span class="badge bg-secondary ms-2">Upcoming</span>
             </h5>
 
             <p class="text-muted flex-grow-1">
-              Comparative analysis of omnibus disclosure data with a focus
-              on transparency, materiality, and reporting consistency.
+              Comparative analysis of omnibus disclosure data focusing on
+              transparency, materiality, and reporting consistency.
             </p>
           </div>
         </div>
