@@ -66,6 +66,19 @@
   padding: 1.4rem;
 }
 
+    <style>
+  .skill-logo {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .contact-icon {
+    height: 44px;
+    width: auto;
+  }
+</style>
+
 /* Subtle image rounding for a softer look */
 .card-img-top {
   border-top-left-radius: 0.75rem;
@@ -397,62 +410,63 @@
 
 
 <!-- SKILLS -->
-<section id="skills" class="py-5 bg-white border-top">
-  <div class="container">
+<section id="skills" class="py-5 border-top">
+  <div class="container-fluid bg-white">
+    <div class="container">
 
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Skills</h2>
-      <p class="text-muted">
-        Core competencies across sustainability data, analysis, quality assurance, and visualization.
-      </p>
-    </div>
-
-    <div class="row text-center g-4">
-
-      <!-- ESG & Sustainability -->
-      <div class="col-md-3 col-sm-6">
-        <div class="p-4 bg-white shadow-sm rounded h-100">
-          <img src="images/skills/esg.jpg" alt="ESG" class="skill-logo mb-3">
-          <h6 class="fw-semibold text-dark">ESG & Sustainability</h6>
-        </div>
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Skills</h2>
+        <p class="text-muted">
+          Core competencies across sustainability data, analysis, quality assurance, and visualization.
+        </p>
       </div>
 
-      <!-- Data Quality -->
-      <div class="col-md-3 col-sm-6">
-        <div class="p-4 bg-white shadow-sm rounded h-100">
-          <img src="images/skills/excel.png" alt="Excel" class="skill-logo mb-3">
-          <h6 class="fw-semibold text-dark">Data Quality & QA</h6>
-        </div>
-      </div>
+      <div class="row text-center g-4 justify-content-center">
 
-      <!-- Data Analysis -->
-      <div class="col-md-3 col-sm-6">
-        <div class="p-4 bg-white shadow-sm rounded h-100">
-          <div class="d-flex justify-content-center gap-3 mb-3">
-            <img src="images/skills/sql.png" alt="SQL" class="skill-logo">
-            <img src="images/skills/python.png" alt="Python" class="skill-logo">
-            <img src="images/skills/r.png" alt="R" class="skill-logo">
-            <img src="images/skills/copilot.png" alt="AI Copilot" class="skill-logo">
+        <!-- ESG & Sustainability -->
+        <div class="col-md-3 col-sm-6">
+          <div class="p-4 bg-white shadow-sm rounded h-100">
+            <img src="images/skills/esg.jpg" class="skill-logo mb-3" alt="ESG">
+            <h6 class="fw-semibold">ESG & Sustainability</h6>
           </div>
-          <h6 class="fw-semibold text-dark">Data Analysis</h6>
         </div>
-      </div>
 
-      <!-- Data Visualization -->
-      <div class="col-md-3 col-sm-6">
-        <div class="p-4 bg-white shadow-sm rounded h-100">
-          <div class="d-flex justify-content-center gap-3 mb-3">
-            <img src="images/skills/tableau.png" alt="Tableau" class="skill-logo">
-            <img src="images/skills/powerbi.png" alt="Power BI" class="skill-logo">
+        <!-- Data Quality -->
+        <div class="col-md-3 col-sm-6">
+          <div class="p-4 bg-white shadow-sm rounded h-100">
+            <img src="images/skills/excel.png" class="skill-logo mb-3" alt="Excel">
+            <h6 class="fw-semibold">Data Quality & QA</h6>
           </div>
-          <h6 class="fw-semibold text-dark">Data Visualization</h6>
         </div>
-      </div>
 
+        <!-- Data Analysis -->
+        <div class="col-md-3 col-sm-6">
+          <div class="p-4 bg-white shadow-sm rounded h-100">
+            <div class="d-flex justify-content-center gap-3 mb-3">
+              <img src="images/skills/sql.png" class="skill-logo" alt="SQL">
+              <img src="images/skills/python.png" class="skill-logo" alt="Python">
+              <img src="images/skills/r.png" class="skill-logo" alt="R">
+              <img src="images/skills/copilot.png" class="skill-logo" alt="Copilot">
+            </div>
+            <h6 class="fw-semibold">Data Analysis</h6>
+          </div>
+        </div>
+
+        <!-- Data Visualization -->
+        <div class="col-md-3 col-sm-6">
+          <div class="p-4 bg-white shadow-sm rounded h-100">
+            <div class="d-flex justify-content-center gap-3 mb-3">
+              <img src="images/skills/tableau.png" class="skill-logo" alt="Tableau">
+              <img src="images/skills/powerbi.png" class="skill-logo" alt="Power BI">
+            </div>
+            <h6 class="fw-semibold">Data Visualization</h6>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
-
   
 <!-- EDUCATION & CERTIFICATIONS -->
 <section id="education" class="py-5 bg-light">
@@ -567,33 +581,30 @@
 
   
 <!-- CONTACT -->
-<section id="contact" class="py-5 bg-white border-top border-bottom">
-  <div class="container text-center">
-    <h2 class="fw-bold mb-4">Contact Me</h2>
+<section id="contact" class="py-5 border-top border-bottom">
+  <div class="container-fluid bg-white">
+    <div class="container text-center">
 
-    <div class="d-flex justify-content-center align-items-center gap-4">
-      <!-- LinkedIn -->
-      <a
-        href="https://www.linkedin.com/in/jrmaquinano/"
-        target="_blank"
-        class="text-decoration-none text-muted d-flex flex-column align-items-center"
-      >
-        <img src="icons/linkedin.png" class="contact-icon mb-1" />
-        <span class="small">LinkedIn</span>
-      </a>
+      <h2 class="fw-bold mb-4">Contact Me</h2>
 
-      <!-- Email -->
-      <a
-        href="mailto:jrmaquinano@alum.up.edu.ph"
-        class="text-decoration-none text-muted d-flex flex-column align-items-center"
-      >
-        <img src="icons/gmail.png" class="contact-icon mb-1" />
-        <span class="small">Email</span>
-      </a>
+      <div class="d-flex justify-content-center gap-4">
+        <a href="https://www.linkedin.com/in/jrmaquinano/"
+           target="_blank"
+           class="text-decoration-none text-muted d-flex flex-column align-items-center">
+          <img src="icons/linkedin.png" class="contact-icon mb-1">
+          <span class="small">LinkedIn</span>
+        </a>
+
+        <a href="mailto:jrmaquinano@alum.up.edu.ph"
+           class="text-decoration-none text-muted d-flex flex-column align-items-center">
+          <img src="icons/gmail.png" class="contact-icon mb-1">
+          <span class="small">Email</span>
+        </a>
+      </div>
+
     </div>
   </div>
 </section>
-
      
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
