@@ -1,13 +1,22 @@
+from pathlib import Path
+
 import pandas as pd
 import streamlit as st
 
 
 st.set_page_config(page_title="Customer RFM", page_icon=":busts_in_silhouette:", layout="wide")
 
+BASE_DIR = Path(__file__).resolve().parent
+DATA_PATH = BASE_DIR.parent / "Online Retail.xlsx"
+
 
 @st.cache_data
 def load_clean_data():
-    df = pd.read_excel("Online Retail.xlsx")
+    if not DATA_PATH.exists():
+        st.error(f"Dataset not found: {DATA_PATH}")
+        st.stop()
+
+    df = pd.read_excel(DATA_PATH)
     df = df.drop_duplicates().dropna().copy()
     df = df[~df["InvoiceNo"].astype(str).str.startswith("C", na=False)].copy()
     df = df[(df["Quantity"] > 0) & (df["UnitPrice"] > 0)].copy()
@@ -38,8 +47,7 @@ def build_rfm(df: pd.DataFrame):
     ).astype(int)
 
     def segment_customer(row):
-        r = row["R_Score"]
-        f = row["F_Score"]
+        r, f = row["R_Score"], row["F_Score"]
         if r >= 4 and f >= 4:
             return "Champions"
         if r >= 3 and f >= 4:
@@ -94,8 +102,8 @@ segment = customer_rfm["Segment"]
 st.markdown(
     f"""
     <div style="padding: 14px; border: 1px solid #334155; border-radius: 10px; background-color: #0f172a;">
-        <h4 style="margin: 0 0 6px 0;">Segment: {segment}</h4>
-        <p style="margin: 0;">{recommendation_for_segment(segment)}</p>
+        <h4 style="margin: 0 0 6px 0; color: #ffffff;">Segment: {segment}</h4>
+        <p style="margin: 0; color: #cbd5e1;">{recommendation_for_segment(segment)}</p>
     </div>
     """,
     unsafe_allow_html=True,
@@ -151,4 +159,3 @@ cat_summary = (
     .sort_values("Revenue", ascending=False)
 )
 st.bar_chart(cat_summary.set_index("Category")["Revenue"], use_container_width=True)
-
