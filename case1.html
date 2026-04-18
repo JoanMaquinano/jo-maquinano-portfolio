@@ -17,7 +17,6 @@
       --text: #0f172a;
       --muted: #64748b;
       --primary: #2563eb;
-      --primary-soft: #dbeafe;
       --border: #e2e8f0;
     }
 
@@ -128,6 +127,33 @@
       color: #0b3ea8;
     }
 
+    .preview-wrap {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 10px 28px rgba(2, 6, 23, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .preview-wrap:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(2, 6, 23, 0.12);
+    }
+
+    .preview-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .preview-caption {
+      padding: 0.9rem 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
     .reveal {
       opacity: 0;
       transform: translateY(16px);
@@ -169,7 +195,7 @@
         <span class="badge text-bg-light">Streamlit</span>
       </div>
 
-      <a href="https://YOUR-STREAMLIT-APP.streamlit.app" target="_blank" class="btn btn-light btn-sm">
+      <a href="https://jo-maquinano-portfolio-gdgubj5fwwmzw5gekmnsik.streamlit.app/" target="_blank" class="btn btn-light btn-sm">
         Open Live Dashboard
       </a>
     </section>
@@ -181,8 +207,8 @@
           <h2 class="h6 fw-bold">Project Links</h2>
           <ul class="mb-0">
             <li><a href="https://github.com/JoanMaquinano/jo-maquinano-portfolio" target="_blank">Source Code (GitHub)</a></li>
-            <li><a href="https://github.com/JoanMaquinano/jo-maquinano-portfolio/blob/main/retail_data_analysis.ipynb" target="_blank">Notebook / Analysis File</a></li>
-            <li><a href="https://YOUR-STREAMLIT-APP.streamlit.app" target="_blank">Live Dashboard (Streamlit)</a></li>
+            <li><a href="https://github.com/JoanMaquinano/jo-maquinano-portfolio/blob/main/online%2Bretail/retail_data_analysis.ipynb" target="_blank">Notebook / Analysis File</a></li>
+            <li><a href="https://jo-maquinano-portfolio-gdgubj5fwwmzw5gekmnsik.streamlit.app/" target="_blank">Live Dashboard (Streamlit)</a></li>
           </ul>
         </div>
       </div>
@@ -196,6 +222,40 @@
             and actionable segmentation opportunities.
           </p>
         </div>
+      </div>
+    </section>
+
+    <!-- Live App Preview -->
+    <section class="mb-4 reveal">
+      <div class="section-card">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="h6 fw-bold mb-0">Live Dashboard Preview</h2>
+          <a
+            href="https://jo-maquinano-portfolio-gdgubj5fwwmzw5gekmnsik.streamlit.app/"
+            target="_blank"
+            class="btn btn-outline-primary btn-sm"
+          >
+            Open Full Dashboard
+          </a>
+        </div>
+
+        <a
+          href="https://jo-maquinano-portfolio-gdgubj5fwwmzw5gekmnsik.streamlit.app/"
+          target="_blank"
+          class="text-decoration-none"
+        >
+          <div class="preview-wrap">
+            <!-- Replace this image with your actual dashboard screenshot -->
+            <img
+              src="images/projects/online-retail-dashboard-preview.png"
+              alt="Online Retail Streamlit Dashboard Preview"
+              class="preview-img"
+            />
+            <div class="preview-caption">
+              Interactive 2-page Streamlit app: Business Overview + Customer RFM Analysis
+            </div>
+          </div>
+        </a>
       </div>
     </section>
 
