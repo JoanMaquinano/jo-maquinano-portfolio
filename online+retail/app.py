@@ -1,13 +1,23 @@
+# app.py
+from pathlib import Path
+
 import pandas as pd
 import streamlit as st
 
 
 st.set_page_config(page_title="Online Retail Dashboard", page_icon=":bar_chart:", layout="wide")
 
+BASE_DIR = Path(__file__).resolve().parent
+DATA_PATH = BASE_DIR / "Online Retail.xlsx"
+
 
 @st.cache_data
 def load_and_prepare_data():
-    df = pd.read_excel("Online Retail.xlsx")
+    if not DATA_PATH.exists():
+        st.error(f"Dataset not found: {DATA_PATH}")
+        st.stop()
+
+    df = pd.read_excel(DATA_PATH)
     df = df.drop_duplicates().dropna().copy()
     df = df[~df["InvoiceNo"].astype(str).str.startswith("C", na=False)].copy()
     df = df[(df["Quantity"] > 0) & (df["UnitPrice"] > 0)].copy()
@@ -68,7 +78,9 @@ trend_col2.line_chart(monthly.set_index("Month")[["Orders"]], use_container_widt
 st.subheader("Geographic Analysis")
 geo_left, geo_right = st.columns([2, 1])
 geo_left.dataframe(
-    countries.head(15).style.format({"Revenue": "{:,.2f}", "Sales": "{:,.0f}", "Orders": "{:,.0f}", "AOV": "{:,.2f}"}),
+    countries.head(15).style.format(
+        {"Revenue": "{:,.2f}", "Sales": "{:,.0f}", "Orders": "{:,.0f}", "AOV": "{:,.2f}"}
+    ),
     use_container_width=True,
 )
 geo_right.bar_chart(countries.head(10).set_index("Country")["Revenue"], use_container_width=True)
@@ -82,4 +94,3 @@ prod_left.dataframe(
 top10 = products.head(10).copy()
 top10["Product"] = top10["Description"].str.slice(0, 40)
 prod_right.bar_chart(top10.set_index("Product")["Revenue"], use_container_width=True)
-
