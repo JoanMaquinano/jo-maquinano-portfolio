@@ -327,15 +327,28 @@
       />
     </div>
 
-    <!-- 5. Profit Analysis -->
+<!-- 5. Profit Analysis -->
     <div class="col-md-12">
       <img
         src="images/case studies/profit analysis.png"
         class="img-fluid preview-img"
-        alt="Profit analysis summary showing gains and losses"
-      />
-    </div>
+        alt="Profit analysis summary showing gains and losses 2026 • Mortgage Trading Analysis • Power BI Case Study
   </div>
-</section>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll(".reveal").forEach((el) =>
+    observer.observe(el)
+  );
+</script>
+
 </body>
 </html>
