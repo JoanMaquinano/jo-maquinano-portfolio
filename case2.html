@@ -16,8 +16,6 @@
       --card: #ffffff;
       --text: #0f172a;
       --muted: #64748b;
-      --primary: #2563eb;
-      --primary-soft: #dbeafe;
       --border: #e2e8f0;
     }
 
@@ -27,71 +25,12 @@
         radial-gradient(circle at 90% 0%, #e0e7ff 0%, transparent 30%),
         var(--bg);
       color: var(--text);
-      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+      font-family: "Inter", "Segoe UI", system-ui, sans-serif;
     }
 
     .top-nav {
       border-bottom: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(8px);
-    }
-
-    .section-title {
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #0b5ed7 0%, #2563eb 100%);
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 18px;
-      padding: 2rem;
-      box-shadow: 0 12px 34px rgba(37, 99, 235, 0.28);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      right: -70px;
-      top: -90px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.15);
-    }
-
-    .hero-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 0.35rem 0.75rem;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.2);
-      font-size: 0.82rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .hero-chip::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #22c55e;
-      animation: pulseDot 1.6s infinite;
-    }
-
-    @keyframes pulseDot {
-      0% { transform: scale(0.9); opacity: 0.8; }
-      70% { transform: scale(1.35); opacity: 0.2; }
-      100% { transform: scale(0.9); opacity: 0.8; }
+      background: rgba(255, 255, 255, 0.9);
     }
 
     .section-card {
@@ -99,69 +38,23 @@
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 1.25rem;
-      height: 100%;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    }
-
-    .section-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 14px 32px rgba(2, 6, 23, 0.08);
-      border-color: #bfdbfe;
-    }
-
-    .kpi {
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: #fff;
-      padding: 1rem;
-      text-align: center;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .kpi:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 24px rgba(2, 6, 23, 0.08);
-    }
-
-    .kpi .value {
-      font-size: 1.45rem;
-      font-weight: 700;
-      margin-bottom: 0.2rem;
-      color: #0b3ea8;
-    }
-
-    .badge-tech {
-      background: #e0e7ff;
-      color: #3730a3;
-      border: 1px solid #c7d2fe;
-      font-weight: 600;
     }
 
     .preview-img {
       border: 1px solid var(--border);
       border-radius: 12px;
       box-shadow: 0 12px 28px rgba(2, 6, 23, 0.08);
-      transition: transform 0.28s ease, box-shadow 0.28s ease;
-    }
-
-    .preview-img:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 36px rgba(2, 6, 23, 0.12);
     }
 
     .reveal {
       opacity: 0;
       transform: translateY(16px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
     .reveal.show {
       opacity: 1;
       transform: translateY(0);
-    }
-
-    .checklist li {
-      margin-bottom: 0.45rem;
     }
   </style>
 </head>
@@ -169,186 +62,83 @@
 <body>
   <nav class="navbar top-nav sticky-top">
     <div class="container">
-      <a href="index.html#case-studies" class="navbar-brand fw-semibold text-decoration-none text-dark">
-        &larr; Back to Case Studies
+      <a href="index.html#case-studies"
+         class="navbar-brand fw-semibold text-decoration-none text-dark">
+        ← Back to Case Studies
       </a>
     </div>
   </nav>
 
-  <main class="container py-4 py-md-5">
+  <main class="container py-5">
+
     <!-- Hero -->
-    <section class="hero mb-4 reveal">
-      <div class="hero-chip">Case Study 2 · In Progress</div>
-      <h1 class="h3 fw-bold mb-2">Mortgage Trading Analysis</h1>
-      <p class="mb-3">
-        Simulated a mortgage trading desk workflow to evaluate trade pricing and identify
-        premium/discount opportunities using Power BI and financial logic.
+    <section class="mb-5 reveal">
+      <h1 class="fw-bold">Mortgage Trading Analysis</h1>
+      <p class="text-muted">
+        Simulated a mortgage trading desk workflow to evaluate trade pricing and
+        identify premium/discount opportunities using Power BI.
       </p>
-      <div class="d-flex flex-wrap gap-2">
-        <span class="badge text-bg-light">Power BI</span>
-        <span class="badge text-bg-light">DAX</span>
-        <span class="badge text-bg-light">Power Query</span>
-      </div>
     </section>
 
-    <!-- Overview cards -->
-    <section class="row g-3 mb-4 reveal">
-      <div class="col-md-6">
-        <div class="section-card">
-          <h2 class="h6 fw-bold">Project Overview</h2>
-          <p class="muted mb-0">
-            This case study models the role of a junior trader analyzing mortgage bids
-            against outstanding principal balances to assess trade attractiveness.
-          </p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="section-card">
-          <h2 class="h6 fw-bold">Business Context</h2>
-          <p class="muted mb-0">
-            Mortgage trading requires fast and accurate valuation checks.
-            The dashboard supports this by making trade pricing and premium/discount status
-            immediately visible for decision support.
-          </p>
-        </div>
-      </div>
-    </section>
+    <!-- Dashboard Preview -->
+    <section class="mb-5 reveal">
+      <h2 class="h5 fw-bold mb-3">Dashboard Preview</h2>
+      <p class="text-muted">
+        End-to-end trading workflow from loan review to profit evaluation.
+      </p>
 
-    <!-- KPI-style metrics -->
-    <section class="mb-4 reveal">
-      <h2 class="h5 section-title mb-3">Analytical Focus Areas</h2>
-      <div class="row g-3">
-        <div class="col-6 col-md-3">
-          <div class="kpi">
-            <div class="value">Trade Price</div>
-            <div class="muted small">Computed per bid</div>
-          </div>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <img src="images/case studies/loan status.png"
+               class="img-fluid preview-img"
+               alt="Loan status overview" />
         </div>
-        <div class="col-6 col-md-3">
-          <div class="kpi">
-            <div class="value">Premium/Discount</div>
-            <div class="muted small">Vs principal balance</div>
-          </div>
+
+        <div class="col-md-6">
+          <img src="images/case studies/loan balances.png"
+               class="img-fluid preview-img"
+               alt="Loan balances analysis" />
         </div>
-        <div class="col-6 col-md-3">
-          <div class="kpi">
-            <div class="value">Data Modeling</div>
-            <div class="muted small">Linked tables</div>
-          </div>
+
+        <div class="col-md-6">
+          <img src="images/case studies/trade analysis.png"
+               class="img-fluid preview-img"
+               alt="Trade analysis table" />
         </div>
-        <div class="col-6 col-md-3">
-          <div class="kpi">
-            <div class="value">Decision Support</div>
-            <div class="muted small">Trade quality scan</div>
-          </div>
+
+        <div class="col-md-6">
+          <img src="images/case studies/trade execution.png"
+               class="img-fluid preview-img"
+               alt="Trade execution view" />
+        </div>
+
+        <div class="col-md-12">
+          <img src="images/case studies/profit analysis.png"
+               class="img-fluid preview-img"
+               alt="Profit analysis summary showing gains and losses" />
         </div>
       </div>
     </section>
 
-    <!-- Method -->
-    <section class="section-card mb-4 reveal">
-      <h2 class="h5 section-title mb-3">Analytical Approach</h2>
-      <ul class="muted checklist mb-0">
-        <li>Cleaned and transformed mortgage, bid, and loan balance datasets.</li>
-        <li>Built a relational model across bid, loan, and balance tables.</li>
-        <li>Created DAX measures for trade pricing and premium calculations.</li>
-        <li>Flagged premiums and discounts for quick trade evaluation.</li>
-        <li>Designed summary visuals for desk-level decision support.</li>
-      </ul>
-    </section>
+  </main>
 
-    <!-- Outcome + tools -->
-    <section class="row g-3 mb-4 reveal">
-      <div class="col-md-7">
-        <div class="section-card">
-          <h2 class="h6 fw-bold">Key Outcome</h2>
-          <p class="muted mb-0">
-            The final model enables clear and reliable comparison of bid prices against
-            principal balances, helping users quickly identify favorable and unfavorable trades.
-            The dashboard forms a practical base for market-side valuation review workflows.
-          </p>
-        </div>
-      </div>
-      <div class="col-md-5">
-        <div class="section-card">
-          <h2 class="h6 fw-bold">Tech Stack</h2>
-          <div class="d-flex flex-wrap gap-2">
-            <span class="badge badge-tech">Power BI</span>
-            <span class="badge badge-tech">DAX</span>
-            <span class="badge badge-tech">Power Query</span>
-            <span class="badge badge-tech">Data Modeling</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Dashboard preview -->
-<section class="mb-4 reveal">
-  <h2 class="h5 section-title mb-3">Dashboard Preview</h2>
-  <p class="muted">
-    Selected views from the dashboard, following the mortgage trading workflow
-    from loan status review to profit evaluation.
-  </p>
-
-  <div class="row g-4">
-    <!-- 1. Loan Status -->
-    <div class="col-md-6">
-      <img
-        src="images/case studies/loan status.png"
-        class="img-fluid preview-img"
-        alt="Loan status overview showing active and closed loans"
-      />
+  <footer class="py-4">
+    <div class="container text-center small text-muted">
+      © 2026 • Mortgage Trading Analysis
     </div>
+  </footer>
 
-    <!-- 2. Loan Balances -->
-    <div class="col-md-6">
-      <img
-        src="images/case studies/loan balances.png"
-        class="img-fluid preview-img"
-        alt="Loan balances by mortgage account"
-      />
-    </div>
-
-    <!-- 3. Trade Analysis -->
-    <div class="col-md-6">
-      <img
-        src="images/case studies/trade analysis.png"
-        class="img-fluid preview-img"
-        alt="Trade analysis table showing trade price and premium or discount"
-      />
-    </div>
-
-    <!-- 4. Trade Execution -->
-    <div class="col-md-6">
-      <img
-        src="images/case studies/trade execution.png"
-        class="img-fluid preview-img"
-        alt="Trade execution view showing bid and execution pricing"
-      />
-    </div>
-
-<!-- 5. Profit Analysis -->
-    <div class="col-md-12">
-      <img
-        src="images/case studies/profit analysis.png"
-        class="img-fluid preview-img"
-        alt="Profit analysis summary showing gains and losses 2026 • Mortgage Trading Analysis • Power BI Case Study
-  </div>
-</footer>
-
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
     });
-  }, { threshold: 0.12 });
 
-  document.querySelectorAll(".reveal").forEach((el) =>
-    observer.observe(el)
-  );
-</script>
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
