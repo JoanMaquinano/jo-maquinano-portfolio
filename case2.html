@@ -283,62 +283,59 @@
     </section>
 
     <!-- Dashboard preview -->
-    <section class="mb-4 reveal">
-      <h2 class="h5 section-title mb-3">Dashboard Preview</h2>
-      <p class="muted">
-        Selected views from the dashboard highlighting trade and profit analysis.
-      </p>
+<section class="mb-4 reveal">
+  <h2 class="h5 section-title mb-3">Dashboard Preview</h2>
+  <p class="muted">
+    Selected views from the dashboard, following the mortgage trading workflow
+    from loan status review to profit evaluation.
+  </p>
 
-      <div class="row g-4">
-        <div class="col-md-6">
-          <img
-            src="images/case studies/trade analysis.png"
-            class="img-fluid preview-img"
-            alt="Trade analysis table showing trade price and premium"
-          />
-        </div>
-        <div class="col-md-6">
-          <img
-            src="images/case studies/profit analysis.png"
-            class="img-fluid preview-img"
-            alt="Trade summary dashboard"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- Links -->
-    <section class="section-card reveal">
-      <h2 class="h6 fw-bold mb-3">Files & Links</h2>
-      <div class="d-flex gap-2 flex-wrap">
-
-        <a
-          href="https://app.powerbi.com/groups/me/reports/a3f1102e-5c5c-49dc-9de7-d8290bc3195e?ctid=e09a991a-d867-4a84-bfd2-6c410be13496&pbi_source=linkShare"
-          target="_blank"
-          class="btn btn-outline-secondary btn-sm"
-        >
-          View Full Power BI Visualization
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="py-4">
-    <div class="container text-center small muted">
-      © 2026 • Mortgage Trading Analysis • Power BI Case Study
+  <div class="row g-4">
+    <!-- 1. Loan Status -->
+    <div class="col-md-6">
+      <img
+        src="images/case studies/loan status.png"
+        class="img-fluid preview-img"
+        alt="Loan status overview showing active and closed loans"
+      />
     </div>
-  </footer>
 
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    }, { threshold: 0.12 });
+    <!-- 2. Loan Balances -->
+    <div class="col-md-6">
+      <img
+        src="images/case studies/loan balances.png"
+        class="img-fluid preview-img"
+        alt="Loan balances by mortgage account"
+      />
+    </div>
 
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-  </script>
+    <!-- 3. Trade Analysis -->
+    <div class="col-md-6">
+      <img
+        src="images/case studies/trade analysis.png"
+        class="img-fluid preview-img"
+        alt="Trade analysis table showing trade price and premium or discount"
+      />
+    </div>
+
+    <!-- 4. Trade Execution -->
+    <div class="col-md-6">
+      <img
+        src="images/case studies/trade execution.png"
+        class="img-fluid preview-img"
+        alt="Trade execution view showing bid and execution pricing"
+      />
+    </div>
+
+    <!-- 5. Profit Analysis -->
+    <div class="col-md-12">
+      <img
+        src="images/case studies/profit analysis.png"
+        class="img-fluid preview-img"
+        alt="Profit analysis summary showing gains and losses"
+      />
+    </div>
+  </div>
+</section>
 </body>
 </html>
