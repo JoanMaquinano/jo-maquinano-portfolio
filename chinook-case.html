@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Case Study | Instacart Dimensional Warehouse</title>
+  <title>Case Study | Chinook Dimensional Model</title>
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -16,9 +16,6 @@
       --muted: #64748b;
       --border: #e9d5ff;
       --coral: #f97368;
-      --purple: #8b5cf6;
-      --mint: #5eead4;
-      --yellow: #fbbf24;
     }
 
     body {
@@ -63,10 +60,7 @@
       box-shadow: 4px 4px 0 rgba(94, 234, 212, 0.18);
     }
 
-    .section-card h2 {
-      color: #7c3aed;
-    }
-
+    .section-card h2 { color: #7c3aed; }
     .muted { color: var(--muted); }
 
     .layer {
@@ -76,10 +70,9 @@
       border: 1px solid rgba(15, 23, 42, 0.08);
     }
 
-    .layer-source { background: #fef3c7; }
-    .layer-bronze { background: #ffedd5; }
-    .layer-silver { background: #e0f2fe; }
-    .layer-gold { background: #ede9fe; }
+    .layer-raw { background: #fef3c7; }
+    .layer-clean { background: #e0f2fe; }
+    .layer-mart { background: #ede9fe; }
     .layer-analytics { background: #ccfbf1; }
 
     .architecture-flow {
@@ -118,18 +111,17 @@
 
   <main class="container py-4 py-md-5">
     <section class="hero mb-4">
-      <span class="hero-chip">Collaborative GitHub Project · End-to-End</span>
-      <h1 class="h2 fw-bold mb-2">Case Study | Instacart Dimensional Warehouse</h1>
+      <span class="hero-chip">End-to-End Data Warehouse Project</span>
+      <h1 class="h2 fw-bold mb-2">Case Study | Chinook Dimensional Model</h1>
       <p class="lead mb-3">
-        Turning raw grocery-order data into clean, reliable, and analytics-ready Delta tables
-        through a Databricks medallion pipeline.
+        Transforming Chinook sales data through Raw, Clean, and Mart layers into
+        analytics-ready tables for sales reporting and business insight.
       </p>
       <div class="d-flex flex-wrap gap-2">
         <span class="badge rounded-pill text-bg-warning">Databricks SQL</span>
-        <span class="badge rounded-pill text-bg-light">Delta Lake</span>
         <span class="badge rounded-pill text-bg-light">Unity Catalog</span>
-        <span class="badge rounded-pill text-bg-light">GitHub Actions</span>
         <span class="badge rounded-pill text-bg-light">Dimensional Modeling</span>
+        <span class="badge rounded-pill text-bg-light">Draw.io</span>
       </div>
     </section>
 
@@ -138,14 +130,13 @@
         <div class="section-card">
           <h2 class="h5 fw-bold">Project Overview</h2>
           <p class="muted">
-            This project builds an end-to-end data warehouse for the Instacart dataset. Source
-            CSV files are ingested into Delta tables, cleaned and integrated, then modeled into
-            a Gold-layer star schema for reusable analytics.
+            This project designs and implements a dimensional data warehouse for the Chinook
+            music-store dataset. Source CSV data is loaded into a Raw layer, standardized and
+            validated in a Clean layer, and published as a curated Mart layer for analysis.
           </p>
           <p class="muted mb-0">
-            The pipeline is organized into Source, Bronze, Silver, Gold, Analytics, and Tests
-            layers so that ingestion, transformation, reporting, and quality checks have clear
-            responsibilities.
+            The model turns operational sales records into a consistent structure that makes
+            revenue, customer, track, genre, employee, and time analysis easier to perform.
           </p>
         </div>
       </div>
@@ -153,13 +144,13 @@
         <div class="section-card">
           <h2 class="h5 fw-bold">Business or Analytical Question</h2>
           <p class="muted">
-            How can grocery-order data be transformed into a dependable model that helps answer:
+            How can sales data be modeled to help answer questions such as:
           </p>
           <ul class="muted small mb-0">
-            <li>Which products and departments are ordered most often?</li>
-            <li>When is order activity highest?</li>
-            <li>Which products are frequently reordered?</li>
-            <li>How does product behavior differ by aisle or department?</li>
+            <li>Which tracks, genres, and artists drive sales?</li>
+            <li>How does revenue change over time?</li>
+            <li>Which customers and regions contribute most to sales?</li>
+            <li>How do employee territories and support assignments relate to performance?</li>
           </ul>
         </div>
       </div>
@@ -168,23 +159,21 @@
     <section class="section-card mb-4">
       <h2 class="h5 fw-bold">Architecture Diagram</h2>
       <p class="muted">
-        Data moves through a medallion architecture, with tests and release checks protecting
-        the path from source data to business-ready outputs.
+        The pipeline follows a medallion-style progression from source data to business-ready
+        marts, with validation and analytics scripts orchestrated through Databricks Jobs.
       </p>
       <div class="architecture-flow mb-3">
-        <div class="layer layer-source flex-fill"><strong>Source</strong><br><small>Instacart CSV files</small></div>
+        <div class="layer layer-raw flex-fill"><strong>Raw</strong><br><small>Source Chinook CSV data</small></div>
         <div class="flow-arrow">&rarr;</div>
-        <div class="layer layer-bronze flex-fill"><strong>Bronze</strong><br><small>Raw Delta ingestion</small></div>
+        <div class="layer layer-clean flex-fill"><strong>Clean</strong><br><small>Standardize and validate</small></div>
         <div class="flow-arrow">&rarr;</div>
-        <div class="layer layer-silver flex-fill"><strong>Silver</strong><br><small>Clean, cast, validate</small></div>
+        <div class="layer layer-mart flex-fill"><strong>Mart</strong><br><small>Fact + dimensions</small></div>
         <div class="flow-arrow">&rarr;</div>
-        <div class="layer layer-gold flex-fill"><strong>Gold</strong><br><small>Fact + dimensions</small></div>
-        <div class="flow-arrow">&rarr;</div>
-        <div class="layer layer-analytics flex-fill"><strong>Analytics</strong><br><small>Views + questions</small></div>
+        <div class="layer layer-analytics flex-fill"><strong>Analytics</strong><br><small>Sales reporting and insights</small></div>
       </div>
       <img
-        src="assets/images/case-studies/instacart-architecture.png"
-        alt="Instacart pipeline architecture diagram"
+        src="assets/images/case-studies/chinook-star-schema.png"
+        alt="Chinook sales data mart star schema"
         class="preview-img"
       />
     </section>
@@ -194,13 +183,13 @@
         <div class="section-card">
           <h2 class="h5 fw-bold">Your Role and Collaboration</h2>
           <p class="muted">
-            This was built as a collaborative FTW Data Engineering project on GitHub. The
-            repository supports shared development through version-controlled SQL, documentation,
-            pull requests, automated validation, and reproducible deployment steps.
+            The project is documented and maintained in GitHub as a reviewable data-engineering
+            workflow. The repository brings together SQL transformations, model documentation,
+            architecture diagrams, validation logic, and Databricks Job orchestration.
           </p>
           <p class="muted mb-0">
-            The collaboration model keeps transformation logic, tests, documentation, and
-            deployment configuration reviewable by the wider team.
+            This structure makes the work easier for collaborators and reviewers to understand,
+            reproduce, and extend.
           </p>
         </div>
       </div>
@@ -209,12 +198,11 @@
           <h2 class="h5 fw-bold">Tools and Technologies</h2>
           <div class="d-flex flex-wrap gap-2">
             <span class="badge rounded-pill text-bg-light">Databricks SQL</span>
-            <span class="badge rounded-pill text-bg-light">Delta Lake</span>
             <span class="badge rounded-pill text-bg-light">Unity Catalog</span>
-            <span class="badge rounded-pill text-bg-light">SQL notebooks</span>
             <span class="badge rounded-pill text-bg-light">GitHub</span>
-            <span class="badge rounded-pill text-bg-light">GitHub Actions</span>
             <span class="badge rounded-pill text-bg-light">Draw.io</span>
+            <span class="badge rounded-pill text-bg-light">SQL</span>
+            <span class="badge rounded-pill text-bg-light">Databricks Jobs</span>
           </div>
         </div>
       </div>
@@ -223,22 +211,21 @@
     <section class="section-card mb-4">
       <h2 class="h5 fw-bold">Data Model and Quality Approach</h2>
       <p class="muted">
-        The Gold layer centers on <code>fact_order_items</code>, where each row represents a
-        product recorded within a customer order. It connects to dimensions for orders, time,
-        products, aisles, and departments.
+        The Mart layer uses a star schema centered on <code>fact_sales</code>. Each fact row
+        represents one invoice line, or one purchased track on a specific invoice.
       </p>
       <div class="row g-3">
         <div class="col-md-4">
           <h3 class="h6 fw-bold">Fact table</h3>
-          <p class="muted small mb-0">Order-item activity keyed by <code>(order_id, product_id)</code>.</p>
+          <p class="muted small mb-0">Sales measures include quantity, unit price, and line amount.</p>
         </div>
         <div class="col-md-4">
           <h3 class="h6 fw-bold">Dimensions</h3>
-          <p class="muted small mb-0">Order, time, product, aisle, and department context for analysis.</p>
+          <p class="muted small mb-0">Customer, track, employee, and date context support flexible reporting.</p>
         </div>
         <div class="col-md-4">
           <h3 class="h6 fw-bold">Validation</h3>
-          <p class="muted small mb-0">Checks for keys, nulls, duplicates, relationships, reruns, and business results.</p>
+          <p class="muted small mb-0">Clean-layer checks help protect data types, keys, relationships, and reporting consistency.</p>
         </div>
       </div>
     </section>
@@ -248,10 +235,10 @@
         <div class="section-card">
           <h2 class="h5 fw-bold">Key Outputs or Findings</h2>
           <ul class="output-list muted">
-            <li>A reusable Gold-layer star schema for reporting.</li>
-            <li>Analytics views for product, order, time, department, aisle, and reorder analysis.</li>
-            <li>Query-ready outputs for order timing, basket size, and reorder behavior.</li>
-            <li>Repeatable Delta merges and release-quality validation checks.</li>
+            <li>A sales-ready Mart layer for reporting and business analysis.</li>
+            <li>A star schema connecting sales to customer, track, employee, and date context.</li>
+            <li>Reusable measures for quantity, price, revenue, and line-level sales.</li>
+            <li>A scheduled sequence for Raw, Clean, Mart, validation, and analytics scripts.</li>
           </ul>
         </div>
       </div>
@@ -259,12 +246,13 @@
         <div class="section-card">
           <h2 class="h5 fw-bold">Example Analysis</h2>
           <p class="muted">
-            The model supports exploration of order volume by day and hour, average items per
-            order, and the rate at which products are reordered.
+            With the Mart model in place, analysts can compare revenue trends, customer behavior,
+            track popularity, genre preferences, and time-based sales performance without rebuilding
+            the source-data joins for every question.
           </p>
           <img
-            src="assets/images/case-studies/instacart-order-analysis.png"
-            alt="Instacart order volume and reorder analysis charts"
+            src="assets/images/case-studies/chinook-star-schema.png"
+            alt="Chinook dimensional warehouse star schema"
             class="preview-img"
           />
         </div>
@@ -272,13 +260,13 @@
     </section>
 
     <section class="text-center">
-      <p class="muted mb-2">Explore the code, documentation, tests, and deployment workflow:</p>
+      <p class="muted mb-2">Explore the model, architecture, and Databricks SQL workflow:</p>
       <a
-        href="https://github.com/jess-christine/instacart-pipeline"
+        href="https://github.com/JoanMaquinano/chinook-dimensional-model"
         target="_blank"
         rel="noopener noreferrer"
         class="btn btn-primary"
-      >View Collaborative GitHub Repository</a>
+      >View Chinook GitHub Repository</a>
     </section>
   </main>
 </body>
