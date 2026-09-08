@@ -14,14 +14,18 @@
       --card: #ffffff;
       --text: #0f172a;
       --muted: #64748b;
-      --primary: #2563eb;
-      --border: #e2e8f0;
+      --border: #e9d5ff;
+      --coral: #f97368;
+      --purple: #8b5cf6;
+      --mint: #5eead4;
+      --yellow: #fbbf24;
     }
 
     body {
       background:
         radial-gradient(circle at 8% 10%, #ffe4e6 0%, transparent 28%),
         radial-gradient(circle at 92% 0%, #ddd6fe 0%, transparent 28%),
+        radial-gradient(circle at 50% 100%, #ccfbf1 0%, transparent 25%),
         var(--bg);
       color: var(--text);
       font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -34,40 +38,77 @@
     }
 
     .hero {
-      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-      color: #fff;
-      border-radius: 18px;
+      background: linear-gradient(135deg, #fff 0%, #fff7ed 55%, #f5f3ff 100%);
+      border: 2px solid #fed7aa;
+      border-radius: 20px;
       padding: 2rem;
-      box-shadow: 8px 8px 0 rgba(249, 115, 106, 0.2);
+      box-shadow: 8px 8px 0 rgba(196, 181, 253, 0.3);
     }
 
     .hero-chip {
       display: inline-block;
       padding: 0.35rem 0.75rem;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.2);
+      background: linear-gradient(100deg, #fef3c7, #fce7f3);
+      color: #9d174d;
       font-size: 0.82rem;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 10px;
     }
 
+    .hero h1 { color: #4338ca; }
+
     .section-card {
       background: var(--card);
-      border: 1px solid #e9d5ff;
+      border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 1.25rem;
+      padding: 1.35rem;
       height: 100%;
       box-shadow: 4px 4px 0 rgba(94, 234, 212, 0.18);
     }
 
+    .section-card h2 {
+      color: #7c3aed;
+    }
+
+    .muted { color: var(--muted); }
+
+    .layer {
+      border-radius: 12px;
+      padding: 1rem;
+      height: 100%;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .layer-source { background: #fef3c7; }
+    .layer-bronze { background: #ffedd5; }
+    .layer-silver { background: #e0f2fe; }
+    .layer-gold { background: #ede9fe; }
+    .layer-analytics { background: #ccfbf1; }
+
+    .architecture-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 0.65rem;
+    }
+
+    .flow-arrow {
+      display: flex;
+      align-items: center;
+      color: var(--coral);
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
     .preview-img {
       width: 100%;
-      border: 1px solid var(--border);
+      border: 1px solid #e2e8f0;
       border-radius: 12px;
       box-shadow: 0 12px 28px rgba(2, 6, 23, 0.1);
     }
 
-    .muted { color: var(--muted); }
+    .output-list li { margin-bottom: 0.6rem; }
   </style>
 </head>
 <body>
@@ -82,77 +123,166 @@
   <main class="container py-4 py-md-5">
     <section class="hero mb-4">
       <span class="hero-chip">Collaborative GitHub Project · End-to-End</span>
-      <h1 class="h3 fw-bold mb-2">Instacart Dimensional Warehouse</h1>
-      <p class="mb-3">
-        An end-to-end data engineering project that transforms raw Instacart transaction data
-        into validated, analytics-ready fact and dimension tables.
+      <h1 class="h2 fw-bold mb-2">Case Study | Instacart Dimensional Warehouse</h1>
+      <p class="lead mb-3">
+        Turning raw grocery-order data into clean, reliable, and analytics-ready Delta tables
+        through a Databricks medallion pipeline.
       </p>
       <div class="d-flex flex-wrap gap-2">
-        <span class="badge text-bg-light">Databricks</span>
-        <span class="badge text-bg-light">SQL</span>
-        <span class="badge text-bg-light">Delta Lake</span>
-        <span class="badge text-bg-light">Dimensional Modeling</span>
+        <span class="badge rounded-pill text-bg-warning">Databricks SQL</span>
+        <span class="badge rounded-pill text-bg-light">Delta Lake</span>
+        <span class="badge rounded-pill text-bg-light">Unity Catalog</span>
+        <span class="badge rounded-pill text-bg-light">GitHub Actions</span>
+        <span class="badge rounded-pill text-bg-light">Dimensional Modeling</span>
       </div>
     </section>
 
     <section class="row g-3 mb-4">
-      <div class="col-md-6">
+      <div class="col-lg-7">
         <div class="section-card">
-          <h2 class="h6 fw-bold">The Goal</h2>
+          <h2 class="h5 fw-bold">Project Overview</h2>
+          <p class="muted">
+            This project builds an end-to-end data warehouse for the Instacart dataset. Source
+            CSV files are ingested into Delta tables, cleaned and integrated, then modeled into
+            a Gold-layer star schema for reusable analytics.
+          </p>
           <p class="muted mb-0">
-            Build a dependable warehouse layer that makes grocery-order data easier to query,
-            validate, and use for reporting and business analysis.
+            The pipeline is organized into Source, Bronze, Silver, Gold, Analytics, and Tests
+            layers so that ingestion, transformation, reporting, and quality checks have clear
+            responsibilities.
           </p>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-lg-5">
         <div class="section-card">
-          <h2 class="h6 fw-bold">My Collaboration Context</h2>
-          <p class="muted mb-0">
-            Developed collaboratively on GitHub, with shared documentation, version control,
-            reviewable SQL transformations, and reproducible pipeline steps.
+          <h2 class="h5 fw-bold">Business or Analytical Question</h2>
+          <p class="muted">
+            How can grocery-order data be transformed into a dependable model that helps answer:
           </p>
+          <ul class="muted small mb-0">
+            <li>Which products and departments are ordered most often?</li>
+            <li>When is order activity highest?</li>
+            <li>Which products are frequently reordered?</li>
+            <li>How does product behavior differ by aisle or department?</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <section class="section-card mb-4">
-      <h2 class="h5 fw-bold">How the Pipeline Works</h2>
+      <h2 class="h5 fw-bold">Architecture Diagram</h2>
       <p class="muted">
-        The workflow follows a medallion architecture: raw source files are ingested into Bronze,
-        cleaned and standardized in Silver, then modeled into a Gold layer for analytics.
+        Data moves through a medallion architecture, with tests and release checks protecting
+        the path from source data to business-ready outputs.
       </p>
-      <div class="row g-3">
-        <div class="col-md-4">
-          <h3 class="h6 fw-bold">Bronze</h3>
-          <p class="muted small mb-0">Preserves source data and establishes traceable ingestion.</p>
-        </div>
-        <div class="col-md-4">
-          <h3 class="h6 fw-bold">Silver</h3>
-          <p class="muted small mb-0">Applies cleaning, standardization, integration, and quality checks.</p>
-        </div>
-        <div class="col-md-4">
-          <h3 class="h6 fw-bold">Gold</h3>
-          <p class="muted small mb-0">Publishes fact and dimension tables for reporting and analysis.</p>
-        </div>
+      <div class="architecture-flow mb-3">
+        <div class="layer layer-source flex-fill"><strong>Source</strong><br><small>Instacart CSV files</small></div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="layer layer-bronze flex-fill"><strong>Bronze</strong><br><small>Raw Delta ingestion</small></div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="layer layer-silver flex-fill"><strong>Silver</strong><br><small>Clean, cast, validate</small></div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="layer layer-gold flex-fill"><strong>Gold</strong><br><small>Fact + dimensions</small></div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="layer layer-analytics flex-fill"><strong>Analytics</strong><br><small>Views + questions</small></div>
       </div>
-    </section>
-
-    <section class="section-card mb-4">
-      <h2 class="h5 fw-bold">Example Output</h2>
-      <p class="muted">
-        The project also supports analysis of order timing, weekday and weekend patterns,
-        average basket size, and reorder behavior.
-      </p>
       <img
-        src="assets/images/case-studies/instacart-order-analysis.png"
-        alt="Instacart order volume and reorder analysis charts"
+        src="assets/images/case-studies/instacart-architecture.png"
+        alt="Instacart pipeline architecture diagram"
         class="preview-img"
       />
     </section>
 
+    <section class="row g-3 mb-4">
+      <div class="col-lg-6">
+        <div class="section-card">
+          <h2 class="h5 fw-bold">Your Role and Collaboration</h2>
+          <p class="muted">
+            This was built as a collaborative FTW Data Engineering project on GitHub. The
+            repository supports shared development through version-controlled SQL, documentation,
+            pull requests, automated validation, and reproducible deployment steps.
+          </p>
+          <p class="muted mb-0">
+            The collaboration model keeps transformation logic, tests, documentation, and
+            deployment configuration reviewable by the wider team.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="section-card">
+          <h2 class="h5 fw-bold">Tools and Technologies</h2>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge rounded-pill text-bg-light">Databricks SQL</span>
+            <span class="badge rounded-pill text-bg-light">Delta Lake</span>
+            <span class="badge rounded-pill text-bg-light">Unity Catalog</span>
+            <span class="badge rounded-pill text-bg-light">SQL notebooks</span>
+            <span class="badge rounded-pill text-bg-light">GitHub</span>
+            <span class="badge rounded-pill text-bg-light">GitHub Actions</span>
+            <span class="badge rounded-pill text-bg-light">Draw.io</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card mb-4">
+      <h2 class="h5 fw-bold">Data Model and Quality Approach</h2>
+      <p class="muted">
+        The Gold layer centers on <code>fact_order_items</code>, where each row represents a
+        product recorded within a customer order. It connects to dimensions for orders, time,
+        products, aisles, and departments.
+      </p>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <h3 class="h6 fw-bold">Fact table</h3>
+          <p class="muted small mb-0">Order-item activity keyed by <code>(order_id, product_id)</code>.</p>
+        </div>
+        <div class="col-md-4">
+          <h3 class="h6 fw-bold">Dimensions</h3>
+          <p class="muted small mb-0">Order, time, product, aisle, and department context for analysis.</p>
+        </div>
+        <div class="col-md-4">
+          <h3 class="h6 fw-bold">Validation</h3>
+          <p class="muted small mb-0">Checks for keys, nulls, duplicates, relationships, reruns, and business results.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row g-3 mb-4">
+      <div class="col-lg-6">
+        <div class="section-card">
+          <h2 class="h5 fw-bold">Key Outputs or Findings</h2>
+          <ul class="output-list muted">
+            <li>A reusable Gold-layer star schema for reporting.</li>
+            <li>Analytics views for product, order, time, department, aisle, and reorder analysis.</li>
+            <li>Query-ready outputs for order timing, basket size, and reorder behavior.</li>
+            <li>Repeatable Delta merges and release-quality validation checks.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="section-card">
+          <h2 class="h5 fw-bold">Example Analysis</h2>
+          <p class="muted">
+            The model supports exploration of order volume by day and hour, average items per
+            order, and the rate at which products are reordered.
+          </p>
+          <img
+            src="assets/images/case-studies/instacart-order-analysis.png"
+            alt="Instacart order volume and reorder analysis charts"
+            class="preview-img"
+          />
+        </div>
+      </div>
+    </section>
+
     <section class="text-center">
-      <a href="https://github.com/jess-christine/instacart-pipeline" target="_blank" class="btn btn-primary">View Collaborative GitHub Repository</a>
+      <p class="muted mb-2">Explore the code, documentation, tests, and deployment workflow:</p>
+      <a
+        href="https://github.com/jess-christine/instacart-pipeline"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >View Collaborative GitHub Repository</a>
     </section>
   </main>
 </body>
