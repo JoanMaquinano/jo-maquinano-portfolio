@@ -13,17 +13,17 @@
 
   <style>
     :root {
-      --bg: #f9a8d4;
-      --card: #ffffff;
+      --bg: #f7f4f1;
+      --card: #fffdfa;
       --text: #0f172a;
       --muted: #64748b;
       --primary: #2563eb;
       --primary-soft: #dbeafe;
       --border: #e2e8f0;
-      --coral: #f97368;
-      --sunshine: #fbbf24;
-      --mint: #5eead4;
-      --lavender: #c4b5fd;
+      --coral: #d98278;
+      --sunshine: #d6a84f;
+      --mint: #83b8a8;
+      --lavender: #a99bc9;
     }
 
     html { scroll-behavior: smooth; }
@@ -31,12 +31,13 @@
     body {
       padding-top: 74px;
       background:
-        radial-gradient(circle at 12% 8%, rgba(249, 168, 212, 0.72) 0%, transparent 27%),
-        radial-gradient(circle at 34% 25%, rgba(196, 181, 253, 0.62) 0%, transparent 29%),
-        radial-gradient(circle at 58% 44%, rgba(253, 230, 138, 0.58) 0%, transparent 31%),
-        radial-gradient(circle at 78% 67%, rgba(253, 186, 116, 0.62) 0%, transparent 30%),
-        radial-gradient(circle at 96% 94%, rgba(134, 239, 172, 0.62) 0%, transparent 29%),
-        linear-gradient(135deg, #f9a8d4 0%, #c4b5fd 27%, #fde68a 51%, #fdba74 74%, #86efac 100%);
+        radial-gradient(circle at 8% 8%, rgba(232, 180, 202, 0.28) 0%, transparent 28%),
+        radial-gradient(circle at 31% 24%, rgba(184, 171, 213, 0.24) 0%, transparent 29%),
+        radial-gradient(circle at 57% 42%, rgba(231, 207, 143, 0.22) 0%, transparent 31%),
+        radial-gradient(circle at 79% 68%, rgba(231, 182, 145, 0.24) 0%, transparent 30%),
+        radial-gradient(circle at 98% 94%, rgba(153, 201, 177, 0.24) 0%, transparent 29%),
+        linear-gradient(135deg, #f7f1f2 0%, #f3f0f6 28%, #f8f5e9 52%, #f8f1ea 75%, #f0f6f1 100%);
+      background-attachment: fixed;
       color: var(--text);
       font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
     }
@@ -59,8 +60,8 @@
 
     .navbar {
       backdrop-filter: blur(8px);
-      background: rgba(255, 250, 247, 0.9) !important;
-      border-bottom: 2px solid #fed7aa;
+      background: rgba(255, 253, 250, 0.92) !important;
+      border-bottom: 1px solid #e8ddd7;
     }
 
     .navbar-brand {
@@ -82,20 +83,20 @@
       align-items: center;
       padding: 0.35rem 0.75rem;
       border-radius: 999px;
-      background: linear-gradient(100deg, #fef3c7, #fce7f3);
-      color: #9d174d;
+      background: #f8e8e3;
+      color: #8f5961;
       font-size: 0.82rem;
       font-weight: 600;
       margin-bottom: 10px;
-      box-shadow: 4px 4px 0 rgba(249, 115, 106, 0.16);
+      box-shadow: 4px 4px 0 rgba(185, 132, 120, 0.13);
     }
 
     .about-panel {
-      background: linear-gradient(135deg, #fff 0%, #fff7ed 55%, #f5f3ff 100%);
-      border: 1px solid #fed7aa;
+      background: rgba(255, 253, 250, 0.9);
+      border: 1px solid #e8ddd7;
       border-radius: 18px;
       padding: 1.5rem;
-      box-shadow: 8px 8px 0 rgba(196, 181, 253, 0.28);
+      box-shadow: 8px 8px 0 rgba(169, 155, 201, 0.18);
     }
 
     .journey-pipeline {
@@ -108,9 +109,9 @@
     .journey-step {
       position: relative;
       padding: 0.8rem 0.65rem;
-      border: 1px solid #fde68a;
+      border: 1px solid #e7d9b1;
       border-radius: 12px;
-      background: rgba(255, 255, 255, 0.72);
+      background: rgba(255, 253, 250, 0.82);
       color: #475569;
       font-size: 0.78rem;
       font-weight: 700;
@@ -123,7 +124,7 @@
       top: 50%;
       right: -0.8rem;
       z-index: 1;
-      color: #f97316;
+      color: #b7794d;
       transform: translateY(-50%);
     }
 
@@ -150,12 +151,12 @@
     }
 
     .card {
-      border: 1px solid #e9d5ff;
+      border: 1px solid #e5dcd7;
       border-radius: 16px;
       background: var(--card);
       transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
       overflow: hidden;
-      box-shadow: 4px 4px 0 rgba(94, 234, 212, 0.18);
+      box-shadow: 4px 4px 0 rgba(131, 184, 168, 0.16);
     }
 
     .card:hover {
@@ -170,7 +171,7 @@
     }
 
     .card .ratio {
-      background: #f8fafc;
+      background: #f5f3f1;
       overflow: hidden;
     }
 
@@ -199,18 +200,18 @@
     }
 
     .badge-tech {
-      background: #f3e8ff;
-      color: #6b21a8;
-      border: 1px solid #d8b4fe;
+      background: #eee9f3;
+      color: #685a7d;
+      border: 1px solid #d8cde2;
       font-weight: 600;
     }
 
     .section-block {
-      background: linear-gradient(135deg, #fff 0%, #fffbeb 100%);
-      border: 1px solid #fde68a;
+      background: rgba(255, 253, 250, 0.88);
+      border: 1px solid #e7d9b1;
       border-radius: 18px;
       padding: 2rem;
-      box-shadow: 5px 5px 0 rgba(251, 191, 36, 0.14);
+      box-shadow: 5px 5px 0 rgba(196, 157, 83, 0.12);
     }
 
     .skill-logo {
@@ -220,15 +221,15 @@
     }
 
     .skill-card {
-      border: 1px solid #a7f3d0;
+      border: 1px solid #c5ddd4;
       border-radius: 14px;
-      background: linear-gradient(145deg, #ffffff, #f0fdfa);
+      background: rgba(255, 253, 250, 0.9);
       transition: transform 0.24s ease, box-shadow 0.24s ease;
     }
 
     .skill-card:hover {
       transform: translateY(-4px);
-      box-shadow: 6px 6px 0 rgba(249, 115, 106, 0.2);
+      box-shadow: 6px 6px 0 rgba(185, 132, 120, 0.16);
     }
 
     .contact-icon {
