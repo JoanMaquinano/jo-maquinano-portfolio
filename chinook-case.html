@@ -10,47 +10,47 @@
   />
   <style>
     :root {
-      --bg: #fff8d6;
-      --card: #ffffff;
+      --bg: #f6f3ef;
+      --card: #fffdfa;
       --text: #0f172a;
       --muted: #64748b;
-      --border: #e9d5ff;
-      --coral: #f97368;
+      --border: #e5dcd7;
+      --coral: #c98579;
     }
 
     body {
-      background: linear-gradient(135deg, #fff8d6 0%, #ffefb0 46%, #fed7aa 100%);
+      background: linear-gradient(135deg, #f6f3ef 0%, #f3f0f5 48%, #f1f5f1 100%);
       background-attachment: fixed;
       color: var(--text);
       font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
     }
 
     .top-nav {
-      border-bottom: 2px solid #fed7aa;
-      background: rgba(255, 250, 247, 0.9);
+      border-bottom: 1px solid #e5dcd7;
+      background: rgba(255, 253, 250, 0.92);
       backdrop-filter: blur(8px);
     }
 
     .hero {
-      background: linear-gradient(135deg, #fff 0%, #fff7ed 55%, #f5f3ff 100%);
-      border: 2px solid #fed7aa;
+      background: rgba(255, 253, 250, 0.92);
+      border: 1px solid #e5dcd7;
       border-radius: 20px;
       padding: 2rem;
-      box-shadow: 8px 8px 0 rgba(196, 181, 253, 0.3);
+      box-shadow: 8px 8px 0 rgba(169, 155, 201, 0.16);
     }
 
     .hero-chip {
       display: inline-block;
       padding: 0.35rem 0.75rem;
       border-radius: 999px;
-      background: linear-gradient(100deg, #fef3c7, #fce7f3);
-      color: #9d174d;
+      background: #f4e6e2;
+      color: #835b61;
       font-size: 0.82rem;
       font-weight: 700;
       margin-bottom: 10px;
     }
 
-    .hero h1 { color: #4338ca; }
+    .hero h1 { color: #665a76; }
 
     .section-card {
       background: var(--card);
@@ -58,10 +58,10 @@
       border-radius: 16px;
       padding: 1.35rem;
       height: 100%;
-      box-shadow: 4px 4px 0 rgba(94, 234, 212, 0.18);
+      box-shadow: 4px 4px 0 rgba(131, 184, 168, 0.14);
     }
 
-    .section-card h2 { color: #7c3aed; }
+    .section-card h2 { color: #74657f; }
     .muted { color: var(--muted); }
 
     .layer {
@@ -71,10 +71,10 @@
       border: 1px solid rgba(15, 23, 42, 0.08);
     }
 
-    .layer-raw { background: #fef3c7; }
-    .layer-clean { background: #e0f2fe; }
-    .layer-mart { background: #ede9fe; }
-    .layer-analytics { background: #ccfbf1; }
+    .layer-raw { background: #f5efdc; }
+    .layer-clean { background: #e9f0f0; }
+    .layer-mart { background: #eeeaf3; }
+    .layer-analytics { background: #e6f1ec; }
 
     .architecture-flow {
       display: flex;
@@ -184,13 +184,13 @@
         <div class="section-card">
           <h2 class="h5 fw-bold">Your Role and Collaboration</h2>
           <p class="muted">
-            The project is documented and maintained in GitHub as a reviewable data-engineering
-            workflow. The repository brings together SQL transformations, model documentation,
-            architecture diagrams, validation logic, and Databricks Job orchestration.
+            This project was developed collaboratively as Group D3, combining my dimensional-modeling
+            work with shared Databricks SQL development, architecture planning, and reviewable GitHub
+            documentation.
           </p>
           <p class="muted mb-0">
-            This structure makes the work easier for collaborators and reviewers to understand,
-            reproduce, and extend.
+            The solo repository presents my implementation and documentation, while the collaborative
+            repository captures the wider team workflow and shared project context.
           </p>
         </div>
       </div>
@@ -268,6 +268,12 @@
         rel="noopener noreferrer"
         class="btn btn-primary"
       >View Chinook GitHub Repository</a>
+      <a
+        href="https://github.com/ItsYangCoder/d3-chinook-dimensional-model"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-outline-secondary ms-2"
+      >View Collaborative Repository</a>
     </section>
   </main>
 </body>
