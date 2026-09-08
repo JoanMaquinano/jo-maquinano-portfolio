@@ -39,14 +39,35 @@
     .about-actions {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      justify-content: space-between;
+      gap: 2rem;
+      width: 100%;
       padding-top: 1.25rem;
       margin-top: 1.35rem;
       border-top: 1px solid #eee4df;
     }
 
+    .about-contact-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .about-contact-label {
+      color: #665a76;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
     .about-actions .contact-icon {
       height: 32px;
+    }
+
+    .about-resume-button {
+      margin-left: auto;
+      white-space: nowrap;
     }
 
     .about-photo {
@@ -241,14 +262,6 @@
       transform: translateY(-50%);
     }
 
-    .role-summary {
-      display: inline-block;
-      margin-bottom: 1rem;
-      color: #665a76;
-      font-size: 1.08rem;
-      font-weight: 700;
-    }
-
     @media (max-width: 575.98px) {
       .journey-pipeline {
         grid-template-columns: repeat(2, 1fr);
@@ -259,7 +272,18 @@
       }
 
       .about-actions {
+        align-items: flex-start;
+        flex-wrap: wrap;
         gap: 0.8rem;
+      }
+
+      .about-contact-group {
+        gap: 0.8rem;
+      }
+
+      .about-resume-button {
+        width: 100%;
+        margin-left: 0;
       }
 
     }
@@ -557,7 +581,6 @@
           <div class="about-header">
             <div class="hero-chip">Open to Data & Tech Roles</div>
             <h2 class="section-title">Hi, I’m Maki</h2>
-            <div class="role-summary mb-0">Data Analyst → Data Engineer | SQL · Databricks · Data Quality</div>
           </div>
 
           <div class="about-copy">
@@ -588,15 +611,18 @@
           </div>
 
           <div class="about-actions">
-            <a href="https://www.linkedin.com/in/jrmaquinano/" target="_blank" rel="noopener noreferrer" class="about-contact-link text-decoration-none d-flex flex-column align-items-center">
-              <img src="assets/icons/linkedin.png" alt="LinkedIn" class="contact-icon mb-1" />
-              <span>LinkedIn</span>
-            </a>
-            <a href="mailto:jrmaquinano@alum.up.edu.ph" class="about-contact-link text-decoration-none d-flex flex-column align-items-center">
-              <img src="assets/icons/gmail.png" alt="Email" class="contact-icon mb-1" />
-              <span>Email</span>
-            </a>
-            <button type="button" class="btn btn-outline-primary btn-sm" id="download-resume">Download Resume</button>
+            <div class="about-contact-group">
+              <span class="about-contact-label">Contact me</span>
+              <a href="https://www.linkedin.com/in/jrmaquinano/" target="_blank" rel="noopener noreferrer" class="about-contact-link text-decoration-none d-flex flex-column align-items-center">
+                <img src="assets/icons/linkedin.png" alt="LinkedIn" class="contact-icon mb-1" />
+                <span>LinkedIn</span>
+              </a>
+              <a href="mailto:jrmaquinano@alum.up.edu.ph" class="about-contact-link text-decoration-none d-flex flex-column align-items-center">
+                <img src="assets/icons/gmail.png" alt="Email" class="contact-icon mb-1" />
+                <span>Email</span>
+              </a>
+            </div>
+            <button type="button" class="btn btn-outline-primary btn-sm about-resume-button" id="download-resume">Download Resume</button>
           </div>
         </div>
       </div>
