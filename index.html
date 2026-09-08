@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joan Maquinano | Data & ESG Analyst</title>
+  <title>Maki | Data & ESG Analyst | Aspiring Data Engineer</title>
 
   <!-- Bootstrap CSS -->
   <link
@@ -128,6 +128,42 @@
       transform: translateY(-50%);
     }
 
+    .role-summary {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #665a76;
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .impact-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .impact-stat {
+      padding: 0.9rem 0.65rem;
+      border: 1px solid #e5dcd7;
+      border-radius: 12px;
+      background: rgba(255, 253, 250, 0.78);
+      text-align: center;
+    }
+
+    .impact-stat strong {
+      display: block;
+      color: #665a76;
+      font-size: 1.25rem;
+    }
+
+    .impact-stat span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+
     @media (max-width: 575.98px) {
       .journey-pipeline {
         grid-template-columns: repeat(2, 1fr);
@@ -135,6 +171,10 @@
 
       .journey-step:nth-child(2)::after {
         content: "";
+      }
+
+      .impact-strip {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -242,6 +282,99 @@
       transform: scale(1.08);
     }
 
+    #resume-print {
+      display: none;
+    }
+
+    @media print {
+      body.printing-resume > *:not(#resume-print) {
+        display: none !important;
+      }
+
+      body.printing-resume #resume-print {
+        display: block;
+      }
+
+      body.printing-resume {
+        background: #fff;
+        color: #111827;
+        font-family: Arial, sans-serif;
+      }
+
+      .resume-page {
+        max-width: 8in;
+        margin: 0 auto;
+        padding: 0.25in 0;
+      }
+
+      .resume-header {
+        border-bottom: 2px solid #665a76;
+        padding-bottom: 0.12in;
+        margin-bottom: 0.18in;
+      }
+
+      .resume-header h1 {
+        margin: 0;
+        color: #433b50;
+        font-size: 24pt;
+      }
+
+      .resume-header p {
+        margin: 0.04in 0 0;
+        color: #665a76;
+        font-size: 10pt;
+        font-weight: 700;
+      }
+
+      .resume-contact {
+        margin-top: 0.06in;
+        color: #4b5563;
+        font-size: 8.5pt;
+      }
+
+      .resume-section {
+        margin-bottom: 0.16in;
+      }
+
+      .resume-section h2 {
+        margin: 0 0 0.05in;
+        color: #665a76;
+        font-size: 11pt;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      .resume-section p {
+        margin: 0 0 0.05in;
+        font-size: 9pt;
+        line-height: 1.35;
+      }
+
+      .resume-item {
+        margin-bottom: 0.08in;
+        break-inside: avoid;
+      }
+
+      .resume-item h3 {
+        margin: 0;
+        color: #1f2937;
+        font-size: 9.5pt;
+      }
+
+      .resume-item p {
+        color: #4b5563;
+      }
+
+      .resume-skills {
+        columns: 2;
+        column-gap: 0.35in;
+      }
+
+      .resume-skills p {
+        break-inside: avoid;
+      }
+    }
+
     /* Scroll reveal */
     .reveal {
       opacity: 0;
@@ -278,6 +411,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#about">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="#featured-case-studies">Case Studies</a></li>
           <!-- <li class="nav-item"><a class="nav-link" href="#case-studies">Additional Case Studies</a></li> -->
           <!-- <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li> -->
@@ -295,13 +429,14 @@
   <div class="container">
     <div class="row align-items-center g-4 reveal">
       <div class="col-md-5 text-center">
-        <img src="assets/images/about/profile.jpg" alt="Joan Maquinano professional portrait" class="img-fluid profile-img" />
+        <img src="assets/images/about/profile.jpg" alt="Maki professional portrait" class="img-fluid profile-img" />
       </div>
 
       <div class="col-md-7">
         <div class="about-panel">
           <div class="hero-chip">Open to Data & Tech Roles</div>
-          <h2 class="section-title mb-3">About Me</h2>
+          <div class="role-summary">Data Analyst → Data Engineer | SQL · Databricks · Data Quality</div>
+          <h2 class="section-title mb-3">Hi, I’m Maki</h2>
 
           <p class="muted">
             <strong>BS Biology graduate from UPLB, DOST scholar, former researcher, current Data & ESG
@@ -330,11 +465,68 @@
             <div class="journey-step">ESG data</div>
             <div class="journey-step">Data engineering</div>
           </div>
+
+          <div class="mt-4 d-flex flex-wrap gap-2">
+            <a href="#featured-case-studies" class="btn btn-primary btn-sm">Explore Case Studies</a>
+            <a href="https://www.linkedin.com/in/jrmaquinano/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-sm">View LinkedIn</a>
+            <button type="button" class="btn btn-outline-primary btn-sm" id="download-resume">Download Resume</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="py-5">
+    <div class="container reveal">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Experience</h2>
+        <p class="muted">
+          Data-quality, research, and reporting experience supporting a transition into
+          production-minded data engineering.
+        </p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-10">
+          <div class="section-block">
+            <h6 class="fw-semibold mb-1">Sustainability Data Analyst · Institutional Shareholder Services</h6>
+            <p class="muted small mb-2">April 2024 – Present</p>
+            <p class="muted small mb-0">
+              Validate, clean, and reconcile EU Taxonomy sustainability data for 5,000+ companies,
+              consistently delivering 99.07% accuracy against daily and weekly performance KPIs.
+              Investigate discrepancies across systems, maintain audit-ready documentation, escalate
+              Jira issues, and support post-publication data-quality checks.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-10">
+          <div class="section-block">
+            <h6 class="fw-semibold mb-1">Research Assistant II · Quantitative Aquatics</h6>
+            <p class="muted small mb-2">October 2022 – October 2023</p>
+            <p class="muted small mb-0">
+              Cleaned, validated, and standardized 1,000+ species records in the global FishBase
+              database while collaborating with international researchers to resolve inconsistencies
+              and improve cross-dataset reliability.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-10">
+          <div class="section-block">
+            <h6 class="fw-semibold mb-1">Research Support · Livingston Research</h6>
+            <p class="muted small mb-2">September 2016 – January 2018</p>
+            <p class="muted small mb-0">
+              Produced structured research outputs across multiple disciplines, strengthening
+              research synthesis, documentation, and clear communication of complex topics.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FEATURED CASE STUDIES -->
   <section id="featured-case-studies" class="py-5">
@@ -346,6 +538,13 @@
           dashboarding to data quality, dimensional modeling, and medallion architecture.
           All four featured case studies are end-to-end projects.
         </p>
+      </div>
+
+      <div class="impact-strip mb-4" aria-label="Portfolio highlights">
+        <div class="impact-stat"><strong>4</strong><span>end-to-end case studies</span></div>
+        <div class="impact-stat"><strong>3,167</strong><span>retail transactions processed</span></div>
+        <div class="impact-stat"><strong>5,949</strong><span>loyalty records validated</span></div>
+        <div class="impact-stat"><strong>3</strong><span>core pipeline layers</span></div>
       </div>
 
       <div class="row g-4 justify-content-center">
@@ -437,7 +636,8 @@
               <p class="muted flex-grow-1">
                 A Databricks SQL pipeline that cleans messy Sari-sari Store transactions and loyalty
                 records, validates the results, and produces customer, retailer, brand, and monthly
-                purchasing insights for dashboard-ready analytics.
+                purchasing insights for dashboard-ready analytics. It reduced 3,167 transactions to
+                3,161 clean records and 5,949 loyalty records to 5,945 validated records.
               </p>
               <div class="mt-2 d-flex gap-2 flex-wrap">
                 <span class="badge badge-tech">SQL</span>
@@ -970,6 +1170,8 @@
     </div>
   </section>
 
+  <div id="resume-print" aria-hidden="true"></div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
@@ -983,6 +1185,79 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    const resumeButton = document.getElementById("download-resume");
+    const resumePrint = document.getElementById("resume-print");
+
+    resumeButton.addEventListener("click", () => {
+      const text = (selector) => document.querySelector(selector)?.textContent.trim() || "";
+      const items = (selector) => [...document.querySelectorAll(selector)];
+      const escapeHtml = (value) => value.replace(/[&<>"']/g, (character) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      }[character]));
+      const aboutParagraphs = items("#about .about-panel > p")
+        .map((item) => item.textContent.trim())
+        .filter((item) => item && !item.startsWith("Currently documenting"));
+      const caseStudies = items("#featured-case-studies .card").map((card) => ({
+        title: card.querySelector("h5")?.textContent.trim() || "",
+        description: card.querySelector("p")?.textContent.trim() || ""
+      }));
+      const experience = items("#experience .section-block").map((block) => ({
+        title: block.querySelector("h6")?.textContent.trim() || "",
+        description: [...block.querySelectorAll("p")].map((item) => item.textContent.trim()).join(" ")
+      }));
+      const skills = items("#skills .skill-card").map((card) => ({
+        title: card.querySelector("h6")?.textContent.trim() || "",
+        description: card.querySelector("p")?.textContent.trim() || ""
+      }));
+      const education = items("#education .section-block").map((block) => ({
+        title: block.querySelector("h6")?.textContent.trim() || "",
+        description: [...block.querySelectorAll("p")].map((item) => item.textContent.trim()).join(" ")
+      })).filter((item) => item.title);
+
+      resumePrint.innerHTML = `
+        <div class="resume-page">
+          <header class="resume-header">
+            <h1>Maki</h1>
+            <p>Data Analyst → Data Engineer | SQL · Databricks · Data Quality</p>
+            <div class="resume-contact">+63 926 891 8105 · jrmaquinano@alum.up.edu.ph · linkedin.com/in/jrmaquinano · github.com/JoanMaquinano</div>
+          </header>
+          <section class="resume-section">
+            <h2>Profile</h2>
+            ${aboutParagraphs.map((item) => `<p>${escapeHtml(item)}</p>`).join("")}
+          </section>
+          <section class="resume-section">
+            <h2>Experience</h2>
+            ${experience.map((item) => `<div class="resume-item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></div>`).join("")}
+          </section>
+          <section class="resume-section">
+            <h2>Selected Case Studies</h2>
+            ${caseStudies.map((item) => `<div class="resume-item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></div>`).join("")}
+          </section>
+          <section class="resume-section">
+            <h2>Technical Skills</h2>
+            <div class="resume-skills">
+              ${skills.map((item) => `<p><strong>${escapeHtml(item.title)}:</strong> ${escapeHtml(item.description)}</p>`).join("")}
+            </div>
+          </section>
+          <section class="resume-section">
+            <h2>Education & Credentials</h2>
+            ${education.map((item) => `<div class="resume-item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></div>`).join("")}
+          </section>
+        </div>`;
+
+      document.body.classList.add("printing-resume");
+      window.setTimeout(() => window.print(), 50);
+    });
+
+    window.addEventListener("afterprint", () => {
+      document.body.classList.remove("printing-resume");
+      resumePrint.innerHTML = "";
+    });
   </script>
 </body>
 </html>
