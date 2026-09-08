@@ -111,12 +111,14 @@
 
     .about-photo {
       width: min(100%, 520px);
+      height: 100%;
       margin: 0 auto;
       padding: 0.5rem;
       border: 1px solid rgba(229, 220, 215, 0.9);
       border-radius: 1.2rem;
       background: rgba(255, 253, 250, 0.72);
       box-shadow: 8px 8px 0 rgba(169, 155, 201, 0.14);
+      display: flex;
     }
 
     html { scroll-behavior: smooth; }
@@ -334,7 +336,7 @@
 
     .profile-img {
       width: 100%;
-      aspect-ratio: 1 / 1;
+      height: 100%;
       object-fit: cover;
       object-position: center center;
       border: 1px solid var(--border);
@@ -346,6 +348,17 @@
     .profile-img:hover {
       transform: translateY(-4px);
       box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+    }
+
+    @media (max-width: 767.98px) {
+      .about-photo {
+        height: auto;
+      }
+
+      .profile-img {
+        height: auto;
+        aspect-ratio: 1 / 1;
+      }
     }
 
     .card {
@@ -618,8 +631,8 @@
   <!-- ABOUT -->
 <section id="about" class="py-5">
   <div class="container">
-    <div class="row align-items-start g-4 reveal">
-      <div class="col-md-5 text-center d-flex justify-content-center align-items-start">
+    <div class="row align-items-stretch g-4 reveal">
+      <div class="col-md-5 text-center d-flex justify-content-center align-items-stretch">
         <div class="about-photo">
           <img src="assets/images/about/profile.jpg" alt="Maki professional portrait" class="img-fluid profile-img" />
         </div>
