@@ -27,26 +27,86 @@
     }
 
     .about-contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      min-height: 42px;
+      padding: 0.45rem 0.7rem;
+      border: 1px solid #e6dcd6;
+      border-radius: 10px;
+      background: rgba(255, 253, 250, 0.78);
       color: #765f5a;
       font-size: 0.78rem;
       font-weight: 600;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
     }
 
     .about-contact-link:hover {
+      background: #fffdfa;
+      border-color: #c9b4c9;
       color: #766693;
+      transform: translateY(-1px);
     }
 
     .about-actions {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 1.25rem;
+      width: 100%;
       padding-top: 1.25rem;
       margin-top: 1.35rem;
       border-top: 1px solid #eee4df;
     }
 
+    .about-contact-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .about-contact-links {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .about-contact-label {
+      color: #665a76;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
     .about-actions .contact-icon {
-      height: 32px;
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    .about-action-divider {
+      width: 1px;
+      align-self: stretch;
+      min-height: 50px;
+      background: #eee4df;
+    }
+
+    .about-resume-button {
+      margin-left: auto;
+      min-height: 42px;
+      padding: 0.55rem 1rem;
+      border-color: #8b78ad;
+      background: #8b78ad;
+      color: #fffdfa;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .about-resume-button:hover,
+    .about-resume-button:focus {
+      border-color: #766693;
+      background: #766693;
+      color: #fffdfa;
     }
 
     .about-photo {
@@ -241,14 +301,6 @@
       transform: translateY(-50%);
     }
 
-    .role-summary {
-      display: inline-block;
-      margin-bottom: 1rem;
-      color: #665a76;
-      font-size: 1.08rem;
-      font-weight: 700;
-    }
-
     @media (max-width: 575.98px) {
       .journey-pipeline {
         grid-template-columns: repeat(2, 1fr);
@@ -259,7 +311,23 @@
       }
 
       .about-actions {
-        gap: 0.8rem;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .about-contact-links {
+        flex-wrap: wrap;
+      }
+
+      .about-action-divider {
+        width: 100%;
+        min-height: 1px;
+      }
+
+      .about-resume-button {
+        width: 100%;
+        margin-left: 0;
       }
 
     }
@@ -451,6 +519,11 @@
         font-size: 7.5pt;
       }
 
+      .resume-contact a {
+        color: inherit;
+        text-decoration: underline;
+      }
+
       .resume-section {
         margin-bottom: 0.09in;
       }
@@ -557,7 +630,6 @@
           <div class="about-header">
             <div class="hero-chip">Open to Data & Tech Roles</div>
             <h2 class="section-title">Hi, I’m Maki</h2>
-            <div class="role-summary mb-0">Data Analyst → Data Engineer | SQL · Databricks · Data Quality</div>
           </div>
 
           <div class="about-copy">
@@ -588,15 +660,21 @@
           </div>
 
           <div class="about-actions">
-            <a href="https://www.linkedin.com/in/jrmaquinano/" target="_blank" rel="noopener noreferrer" class="about-contact-link text-decoration-none d-flex flex-column align-items-center">
-              <img src="assets/icons/linkedin.png" alt="LinkedIn" class="contact-icon mb-1" />
-              <span>LinkedIn</span>
-            </a>
-            <a href="mailto:jrmaquinano@alum.up.edu.ph" class="about-contact-link text-decoration-none d-flex flex-column align-items-center">
-              <img src="assets/icons/gmail.png" alt="Email" class="contact-icon mb-1" />
-              <span>Email</span>
-            </a>
-            <button type="button" class="btn btn-outline-primary btn-sm" id="download-resume">Download Resume</button>
+            <div class="about-contact-block">
+              <div class="about-contact-label">Contact me</div>
+              <div class="about-contact-links">
+                <a href="https://www.linkedin.com/in/jrmaquinano/" target="_blank" rel="noopener noreferrer" class="about-contact-link text-decoration-none">
+                <img src="assets/icons/linkedin.png" alt="LinkedIn" class="contact-icon" />
+                <span>LinkedIn</span>
+                </a>
+                <a href="mailto:jrmaquinano@alum.up.edu.ph" class="about-contact-link text-decoration-none">
+                <img src="assets/icons/gmail.png" alt="Email" class="contact-icon" />
+                <span>Email</span>
+                </a>
+              </div>
+            </div>
+            <div class="about-action-divider" aria-hidden="true"></div>
+            <button type="button" class="btn btn-sm about-resume-button" id="download-resume">Download Resume</button>
           </div>
         </div>
       </div>
@@ -1347,7 +1425,7 @@
         const normalized = value.replace(/\s+/g, " ").trim();
         return normalized.length > limit ? `${normalized.slice(0, limit).replace(/\s+\S*$/, "")}...` : normalized;
       };
-      const aboutParagraphs = items("#about .about-panel > p")
+      const aboutParagraphs = items("#about .about-copy p")
         .map((item) => item.textContent.trim())
         .filter((item) => item && !item.startsWith("Currently documenting"));
       const caseStudies = items("#featured-case-studies .card").map((card) => ({
@@ -1370,9 +1448,13 @@
       resumePrint.innerHTML = `
         <div class="resume-page">
           <header class="resume-header">
-            <h1>Maki</h1>
-            <p>Data Analyst → Data Engineer | SQL · Databricks · Data Quality</p>
-            <div class="resume-contact">+63 926 891 8105 · jrmaquinano@alum.up.edu.ph · linkedin.com/in/jrmaquinano · github.com/JoanMaquinano</div>
+            <h1>Joan Maquinano</h1>
+            <div class="resume-contact">
+              <a href="tel:+639268918105">+63 926 891 8105</a> ·
+              <a href="mailto:jrmaquinano@alum.up.edu.ph">jrmaquinano@alum.up.edu.ph</a> ·
+              <a href="https://www.linkedin.com/in/jrmaquinano/" target="_blank" rel="noopener noreferrer">linkedin.com/in/jrmaquinano</a> ·
+              <a href="https://github.com/JoanMaquinano" target="_blank" rel="noopener noreferrer">github.com/JoanMaquinano</a>
+            </div>
           </header>
           <section class="resume-section">
             <h2>Profile</h2>
@@ -1384,7 +1466,7 @@
           </section>
           <section class="resume-section">
             <h2>Selected Case Studies</h2>
-            ${caseStudies.map((item) => `<div class="resume-item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(compact(item.description, 190))}</p></div>`).join("")}
+            ${caseStudies.map((item) => `<div class="resume-item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></div>`).join("")}
           </section>
           <section class="resume-section">
             <h2>Technical Skills</h2>
