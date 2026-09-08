@@ -26,6 +26,16 @@
       --lavender: #a99bc9;
     }
 
+    .about-contact-link {
+      color: #765f5a;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .about-contact-link:hover {
+      color: #766693;
+    }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -76,6 +86,41 @@
 
     .nav-link:hover {
       color: var(--primary) !important;
+    }
+
+    .btn-primary {
+      background: #8f80b3;
+      border-color: #8f80b3;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background: #766693;
+      border-color: #766693;
+    }
+
+    .btn-outline-primary {
+      color: #766693;
+      border-color: #a99bc9;
+    }
+
+    .btn-outline-primary:hover,
+    .btn-outline-primary:focus {
+      color: #fff;
+      background: #8f80b3;
+      border-color: #8f80b3;
+    }
+
+    .btn-outline-dark {
+      color: #765f5a;
+      border-color: #c9b8b2;
+    }
+
+    .btn-outline-dark:hover,
+    .btn-outline-dark:focus {
+      color: #fff;
+      background: #9f827b;
+      border-color: #9f827b;
     }
 
     .hero-chip {
@@ -136,34 +181,6 @@
       font-weight: 700;
     }
 
-    .impact-strip {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.75rem;
-      margin-top: 1.5rem;
-    }
-
-    .impact-stat {
-      padding: 0.9rem 0.65rem;
-      border: 1px solid #e5dcd7;
-      border-radius: 12px;
-      background: rgba(255, 253, 250, 0.78);
-      text-align: center;
-    }
-
-    .impact-stat strong {
-      display: block;
-      color: #665a76;
-      font-size: 1.25rem;
-    }
-
-    .impact-stat span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.72rem;
-      font-weight: 600;
-    }
-
     @media (max-width: 575.98px) {
       .journey-pipeline {
         grid-template-columns: repeat(2, 1fr);
@@ -173,12 +190,12 @@
         content: "";
       }
 
-      .impact-strip {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
 
     .profile-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
       border: 1px solid var(--border);
       border-radius: 1rem;
       box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
@@ -427,7 +444,7 @@
   <!-- ABOUT -->
 <section id="about" class="py-5">
   <div class="container">
-    <div class="row align-items-center g-4 reveal">
+    <div class="row align-items-start g-4 reveal">
       <div class="col-md-5 text-center">
         <img src="assets/images/about/profile.jpg" alt="Maki professional portrait" class="img-fluid profile-img" />
       </div>
@@ -467,8 +484,14 @@
           </div>
 
           <div class="mt-4 d-flex flex-wrap gap-2">
-            <a href="#featured-case-studies" class="btn btn-primary btn-sm">Explore Case Studies</a>
-            <a href="https://www.linkedin.com/in/jrmaquinano/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-sm">View LinkedIn</a>
+            <a href="https://www.linkedin.com/in/jrmaquinano/" target="_blank" rel="noopener noreferrer" class="about-contact-link text-decoration-none d-flex flex-column align-items-center">
+              <img src="assets/icons/linkedin.png" alt="LinkedIn" class="contact-icon mb-1" />
+              <span>LinkedIn</span>
+            </a>
+            <a href="mailto:jrmaquinano@alum.up.edu.ph" class="about-contact-link text-decoration-none d-flex flex-column align-items-center">
+              <img src="assets/icons/gmail.png" alt="Email" class="contact-icon mb-1" />
+              <span>Email</span>
+            </a>
             <button type="button" class="btn btn-outline-primary btn-sm" id="download-resume">Download Resume</button>
           </div>
         </div>
@@ -540,12 +563,14 @@
         </p>
       </div>
 
+      <!--
       <div class="impact-strip mb-4" aria-label="Portfolio highlights">
         <div class="impact-stat"><strong>4</strong><span>end-to-end case studies</span></div>
         <div class="impact-stat"><strong>3,167</strong><span>retail transactions processed</span></div>
         <div class="impact-stat"><strong>5,949</strong><span>loyalty records validated</span></div>
         <div class="impact-stat"><strong>3</strong><span>core pipeline layers</span></div>
       </div>
+      -->
 
       <div class="row g-4 justify-content-center">
         <div class="col-md-6">
