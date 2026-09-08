@@ -13,7 +13,7 @@
 
   <style>
     :root {
-      --bg: #fff8f2;
+      --bg: #fff4b8;
       --card: #ffffff;
       --text: #0f172a;
       --muted: #64748b;
@@ -201,7 +201,7 @@
   </style>
 </head>
 
-<body class="bg-light">
+<body>
   <div id="top"></div>
 
   <!-- NAVBAR -->
@@ -294,8 +294,8 @@
             <div class="card-body d-flex flex-column">
               <h5 class="fw-semibold">OULAD Data Pipeline</h5>
               <p class="muted flex-grow-1">
-                Collaborative FTW activity using the Open University Learning Analytics Dataset
-                to practice pipeline design, data preparation, and reproducible analytics workflows.
+                End-to-end collaborative FTW activity using the Open University Learning Analytics
+                Dataset to practice pipeline design, data preparation, and reproducible analytics workflows.
               </p>
               <div class="mt-2 d-flex gap-2 flex-wrap">
                 <span class="badge badge-tech">Collaborative GitHub Project</span>
@@ -312,7 +312,7 @@
         <div class="col-md-4">
           <div class="card h-100 shadow-sm">
             <div class="ratio ratio-16x9">
-              <img src="assets/images/case-studies/instacart-placeholder.svg" class="card-img-top" alt="Instacart medallion data pipeline placeholder" />
+              <img src="assets/images/case-studies/instacart-order-analysis.png" class="card-img-top" alt="Instacart order volume and reorder analysis" />
             </div>
             <div class="card-body d-flex flex-column">
               <h5 class="fw-semibold">Instacart Dimensional Warehouse</h5>
@@ -327,8 +327,9 @@
                 <span class="badge badge-tech">Delta Lake</span>
                 <span class="badge badge-tech">Dimensional Modeling</span>
               </div>
-              <div class="mt-3">
-                <a href="https://github.com/JoanMaquinano/instacart-medallion-data-pipeline" target="_blank" class="btn btn-outline-primary btn-sm">View Repository</a>
+              <div class="mt-3 d-flex flex-wrap gap-2">
+                <a href="instacart-case.html" class="btn btn-outline-primary btn-sm">View Case Study</a>
+                <a href="https://github.com/jess-christine/instacart-pipeline" target="_blank" class="btn btn-outline-dark btn-sm">View Repository</a>
               </div>
             </div>
           </div>
@@ -337,13 +338,13 @@
         <div class="col-md-4">
           <div class="card h-100 shadow-sm">
             <div class="ratio ratio-16x9">
-              <img src="assets/images/case-studies/chinook-placeholder.svg" class="card-img-top" alt="Chinook dimensional warehouse placeholder" />
+              <img src="assets/images/case-studies/chinook-star-schema.png" class="card-img-top" alt="Chinook sales data mart star schema" />
             </div>
             <div class="card-body d-flex flex-column">
               <h5 class="fw-semibold">Chinook Dimensional Warehouse</h5>
               <p class="muted flex-grow-1">
-                Databricks warehouse project using Raw, Clean, and Mart layers, star-schema
-                modeling, and validation checks to support reliable reporting.
+                End-to-end Databricks warehouse project using Raw, Clean, and Mart layers,
+                star-schema modeling, and validation checks to support reliable reporting.
               </p>
               <div class="mt-2 d-flex gap-2 flex-wrap">
                 <span class="badge badge-tech">Collaborative GitHub Project</span>
@@ -756,22 +757,6 @@
         <div class="col-md-10">
           <div class="section-block">
             <div class="d-flex align-items-start gap-3">
-              <img src="assets/images/education/ftw.png" alt="FTW logo" width="48" />
-              <div>
-                <h6 class="fw-semibold mb-1">Data Engineering Fellowship</h6>
-                <p class="muted mb-1">FTW Foundation Data Engineering Fellowship · July 2026</p>
-                <p class="muted small mb-2">
-                  Industry-led fellowship focused on SQL, Databricks, data modeling, medallion
-                  architecture, data quality, Git/GitHub, documentation, and data engineering practice.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-10">
-          <div class="section-block">
-            <div class="d-flex align-items-start gap-3">
               <img src="assets/images/education/datacamp.jpg" alt="DataCamp logo" width="48" />
               <div>
                 <h6 class="fw-semibold mb-1">Data Engineer Associate</h6>
@@ -785,6 +770,22 @@
                   target="_blank"
                   class="btn btn-outline-primary btn-sm"
                 >Show credential <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-10">
+          <div class="section-block">
+            <div class="d-flex align-items-start gap-3">
+              <img src="assets/images/education/ftw.png" alt="FTW logo" width="48" />
+              <div>
+                <h6 class="fw-semibold mb-1">Data Engineering Fellowship</h6>
+                <p class="muted mb-1">FTW Foundation Data Engineering Fellowship · July 2026</p>
+                <p class="muted small mb-2">
+                  Industry-led fellowship focused on SQL, Databricks, data modeling, medallion
+                  architecture, data quality, Git/GitHub, documentation, and data engineering practice.
+                </p>
               </div>
             </div>
           </div>
