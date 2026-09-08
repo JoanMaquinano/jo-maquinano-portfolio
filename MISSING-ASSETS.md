@@ -10,3 +10,6 @@ The following case-study images are still temporary placeholders or remain avail
 - `assets/images/case-studies/retail-loyalty.png` - Retail Loyalty pipeline notes and medallion architecture (provided)
 - `assets/images/case-studies/oulad.png` - Temporary OULAD dataset image (provided)
 - `assets/images/case-studies/fish-community.png` - Fish biomass by family, station, and year (provided)
+- `assets/images/skills/github.png` - GitHub logo from Icons8
+- `assets/images/skills/jira.png` - Jira logo from Icons8
+- `assets/images/skills/excel.png` - Microsoft Excel logo from Icons8

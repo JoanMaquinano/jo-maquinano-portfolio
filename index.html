@@ -13,7 +13,7 @@
 
   <style>
     :root {
-      --bg: #fff4c2;
+      --bg: #f9a8d4;
       --card: #ffffff;
       --text: #0f172a;
       --muted: #64748b;
@@ -31,10 +31,12 @@
     body {
       padding-top: 74px;
       background:
-        radial-gradient(circle at 8% 12%, rgba(255, 224, 138, 0.7) 0%, transparent 29%),
-        radial-gradient(circle at 92% 4%, rgba(253, 186, 116, 0.6) 0%, transparent 30%),
-        radial-gradient(circle at 50% 100%, rgba(254, 215, 170, 0.52) 0%, transparent 27%),
-        var(--bg);
+        radial-gradient(circle at 12% 8%, rgba(249, 168, 212, 0.72) 0%, transparent 27%),
+        radial-gradient(circle at 34% 25%, rgba(196, 181, 253, 0.62) 0%, transparent 29%),
+        radial-gradient(circle at 58% 44%, rgba(253, 230, 138, 0.58) 0%, transparent 31%),
+        radial-gradient(circle at 78% 67%, rgba(253, 186, 116, 0.62) 0%, transparent 30%),
+        radial-gradient(circle at 96% 94%, rgba(134, 239, 172, 0.62) 0%, transparent 29%),
+        linear-gradient(135deg, #f9a8d4 0%, #c4b5fd 27%, #fde68a 51%, #fdba74 74%, #86efac 100%);
       color: var(--text);
       font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
     }
@@ -94,6 +96,45 @@
       border-radius: 18px;
       padding: 1.5rem;
       box-shadow: 8px 8px 0 rgba(196, 181, 253, 0.28);
+    }
+
+    .journey-pipeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.65rem;
+      margin-top: 1.25rem;
+    }
+
+    .journey-step {
+      position: relative;
+      padding: 0.8rem 0.65rem;
+      border: 1px solid #fde68a;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.72);
+      color: #475569;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .journey-step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      top: 50%;
+      right: -0.8rem;
+      z-index: 1;
+      color: #f97316;
+      transform: translateY(-50%);
+    }
+
+    @media (max-width: 575.98px) {
+      .journey-pipeline {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .journey-step:nth-child(2)::after {
+        content: "";
+      }
     }
 
     .profile-img {
@@ -262,25 +303,32 @@
           <h2 class="section-title mb-3">About Me</h2>
 
           <p class="muted">
-            I’m Joan Maquinano, a data analyst transitioning into data engineering. I build reliable
-            pipelines, analytics-ready datasets, and clear dashboards that help people make better
-            decisions. My portfolio combines SQL, Databricks, dimensional modeling, data quality,
-            and business-focused analysis.
+            <strong>BS Biology graduate from UPLB, DOST scholar, former researcher, current Data & ESG
+            Analyst, and aspiring Data Engineer. ✨</strong>
           </p>
 
           <p class="muted">
-            In my professional work at Institutional Shareholder Services (ISS), I validate and
-            quality-check sustainability data for more than 5,000 companies. That experience has
-            strengthened my attention to detail, structured QA workflows, and ability to work with
-            high-stakes reporting data.
+            I started out studying fish, biodiversity, and ecological data. Somewhere between research
+            databases, species records, and sustainability reporting, I realized I enjoyed building and
+            improving data systems just as much as studying the things inside them.
+          </p>
+
+          <p class="muted">
+            Today, I work with large-scale ESG datasets, obsess over data quality, and spend a
+            questionable amount of time cleaning, validating, and transforming data so other people
+            don’t have to.
           </p>
 
           <p class="muted mb-0">
-            I hold a BS in Biology, Major in Zoology, from the University of the Philippines Los Baños
-            (UPLB). My research background shaped how I approach complex questions: understand the
-            context, validate the evidence, and communicate the result clearly. I’m currently focused
-            on growing as a data engineer through collaborative GitHub projects and practical pipeline work.
+            Currently documenting my journey from:
           </p>
+
+          <div class="journey-pipeline" aria-label="Career journey from biology to data engineering">
+            <div class="journey-step">Biology</div>
+            <div class="journey-step">Research</div>
+            <div class="journey-step">ESG data</div>
+            <div class="journey-step">Data engineering</div>
+          </div>
         </div>
       </div>
     </div>
@@ -760,6 +808,7 @@
             <div class="d-flex justify-content-center gap-3 mb-3">
               <img src="assets/images/skills/tableau.png" alt="Tableau" class="skill-logo" />
               <img src="assets/images/skills/powerbi.png" alt="Power BI" class="skill-logo" />
+              <img src="assets/images/skills/excel.png" alt="Microsoft Excel" class="skill-logo" />
             </div>
             <h6 class="fw-semibold">Analytics & BI</h6>
             <p class="muted small mb-0">Tableau, Power BI, Excel, Google Sheets, dashboards</p>
@@ -770,6 +819,8 @@
           <div class="p-4 skill-card h-100">
             <div class="d-flex justify-content-center gap-3 mb-3">
               <img src="assets/images/skills/esg.jpg" alt="ESG" class="skill-logo" />
+              <img src="assets/images/skills/github.png" alt="GitHub" class="skill-logo" />
+              <img src="assets/images/skills/jira.png" alt="Jira" class="skill-logo" />
             </div>
             <h6 class="fw-semibold">Data Quality & Tools</h6>
             <p class="muted small mb-0">Validation, GitHub, Jira, documentation, ESG data</p>
