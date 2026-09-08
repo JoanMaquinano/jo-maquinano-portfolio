@@ -36,9 +36,27 @@
       color: #766693;
     }
 
+    .about-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 1.25rem;
+      margin-top: 1.35rem;
+      border-top: 1px solid #eee4df;
+    }
+
+    .about-actions .contact-icon {
+      height: 32px;
+    }
+
     .about-photo {
       width: min(100%, 520px);
       margin: 0 auto;
+      padding: 0.5rem;
+      border: 1px solid rgba(229, 220, 215, 0.9);
+      border-radius: 1.2rem;
+      background: rgba(255, 253, 250, 0.72);
+      box-shadow: 8px 8px 0 rgba(169, 155, 201, 0.14);
     }
 
     html { scroll-behavior: smooth; }
@@ -145,8 +163,53 @@
       background: rgba(255, 253, 250, 0.9);
       border: 1px solid #e8ddd7;
       border-radius: 18px;
-      padding: 1.5rem;
+      padding: clamp(1.35rem, 3vw, 2.25rem);
       box-shadow: 8px 8px 0 rgba(169, 155, 201, 0.18);
+    }
+
+    .about-header {
+      padding-bottom: 1.15rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid #eee4df;
+    }
+
+    .about-header .hero-chip {
+      margin-bottom: 0.85rem;
+    }
+
+    .about-header h2 {
+      margin-bottom: 0.45rem !important;
+    }
+
+    .about-copy {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .about-copy p {
+      margin-bottom: 0;
+      line-height: 1.7;
+    }
+
+    .about-lead {
+      color: #5f5472;
+      font-size: 1.02rem;
+      line-height: 1.55 !important;
+    }
+
+    .journey-wrap {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid #eee4df;
+    }
+
+    .journey-label {
+      margin-bottom: 0.75rem;
+      color: #766693;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
 
     .journey-pipeline {
@@ -193,6 +256,10 @@
 
       .journey-step:nth-child(2)::after {
         content: "";
+      }
+
+      .about-actions {
+        gap: 0.8rem;
       }
 
     }
@@ -479,47 +546,48 @@
 <section id="about" class="py-5">
   <div class="container">
     <div class="row align-items-start g-4 reveal">
-      <div class="col-md-5 text-center d-flex justify-content-center">
+      <div class="col-md-5 text-center d-flex justify-content-center align-items-start">
         <div class="about-photo">
-        <img src="assets/images/about/profile.jpg" alt="Maki professional portrait" class="img-fluid profile-img" />
+          <img src="assets/images/about/profile.jpg" alt="Maki professional portrait" class="img-fluid profile-img" />
         </div>
       </div>
 
       <div class="col-md-7">
         <div class="about-panel">
-          <div class="hero-chip">Open to Data & Tech Roles</div>
-          <div class="role-summary">Data Analyst → Data Engineer | SQL · Databricks · Data Quality</div>
-          <h2 class="section-title mb-3">Hi, I’m Maki</h2>
-
-          <p class="muted">
-            <strong>BS Biology graduate from UPLB, DOST scholar, former researcher, current Data & ESG
-            Analyst, and aspiring Data Engineer. ✨</strong>
-          </p>
-
-          <p class="muted">
-            I started out studying fish, biodiversity, and ecological data. Somewhere between research
-            databases, species records, and sustainability reporting, I realized I enjoyed building and
-            improving data systems just as much as studying the things inside them.
-          </p>
-
-          <p class="muted">
-            Today, I work with large-scale ESG datasets, obsess over data quality, and spend a
-            questionable amount of time cleaning, validating, and transforming data so other people
-            don’t have to.
-          </p>
-
-          <p class="muted mb-0">
-            Currently documenting my journey from:
-          </p>
-
-          <div class="journey-pipeline" aria-label="Career journey from biology to data engineering">
-            <div class="journey-step">Biology</div>
-            <div class="journey-step">Research</div>
-            <div class="journey-step">ESG data</div>
-            <div class="journey-step">Data engineering</div>
+          <div class="about-header">
+            <div class="hero-chip">Open to Data & Tech Roles</div>
+            <h2 class="section-title">Hi, I’m Maki</h2>
+            <div class="role-summary mb-0">Data Analyst → Data Engineer | SQL · Databricks · Data Quality</div>
           </div>
 
-          <div class="mt-4 d-flex flex-wrap gap-2">
+          <div class="about-copy">
+            <p class="about-lead">
+              <strong>BS Biology graduate from UPLB, DOST scholar, former researcher, current Data & ESG
+              Analyst, and aspiring Data Engineer. ✨</strong>
+            </p>
+            <p class="muted">
+              I started out studying fish, biodiversity, and ecological data. Somewhere between research
+              databases, species records, and sustainability reporting, I realized I enjoyed building and
+              improving data systems just as much as studying the things inside them.
+            </p>
+            <p class="muted">
+              Today, I work with large-scale ESG datasets, obsess over data quality, and spend a
+              questionable amount of time cleaning, validating, and transforming data so other people
+              don’t have to.
+            </p>
+          </div>
+
+          <div class="journey-wrap">
+            <div class="journey-label">My journey so far</div>
+            <div class="journey-pipeline" aria-label="Career journey from biology to data engineering">
+              <div class="journey-step">Biology</div>
+              <div class="journey-step">Research</div>
+              <div class="journey-step">ESG data</div>
+              <div class="journey-step">Data engineering</div>
+            </div>
+          </div>
+
+          <div class="about-actions">
             <a href="https://www.linkedin.com/in/jrmaquinano/" target="_blank" rel="noopener noreferrer" class="about-contact-link text-decoration-none d-flex flex-column align-items-center">
               <img src="assets/icons/linkedin.png" alt="LinkedIn" class="contact-icon mb-1" />
               <span>LinkedIn</span>
