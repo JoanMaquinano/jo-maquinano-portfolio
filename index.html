@@ -36,6 +36,11 @@
       color: #766693;
     }
 
+    .about-photo {
+      width: min(100%, 520px);
+      margin: 0 auto;
+    }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -196,6 +201,7 @@
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
+      object-position: center center;
       border: 1px solid var(--border);
       border-radius: 1rem;
       box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
@@ -299,11 +305,38 @@
       transform: scale(1.08);
     }
 
+    .experience-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.1rem;
+    }
+
+    .experience-logo {
+      flex: 0 0 58px;
+      width: 58px;
+      height: 58px;
+      padding: 0.55rem;
+      object-fit: contain;
+      border: 1px solid #e5dcd7;
+      border-radius: 12px;
+      background: #fffdfa;
+    }
+
+    .experience-content {
+      flex: 1;
+      min-width: 0;
+    }
+
     #resume-print {
       display: none;
     }
 
     @media print {
+      @page {
+        size: Letter;
+        margin: 0.35in;
+      }
+
       body.printing-resume > *:not(#resume-print) {
         display: none !important;
       }
@@ -319,63 +352,65 @@
       }
 
       .resume-page {
-        max-width: 8in;
+        width: 100%;
+        max-height: 10.3in;
         margin: 0 auto;
-        padding: 0.25in 0;
+        overflow: hidden;
+        padding: 0;
       }
 
       .resume-header {
-        border-bottom: 2px solid #665a76;
-        padding-bottom: 0.12in;
-        margin-bottom: 0.18in;
+        border-bottom: 1px solid #111827;
+        padding-bottom: 0.08in;
+        margin-bottom: 0.1in;
       }
 
       .resume-header h1 {
         margin: 0;
-        color: #433b50;
-        font-size: 24pt;
+        color: #111827;
+        font-size: 19pt;
       }
 
       .resume-header p {
         margin: 0.04in 0 0;
-        color: #665a76;
-        font-size: 10pt;
+        color: #111827;
+        font-size: 9pt;
         font-weight: 700;
       }
 
       .resume-contact {
-        margin-top: 0.06in;
+        margin-top: 0.03in;
         color: #4b5563;
-        font-size: 8.5pt;
+        font-size: 7.5pt;
       }
 
       .resume-section {
-        margin-bottom: 0.16in;
+        margin-bottom: 0.09in;
       }
 
       .resume-section h2 {
         margin: 0 0 0.05in;
-        color: #665a76;
-        font-size: 11pt;
+        color: #111827;
+        font-size: 9pt;
         text-transform: uppercase;
         letter-spacing: 0.06em;
       }
 
       .resume-section p {
         margin: 0 0 0.05in;
-        font-size: 9pt;
-        line-height: 1.35;
+        font-size: 7.5pt;
+        line-height: 1.2;
       }
 
       .resume-item {
-        margin-bottom: 0.08in;
+        margin-bottom: 0.04in;
         break-inside: avoid;
       }
 
       .resume-item h3 {
         margin: 0;
         color: #1f2937;
-        font-size: 9.5pt;
+        font-size: 8pt;
       }
 
       .resume-item p {
@@ -383,8 +418,7 @@
       }
 
       .resume-skills {
-        columns: 2;
-        column-gap: 0.35in;
+        columns: 1;
       }
 
       .resume-skills p {
@@ -445,8 +479,10 @@
 <section id="about" class="py-5">
   <div class="container">
     <div class="row align-items-start g-4 reveal">
-      <div class="col-md-5 text-center">
+      <div class="col-md-5 text-center d-flex justify-content-center">
+        <div class="about-photo">
         <img src="assets/images/about/profile.jpg" alt="Maki professional portrait" class="img-fluid profile-img" />
+        </div>
       </div>
 
       <div class="col-md-7">
@@ -511,40 +547,55 @@
         </p>
       </div>
 
-      <div class="row g-4 justify-content-center">
+      <div class="row g-3 justify-content-center">
         <div class="col-md-10">
           <div class="section-block">
-            <h6 class="fw-semibold mb-1">Sustainability Data Analyst · Institutional Shareholder Services</h6>
-            <p class="muted small mb-2">April 2024 – Present</p>
-            <p class="muted small mb-0">
-              Validate, clean, and reconcile EU Taxonomy sustainability data for 5,000+ companies,
-              consistently delivering 99.07% accuracy against daily and weekly performance KPIs.
-              Investigate discrepancies across systems, maintain audit-ready documentation, escalate
-              Jira issues, and support post-publication data-quality checks.
-            </p>
+            <div class="experience-item">
+              <img src="assets/images/experience/iss.png" alt="Institutional Shareholder Services logo" class="experience-logo" />
+              <div class="experience-content">
+                <h6 class="fw-semibold mb-1">Sustainability Data Analyst · Institutional Shareholder Services</h6>
+                <p class="muted small mb-2">April 2024 – Present</p>
+                <p class="muted small mb-0">
+                  Validate, clean, and reconcile EU Taxonomy sustainability data for 5,000+ companies,
+                  consistently delivering 99.07% accuracy against daily and weekly performance KPIs.
+                  Investigate discrepancies across systems, maintain audit-ready documentation, escalate
+                  Jira issues, and support post-publication data-quality checks.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="col-md-10">
           <div class="section-block">
-            <h6 class="fw-semibold mb-1">Research Assistant II · Quantitative Aquatics</h6>
-            <p class="muted small mb-2">October 2022 – October 2023</p>
-            <p class="muted small mb-0">
-              Cleaned, validated, and standardized 1,000+ species records in the global FishBase
-              database while collaborating with international researchers to resolve inconsistencies
-              and improve cross-dataset reliability.
-            </p>
+            <div class="experience-item">
+              <img src="assets/images/experience/quantitative-aquatics.png" alt="Quantitative Aquatics logo" class="experience-logo" />
+              <div class="experience-content">
+                <h6 class="fw-semibold mb-1">Research Assistant II · Quantitative Aquatics</h6>
+                <p class="muted small mb-2">October 2022 – October 2023</p>
+                <p class="muted small mb-0">
+                  Cleaned, validated, and standardized 1,000+ species records in the global FishBase
+                  database while collaborating with international researchers to resolve inconsistencies
+                  and improve cross-dataset reliability.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="col-md-10">
           <div class="section-block">
-            <h6 class="fw-semibold mb-1">Research Support · Livingston Research</h6>
-            <p class="muted small mb-2">September 2016 – January 2018</p>
-            <p class="muted small mb-0">
-              Produced structured research outputs across multiple disciplines, strengthening
-              research synthesis, documentation, and clear communication of complex topics.
-            </p>
+            <div class="experience-item">
+              <img src="assets/images/experience/livingston-research.png" alt="Livingston Research logo" class="experience-logo" />
+              <div class="experience-content">
+                <h6 class="fw-semibold mb-1">Research Support · Livingston Research</h6>
+                <p class="muted small mb-2">September 2016 – January 2018</p>
+                <p class="muted small mb-0">
+                  Produced structured research outputs across multiple disciplines, strengthening
+                  research synthesis, documentation, and clear communication of complex topics.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1224,6 +1275,10 @@
         '"': "&quot;",
         "'": "&#039;"
       }[character]));
+      const compact = (value, limit) => {
+        const normalized = value.replace(/\s+/g, " ").trim();
+        return normalized.length > limit ? `${normalized.slice(0, limit).replace(/\s+\S*$/, "")}...` : normalized;
+      };
       const aboutParagraphs = items("#about .about-panel > p")
         .map((item) => item.textContent.trim())
         .filter((item) => item && !item.startsWith("Currently documenting"));
@@ -1242,7 +1297,7 @@
       const education = items("#education .section-block").map((block) => ({
         title: block.querySelector("h6")?.textContent.trim() || "",
         description: [...block.querySelectorAll("p")].map((item) => item.textContent.trim()).join(" ")
-      })).filter((item) => item.title);
+      })).filter((item) => item.title).slice(-3);
 
       resumePrint.innerHTML = `
         <div class="resume-page">
@@ -1253,25 +1308,25 @@
           </header>
           <section class="resume-section">
             <h2>Profile</h2>
-            ${aboutParagraphs.map((item) => `<p>${escapeHtml(item)}</p>`).join("")}
+            <p>${escapeHtml(compact(aboutParagraphs[0] || "Data analyst transitioning into data engineering with experience in ESG data quality, research data, SQL, and Databricks workflows.", 320))}</p>
           </section>
           <section class="resume-section">
             <h2>Experience</h2>
-            ${experience.map((item) => `<div class="resume-item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></div>`).join("")}
+            ${experience.map((item) => `<div class="resume-item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(compact(item.description, 360))}</p></div>`).join("")}
           </section>
           <section class="resume-section">
             <h2>Selected Case Studies</h2>
-            ${caseStudies.map((item) => `<div class="resume-item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></div>`).join("")}
+            ${caseStudies.map((item) => `<div class="resume-item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(compact(item.description, 190))}</p></div>`).join("")}
           </section>
           <section class="resume-section">
             <h2>Technical Skills</h2>
             <div class="resume-skills">
-              ${skills.map((item) => `<p><strong>${escapeHtml(item.title)}:</strong> ${escapeHtml(item.description)}</p>`).join("")}
+              ${skills.map((item) => `<p><strong>${escapeHtml(item.title)}:</strong> ${escapeHtml(compact(item.description, 130))}</p>`).join("")}
             </div>
           </section>
           <section class="resume-section">
             <h2>Education & Credentials</h2>
-            ${education.map((item) => `<div class="resume-item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></div>`).join("")}
+            ${education.map((item) => `<div class="resume-item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(compact(item.description, 190))}</p></div>`).join("")}
           </section>
         </div>`;
 
