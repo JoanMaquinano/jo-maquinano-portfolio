@@ -9,3 +9,4 @@ The following case-study images are still temporary placeholders or remain avail
 - `assets/images/case-studies/retail-loyalty-placeholder.svg` - Retail loyalty pipeline visual
 - `assets/images/case-studies/retail-loyalty.png` - Retail Loyalty pipeline notes and medallion architecture (provided)
 - `assets/images/case-studies/oulad.png` - Temporary OULAD dataset image (provided)
+- `assets/images/case-studies/fish-community.png` - Fish biomass by family, station, and year (provided)
