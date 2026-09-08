@@ -66,7 +66,6 @@
     .hero-chip {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
       padding: 0.35rem 0.75rem;
       border-radius: 999px;
       background: var(--primary-soft);
@@ -74,21 +73,6 @@
       font-size: 0.82rem;
       font-weight: 600;
       margin-bottom: 10px;
-    }
-
-    .hero-chip::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #22c55e;
-      animation: pulseDot 1.6s infinite;
-    }
-
-    @keyframes pulseDot {
-      0% { transform: scale(0.9); opacity: 0.8; }
-      70% { transform: scale(1.35); opacity: 0.2; }
-      100% { transform: scale(0.9); opacity: 0.8; }
     }
 
     .about-panel {
