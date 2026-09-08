@@ -475,6 +475,11 @@
         font-size: 7.5pt;
       }
 
+      .resume-contact a {
+        color: inherit;
+        text-decoration: underline;
+      }
+
       .resume-section {
         margin-bottom: 0.09in;
       }
@@ -1373,7 +1378,7 @@
         const normalized = value.replace(/\s+/g, " ").trim();
         return normalized.length > limit ? `${normalized.slice(0, limit).replace(/\s+\S*$/, "")}...` : normalized;
       };
-      const aboutParagraphs = items("#about .about-panel > p")
+      const aboutParagraphs = items("#about .about-copy p")
         .map((item) => item.textContent.trim())
         .filter((item) => item && !item.startsWith("Currently documenting"));
       const caseStudies = items("#featured-case-studies .card").map((card) => ({
@@ -1396,9 +1401,13 @@
       resumePrint.innerHTML = `
         <div class="resume-page">
           <header class="resume-header">
-            <h1>Maki</h1>
-            <p>Data Analyst → Data Engineer | SQL · Databricks · Data Quality</p>
-            <div class="resume-contact">+63 926 891 8105 · jrmaquinano@alum.up.edu.ph · linkedin.com/in/jrmaquinano · github.com/JoanMaquinano</div>
+            <h1>Joan Maquinano</h1>
+            <div class="resume-contact">
+              <a href="tel:+639268918105">+63 926 891 8105</a> ·
+              <a href="mailto:jrmaquinano@alum.up.edu.ph">jrmaquinano@alum.up.edu.ph</a> ·
+              <a href="https://www.linkedin.com/in/jrmaquinano/" target="_blank" rel="noopener noreferrer">linkedin.com/in/jrmaquinano</a> ·
+              <a href="https://github.com/JoanMaquinano" target="_blank" rel="noopener noreferrer">github.com/JoanMaquinano</a>
+            </div>
           </header>
           <section class="resume-section">
             <h2>Profile</h2>
@@ -1410,7 +1419,7 @@
           </section>
           <section class="resume-section">
             <h2>Selected Case Studies</h2>
-            ${caseStudies.map((item) => `<div class="resume-item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(compact(item.description, 190))}</p></div>`).join("")}
+            ${caseStudies.map((item) => `<div class="resume-item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></div>`).join("")}
           </section>
           <section class="resume-section">
             <h2>Technical Skills</h2>
