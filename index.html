@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joan Maquinano | Data & ESG Analyst</title>
+  <title>Maki | Data & ESG Analyst | Aspiring Data Engineer</title>
 
   <!-- Bootstrap CSS -->
   <link
@@ -128,6 +128,42 @@
       transform: translateY(-50%);
     }
 
+    .role-summary {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #665a76;
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .impact-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .impact-stat {
+      padding: 0.9rem 0.65rem;
+      border: 1px solid #e5dcd7;
+      border-radius: 12px;
+      background: rgba(255, 253, 250, 0.78);
+      text-align: center;
+    }
+
+    .impact-stat strong {
+      display: block;
+      color: #665a76;
+      font-size: 1.25rem;
+    }
+
+    .impact-stat span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+
     @media (max-width: 575.98px) {
       .journey-pipeline {
         grid-template-columns: repeat(2, 1fr);
@@ -135,6 +171,10 @@
 
       .journey-step:nth-child(2)::after {
         content: "";
+      }
+
+      .impact-strip {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -301,6 +341,7 @@
       <div class="col-md-7">
         <div class="about-panel">
           <div class="hero-chip">Open to Data & Tech Roles</div>
+          <div class="role-summary">Data Analyst → Data Engineer | SQL · Databricks · Data Quality</div>
           <h2 class="section-title mb-3">Hi, I’m Maki</h2>
 
           <p class="muted">
@@ -330,6 +371,11 @@
             <div class="journey-step">ESG data</div>
             <div class="journey-step">Data engineering</div>
           </div>
+
+          <div class="mt-4 d-flex flex-wrap gap-2">
+            <a href="#featured-case-studies" class="btn btn-primary btn-sm">Explore Case Studies</a>
+            <a href="https://www.linkedin.com/in/jrmaquinano/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-sm">View LinkedIn</a>
+          </div>
         </div>
       </div>
     </div>
@@ -346,6 +392,13 @@
           dashboarding to data quality, dimensional modeling, and medallion architecture.
           All four featured case studies are end-to-end projects.
         </p>
+      </div>
+
+      <div class="impact-strip mb-4" aria-label="Portfolio highlights">
+        <div class="impact-stat"><strong>4</strong><span>end-to-end case studies</span></div>
+        <div class="impact-stat"><strong>3,167</strong><span>retail transactions processed</span></div>
+        <div class="impact-stat"><strong>5,949</strong><span>loyalty records validated</span></div>
+        <div class="impact-stat"><strong>3</strong><span>core pipeline layers</span></div>
       </div>
 
       <div class="row g-4 justify-content-center">
@@ -437,7 +490,8 @@
               <p class="muted flex-grow-1">
                 A Databricks SQL pipeline that cleans messy Sari-sari Store transactions and loyalty
                 records, validates the results, and produces customer, retailer, brand, and monthly
-                purchasing insights for dashboard-ready analytics.
+                purchasing insights for dashboard-ready analytics. It reduced 3,167 transactions to
+                3,161 clean records and 5,949 loyalty records to 5,945 validated records.
               </p>
               <div class="mt-2 d-flex gap-2 flex-wrap">
                 <span class="badge badge-tech">SQL</span>
