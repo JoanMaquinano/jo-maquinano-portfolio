@@ -1,0 +1,45 @@
+name: Profile sync
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: "Type sync to fetch profile data and open a review PR"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  propose-profile-update:
+    if: ${{ inputs.confirm == 'sync' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Fetch profile sources
+        env:
+          GITHUB_USERNAME: JoanMaquinano
+        run: python scripts/sync_profile.py
+
+      - name: Open review pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: profile-sync/proposed-update
+          delete-branch: true
+          commit-message: "Propose profile data sync"
+          title: "Proposed profile data sync"
+          body: |
+            This pull request was generated manually by the Profile sync workflow.
+
+            Review `profile-sync/profile-update.md`, `profile-sync/profile-snapshot.json`, and the LinkedIn source file before merging.
+
+            The portfolio is not updated until this pull request is approved and merged.

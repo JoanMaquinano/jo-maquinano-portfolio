@@ -1,0 +1,109 @@
+{
+  "login": "JoanMaquinano",
+  "name": "Joan Maquinano",
+  "bio": "Bio nerd turned data nerd. Still an experimentalist at heart.",
+  "blog": "https://joanmaquinano.github.io/jo-maquinano-portfolio/",
+  "location": "Philippines",
+  "public_repos": 12,
+  "followers": 15,
+  "profile_url": "https://github.com/JoanMaquinano",
+  "readme": "# Hi, i'm Maki! 🍣\n\n**BS Biology graduate from UPLB, DOST scholar, former researcher, current Data & ESG Analyst, and aspiring Data Engineer. ✨**\n\nI started out studying fish, biodiversity, and ecological data. Somewhere between research databases, species records, and sustainability reporting, I realized I enjoyed building and improving data systems just as much as studying the things inside them.\n\nToday, I work with large-scale ESG datasets, obsess over data quality, and spend a questionable amount of time cleaning, validating, and transforming data so other people don't have to.\n\nCurrently documenting my journey from:\n\n**biology → research → ESG data → data engineering**\n\n## Work\n\n- Data & ESG Analyst @ Institutional Shareholder Services (ISS)\n- Former Research Assistant @ Quantitative Aquatics\n- Former Digital Marketer @ 3rd Shift\n\n## Building\n\n- Data warehouse projects in Databricks\n- Medallion Architecture pipelines\n- Data quality and validation frameworks\n- Analytics-ready datasets\n- Tableau and Power BI dashboards\n\n## Stack\n\n**Data engineering**\n- Databricks\n- SQL\n- Delta Lake\n- Apache Spark\n\n**Analytics**\n- Tableau\n- Power BI\n- Excel\n- Google Sheets\n\n**Programming**\n- SQL\n- Python\n- R\n\n**Tools**\n- GitHub\n- Jira\n\n## Featured case studies\n\n### 🛒 Instacart Dimensional Warehouse\nDimensional data warehouse built in Databricks using a Raw → Clean → Mart architecture, star schema modeling, and validation checks.\n\n🔗 Repository: https://github.com/jess-christine/instacart-pipeline\n\n### 🎵 Chinook Dimensional Warehouse\nDimensional data warehouse built in Databricks using a Raw → Clean → Mart architecture, star schema modeling, and validation checks.\n\n🔗 Repository: https://github.com/JoanMaquinano/chinook-dimensional-model\n\n### 🛒 Retail Loyalty Pipeline\nEnd-to-end pipeline processing retail transactions through Bronze, Silver, and Gold layers.\n\n🔗 Repository: https://github.com/JoanMaquinano/retail-loyalty-data-pipeline\n\n### 🌊 Marine Sanctuary Impact Analysis\nR-based analysis of long-term reef fish monitoring data used in a published marine conservation study.\n\n🔗 Repository: https://github.com/JoanMaquinano/twinrocks-mpa-analysis\n\n## Currently learning\n\n- Apache Spark\n- Data Quality Engineering\n- CI/CD\n\n---\n\n*\"building reliable data, one dataset at a time.\"*\n",
+  "repositories": [
+    {
+      "name": "jo-maquinano-portfolio",
+      "description": null,
+      "html_url": "https://github.com/JoanMaquinano/jo-maquinano-portfolio",
+      "language": "Jupyter Notebook",
+      "topics": [],
+      "updated_at": "2026-09-08T03:32:54Z"
+    },
+    {
+      "name": "JoanMaquinano",
+      "description": null,
+      "html_url": "https://github.com/JoanMaquinano/JoanMaquinano",
+      "language": null,
+      "topics": [],
+      "updated_at": "2026-09-08T02:12:35Z"
+    },
+    {
+      "name": "ftw-data-engineering-journal",
+      "description": null,
+      "html_url": "https://github.com/JoanMaquinano/ftw-data-engineering-journal",
+      "language": null,
+      "topics": [],
+      "updated_at": "2026-09-07T02:39:15Z"
+    },
+    {
+      "name": "retail-loyalty-data-pipeline",
+      "description": "A Databricks SQL data pipeline project for processing Sari-Sari Store transaction data through Bronze, Silver, and Gold layers, with data cleaning, validation, transformation, and dashboard-ready analytics.",
+      "html_url": "https://github.com/JoanMaquinano/retail-loyalty-data-pipeline",
+      "language": null,
+      "topics": [],
+      "updated_at": "2026-09-03T17:28:49Z"
+    },
+    {
+      "name": "chinook-dimensional-model",
+      "description": "A dimensional data warehouse project developed in Databricks SQL using the Chinook dataset. The solution transforms source CSV files through Raw, Clean, and Mart layers to create analytics-ready data for sales reporting and business insights.",
+      "html_url": "https://github.com/JoanMaquinano/chinook-dimensional-model",
+      "language": "Python",
+      "topics": [],
+      "updated_at": "2026-09-03T17:05:12Z"
+    },
+    {
+      "name": "instacart-medallion-data-pipeline",
+      "description": "Built an end-to-end data pipeline in Databricks using Medallion Architecture (Bronze, Silver, Gold) to ingest, clean, transform, and model Instacart grocery order data into analytics-ready dimensional tables.",
+      "html_url": "https://github.com/JoanMaquinano/instacart-medallion-data-pipeline",
+      "language": "Python",
+      "topics": [],
+      "updated_at": "2026-09-03T16:38:38Z"
+    },
+    {
+      "name": "twinrocks-mpa-analysis",
+      "description": "Analysis of long-term fish community trends in a marine sanctuary in the Verde Island Passage, examining how marine protection influences fish abundance, biomass, and body size over time.",
+      "html_url": "https://github.com/JoanMaquinano/twinrocks-mpa-analysis",
+      "language": "HTML",
+      "topics": [],
+      "updated_at": "2026-08-31T09:42:54Z"
+    },
+    {
+      "name": "Sarisari-store-data-cleaning",
+      "description": "SQL data cleaning and transformation project in Databricks. Raw sales data was inspected, cleaned, standardized, deduplicated, and converted to proper data types to create a trusted Silver-layer table (silver.sarisari_sales) ready for analytics and reporting.",
+      "html_url": "https://github.com/JoanMaquinano/Sarisari-store-data-cleaning",
+      "language": null,
+      "topics": [],
+      "updated_at": "2026-08-20T15:10:36Z"
+    },
+    {
+      "name": "Monthly-Wholesale-Net-Revenue-Breakdown-Using-SQL",
+      "description": "Developed a SQL-based sales analysis to measure monthly wholesale net revenue by product line and warehouse. Applied data aggregation, date transformations, and revenue calculations to uncover business insights, identify top-performing products, and compare warehouse performance.",
+      "html_url": "https://github.com/JoanMaquinano/Monthly-Wholesale-Net-Revenue-Breakdown-Using-SQL",
+      "language": null,
+      "topics": [],
+      "updated_at": "2026-08-20T09:59:07Z"
+    },
+    {
+      "name": "E-commerce-analysis",
+      "description": null,
+      "html_url": "https://github.com/JoanMaquinano/E-commerce-analysis",
+      "language": "Jupyter Notebook",
+      "topics": [],
+      "updated_at": "2026-04-29T06:35:21Z"
+    },
+    {
+      "name": "Mortgage-Trading-Analysis-Case-Study",
+      "description": null,
+      "html_url": "https://github.com/JoanMaquinano/Mortgage-Trading-Analysis-Case-Study",
+      "language": null,
+      "topics": [],
+      "updated_at": "2026-04-07T10:13:33Z"
+    },
+    {
+      "name": "Secondary-Market-Condo-Listings-Exploratory-Analysis-",
+      "description": null,
+      "html_url": "https://github.com/JoanMaquinano/Secondary-Market-Condo-Listings-Exploratory-Analysis-",
+      "language": null,
+      "topics": [],
+      "updated_at": "2026-03-31T05:48:38Z"
+    }
+  ]
+}
