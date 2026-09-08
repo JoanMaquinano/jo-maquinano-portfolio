@@ -13,13 +13,17 @@
 
   <style>
     :root {
-      --bg: #f4f7fb;
+      --bg: #fff8f2;
       --card: #ffffff;
       --text: #0f172a;
       --muted: #64748b;
       --primary: #2563eb;
       --primary-soft: #dbeafe;
       --border: #e2e8f0;
+      --coral: #f97368;
+      --sunshine: #fbbf24;
+      --mint: #5eead4;
+      --lavender: #c4b5fd;
     }
 
     html { scroll-behavior: smooth; }
@@ -27,8 +31,9 @@
     body {
       padding-top: 74px;
       background:
-        radial-gradient(circle at 10% 10%, #eff6ff 0%, transparent 30%),
-        radial-gradient(circle at 90% 0%, #e0e7ff 0%, transparent 30%),
+        radial-gradient(circle at 8% 12%, #ffe4e6 0%, transparent 26%),
+        radial-gradient(circle at 92% 4%, #ddd6fe 0%, transparent 28%),
+        radial-gradient(circle at 50% 100%, #ccfbf1 0%, transparent 25%),
         var(--bg);
       color: var(--text);
       font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -39,14 +44,21 @@
       letter-spacing: -0.01em;
     }
 
+    .section-title::after {
+      content: " ✦";
+      color: var(--coral);
+      font-size: 0.72em;
+      vertical-align: 0.12em;
+    }
+
     .muted {
       color: var(--muted);
     }
 
     .navbar {
       backdrop-filter: blur(8px);
-      background: rgba(255, 255, 255, 0.88) !important;
-      border-bottom: 1px solid var(--border);
+      background: rgba(255, 250, 247, 0.9) !important;
+      border-bottom: 2px solid #fed7aa;
     }
 
     .navbar-brand {
@@ -68,18 +80,20 @@
       align-items: center;
       padding: 0.35rem 0.75rem;
       border-radius: 999px;
-      background: var(--primary-soft);
-      color: #1d4ed8;
+      background: linear-gradient(100deg, #fef3c7, #fce7f3);
+      color: #9d174d;
       font-size: 0.82rem;
       font-weight: 600;
       margin-bottom: 10px;
+      box-shadow: 4px 4px 0 rgba(249, 115, 106, 0.16);
     }
 
     .about-panel {
-      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-      border: 1px solid var(--border);
+      background: linear-gradient(135deg, #fff 0%, #fff7ed 55%, #f5f3ff 100%);
+      border: 1px solid #fed7aa;
       border-radius: 18px;
       padding: 1.5rem;
+      box-shadow: 8px 8px 0 rgba(196, 181, 253, 0.28);
     }
 
     .profile-img {
@@ -95,17 +109,18 @@
     }
 
     .card {
-      border: 1px solid var(--border);
+      border: 1px solid #e9d5ff;
       border-radius: 16px;
       background: var(--card);
       transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
       overflow: hidden;
+      box-shadow: 4px 4px 0 rgba(94, 234, 212, 0.18);
     }
 
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 18px 40px rgba(2, 6, 23, 0.1);
-      border-color: #bfdbfe;
+      border-color: var(--coral);
     }
 
     .card-img-top {
@@ -130,17 +145,18 @@
     }
 
     .badge-tech {
-      background: #e0e7ff;
-      color: #3730a3;
-      border: 1px solid #c7d2fe;
+      background: #f3e8ff;
+      color: #6b21a8;
+      border: 1px solid #d8b4fe;
       font-weight: 600;
     }
 
     .section-block {
-      background: #fff;
-      border: 1px solid var(--border);
+      background: linear-gradient(135deg, #fff 0%, #fffbeb 100%);
+      border: 1px solid #fde68a;
       border-radius: 18px;
       padding: 2rem;
+      box-shadow: 5px 5px 0 rgba(251, 191, 36, 0.14);
     }
 
     .skill-logo {
@@ -150,15 +166,15 @@
     }
 
     .skill-card {
-      border: 1px solid var(--border);
+      border: 1px solid #a7f3d0;
       border-radius: 14px;
-      background: #fff;
+      background: linear-gradient(145deg, #ffffff, #f0fdfa);
       transition: transform 0.24s ease, box-shadow 0.24s ease;
     }
 
     .skill-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(2, 6, 23, 0.08);
+      box-shadow: 6px 6px 0 rgba(249, 115, 106, 0.2);
     }
 
     .contact-icon {
@@ -208,6 +224,7 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#top">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#featured-case-studies">Featured Work</a></li>
           <li class="nav-item"><a class="nav-link" href="#case-studies">Case Studies</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#academic-work">Academic Work</a></li>
@@ -247,7 +264,9 @@
 
           <p class="muted mb-0">
             I focus on turning complex, imperfect data into trusted insights that stakeholders can act on
-            through careful validation, clear analysis, and business-oriented storytelling.
+            through careful validation, clear analysis, and business-oriented storytelling. I am currently
+            building on that foundation as an aspiring data engineer focused on reliable pipelines,
+            data modeling, and analytics-ready datasets.
           </p>
         </div>
       </div>
@@ -255,14 +274,100 @@
   </div>
 </section>
 
+  <!-- FEATURED CASE STUDIES -->
+  <section id="featured-case-studies" class="py-5">
+    <div class="container reveal">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Featured Data Engineering Work</h2>
+        <p class="muted">
+          Data engineering projects focused on reliable pipelines, medallion architecture,
+          dimensional modeling, data quality, and analytics-ready datasets.
+        </p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="ratio ratio-16x9">
+              <img src="assets/images/case-studies/instacart-placeholder.svg" class="card-img-top" alt="Instacart medallion data pipeline placeholder" />
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="fw-semibold">Instacart Dimensional Warehouse</h5>
+              <p class="muted flex-grow-1">
+                End-to-end Databricks pipeline transforming raw Instacart transactions through
+                Bronze, Silver, and Gold layers into validated fact and dimension tables.
+              </p>
+              <div class="mt-2 d-flex gap-2 flex-wrap">
+                <span class="badge badge-tech">Databricks</span>
+                <span class="badge badge-tech">SQL</span>
+                <span class="badge badge-tech">Delta Lake</span>
+                <span class="badge badge-tech">Dimensional Modeling</span>
+              </div>
+              <div class="mt-3">
+                <a href="https://github.com/JoanMaquinano/instacart-medallion-data-pipeline" target="_blank" class="btn btn-outline-primary btn-sm">View Repository</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="ratio ratio-16x9">
+              <img src="assets/images/case-studies/chinook-placeholder.svg" class="card-img-top" alt="Chinook dimensional warehouse placeholder" />
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="fw-semibold">Chinook Dimensional Warehouse</h5>
+              <p class="muted flex-grow-1">
+                Databricks warehouse project using Raw, Clean, and Mart layers, star-schema
+                modeling, and validation checks to support reliable reporting.
+              </p>
+              <div class="mt-2 d-flex gap-2 flex-wrap">
+                <span class="badge badge-tech">Databricks</span>
+                <span class="badge badge-tech">SQL</span>
+                <span class="badge badge-tech">Star Schema</span>
+                <span class="badge badge-tech">Data Validation</span>
+              </div>
+              <div class="mt-3">
+                <a href="https://github.com/JoanMaquinano/chinook-dimensional-model" target="_blank" class="btn btn-outline-primary btn-sm">View Repository</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="ratio ratio-16x9">
+              <img src="assets/images/case-studies/retail-loyalty-placeholder.svg" class="card-img-top" alt="Retail loyalty data pipeline placeholder" />
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="fw-semibold">Retail Loyalty Data Pipeline</h5>
+              <p class="muted flex-grow-1">
+                End-to-end retail transaction pipeline organized through Bronze, Silver, and Gold
+                layers for dependable downstream analytics and reporting.
+              </p>
+              <div class="mt-2 d-flex gap-2 flex-wrap">
+                <span class="badge badge-tech">SQL</span>
+                <span class="badge badge-tech">Medallion Architecture</span>
+                <span class="badge badge-tech">Data Quality</span>
+              </div>
+              <div class="mt-3">
+                <a href="https://github.com/JoanMaquinano/retail-loyalty-data-pipeline" target="_blank" class="btn btn-outline-primary btn-sm">View Repository</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CASE STUDIES -->
   <section id="case-studies" class="py-5">
     <div class="container reveal">
       <div class="text-center mb-5">
-        <h2 class="section-title">Case Studies</h2>
+        <h2 class="section-title">Additional Case Studies</h2>
         <p class="muted">
-          Scenario-based analyses that simulate real-world decision-making contexts,
-          focusing on business impact, trade-offs, and analytical reasoning.
+          Scenario-based analyses covering business intelligence, data cleaning, and
+          decision-support workflows. These existing portfolio studies remain available below.
         </p>
       </div>
 
@@ -491,7 +596,7 @@
       </div>
 
       <div class="row justify-content-center">
-        <div class="col-lg-8">
+        <div class="col-lg-7">
           <div class="card h-100 shadow-sm">
             <div class="ratio ratio-16x9">
               <img
@@ -542,34 +647,31 @@
       <div class="text-center mb-5">
         <h2 class="section-title">Skills</h2>
         <p class="muted">
-          Core competencies across sustainability data, analysis, quality assurance, and visualization.
+          A growing data engineering toolkit spanning reliable pipelines, analytics, data quality,
+          and business-facing visualization.
         </p>
       </div>
 
       <div class="row text-center g-4 justify-content-center">
         <div class="col-md-3 col-sm-6">
           <div class="p-4 skill-card h-100">
-            <img src="assets/images/skills/esg.jpg" alt="ESG" class="skill-logo mb-3" />
-            <h6 class="fw-semibold">ESG & Sustainability</h6>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6">
-          <div class="p-4 skill-card h-100">
-            <img src="assets/images/skills/sql.png" alt="SQL" class="skill-logo" />
-            <img src="assets/images/skills/databricks.png" alt="Databricks" class="skill-logo" />
+            <div class="d-flex justify-content-center gap-3 mb-3">
+              <img src="assets/images/skills/sql.png" alt="SQL" class="skill-logo" />
+              <img src="assets/images/skills/databricks.png" alt="Databricks" class="skill-logo" />
+            </div>
             <h6 class="fw-semibold">Data Engineering</h6>
+            <p class="muted small mb-0">SQL, Databricks, Delta Lake, Apache Spark, ETL/ELT</p>
           </div>
         </div>
 
         <div class="col-md-3 col-sm-6">
           <div class="p-4 skill-card h-100">
             <div class="d-flex justify-content-center gap-3 mb-3">
-              <img src="assets/images/skills/excel.png" alt="Excel" class="skill-logo mb-3" />
               <img src="assets/images/skills/python.png" alt="Python" class="skill-logo" />
               <img src="assets/images/skills/r.png" alt="R" class="skill-logo" />
             </div>
-            <h6 class="fw-semibold">Data Analysis & QA</h6>
+            <h6 class="fw-semibold">Programming & Analysis</h6>
+            <p class="muted small mb-0">Python, R, exploratory analysis, statistics, data cleaning</p>
           </div>
         </div>
 
@@ -579,7 +681,18 @@
               <img src="assets/images/skills/tableau.png" alt="Tableau" class="skill-logo" />
               <img src="assets/images/skills/powerbi.png" alt="Power BI" class="skill-logo" />
             </div>
-            <h6 class="fw-semibold">Data Visualization</h6>
+            <h6 class="fw-semibold">Analytics & BI</h6>
+            <p class="muted small mb-0">Tableau, Power BI, Excel, Google Sheets, dashboards</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="p-4 skill-card h-100">
+            <div class="d-flex justify-content-center gap-3 mb-3">
+              <img src="assets/images/skills/esg.jpg" alt="ESG" class="skill-logo" />
+            </div>
+            <h6 class="fw-semibold">Data Quality & Tools</h6>
+            <p class="muted small mb-0">Validation, GitHub, Jira, documentation, ESG data</p>
           </div>
         </div>
       </div>
@@ -590,9 +703,10 @@
   <section id="education" class="py-5">
     <div class="container reveal">
       <div class="text-center mb-5">
-        <h2 class="section-title">Education & Certifications</h2>
+        <h2 class="section-title">Education, Certifications & Learning</h2>
         <p class="muted">
-          Academic training and professional certifications supporting analytical and sustainability-focused work.
+          Formal training and ongoing study supporting my transition from biology and ESG analysis
+          into data engineering.
         </p>
       </div>
 
@@ -602,10 +716,11 @@
             <div class="d-flex align-items-start gap-3">
               <img src="assets/images/education/ftw.png" alt="FTW logo" width="48" />
               <div>
-                <h6 class="fw-semibold mb-1">Associate Data Analyst in SQL Career Track</h6>
-                <p class="muted mb-1"> Data Engineering Cohort · July 2026 · For the Women Scholarship</p>
+                <h6 class="fw-semibold mb-1">Data Engineering Fellowship</h6>
+                <p class="muted mb-1">FTW Foundation Data Engineering Fellowship · July 2026</p>
                 <p class="muted small mb-2">
-                    Competitive industry-led Data Engineering fellowship focused on SQL, Python, Databricks, Apache Spark, data modeling, ETL/ELT pipelines, data warehousing, cloud technologies, orchestration, governance, data quality, AI/BI solutions, stakeholder communication, and real-world analytics project delivery.
+                    Industry-led fellowship focused on SQL, Databricks, data modeling, medallion
+                    architecture, data quality, Git/GitHub, documentation, and data engineering practice.
                 </p>
                 <!--
                   <a
@@ -628,8 +743,8 @@
                 <h6 class="fw-semibold mb-1">Associate Data Analyst in SQL Career Track</h6>
                 <p class="muted mb-1">DataCamp · December 2025 · Data Engineering Philippines Scholarship</p>
                 <p class="muted small mb-2">
-                  Advanced SQL, PostgreSQL, joins & subqueries, window functions, exploratory analysis,
-                  statistics, and data-driven decision-making.
+                  Associate Data Analyst in SQL career track covering advanced SQL, PostgreSQL, joins,
+                  subqueries, window functions, exploratory analysis, and statistics.
                 </p>
                 <a
                   href="https://www.datacamp.com/certificate/DAA0017289104033"
@@ -656,6 +771,21 @@
                   target="_blank"
                   class="link-dark small text-decoration-underline"
                 >View certificate</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-10">
+          <div class="section-block">
+            <div class="d-flex align-items-start gap-3">
+              <div class="section-block p-2" aria-hidden="true">LEARN</div>
+              <div>
+                <h6 class="fw-semibold mb-1">Current Learning Focus</h6>
+                <p class="muted small mb-0">
+                  Apache Spark, data quality engineering, CI/CD, data modeling, and production-oriented
+                  data engineering workflows.
+                </p>
               </div>
             </div>
           </div>
