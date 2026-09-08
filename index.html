@@ -13,7 +13,7 @@
 
   <style>
     :root {
-      --bg: #fff4b8;
+      --bg: #f8fafc;
       --card: #ffffff;
       --text: #0f172a;
       --muted: #64748b;
@@ -31,9 +31,9 @@
     body {
       padding-top: 74px;
       background:
-        radial-gradient(circle at 8% 12%, #ffe4e6 0%, transparent 26%),
-        radial-gradient(circle at 92% 4%, #ddd6fe 0%, transparent 28%),
-        radial-gradient(circle at 50% 100%, #ccfbf1 0%, transparent 25%),
+        radial-gradient(circle at 8% 12%, rgba(251, 207, 232, 0.58) 0%, transparent 25%),
+        radial-gradient(circle at 92% 4%, rgba(196, 181, 253, 0.52) 0%, transparent 26%),
+        radial-gradient(circle at 50% 100%, rgba(153, 246, 228, 0.42) 0%, transparent 23%),
         var(--bg);
       color: var(--text);
       font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -126,6 +126,19 @@
     .card-img-top {
       border-top-left-radius: 16px;
       border-top-right-radius: 16px;
+    }
+
+    .card .ratio {
+      background: #f8fafc;
+      overflow: hidden;
+    }
+
+    .card .ratio > .card-img-top {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      padding: 0.35rem;
     }
 
     .card-body { padding: 1.3rem; }
@@ -221,7 +234,6 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
-        <!--
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#top">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
@@ -233,7 +245,6 @@
           <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
-        -->
       </div>
     </div>
   </nav>
@@ -252,23 +263,24 @@
           <h2 class="section-title mb-3">About Me</h2>
 
           <p class="muted">
-            I’m a data analyst with a foundation in scientific research and a track record of building
-            reliable, decision-ready datasets. I hold a BS in Biology (Zoology) from the University of
-            the Philippines Los Baños (UPLB), where I developed strong skills in analytical thinking,
-            hypothesis-driven work, and rigorous data handling.
+            I’m Joan Maquinano, a data analyst transitioning into data engineering. I build reliable
+            pipelines, analytics-ready datasets, and clear dashboards that help people make better
+            decisions. My portfolio combines SQL, Databricks, dimensional modeling, data quality,
+            and business-focused analysis.
           </p>
 
           <p class="muted">
-            At Institutional Shareholder Services (ISS), I validate and quality-check sustainability data
-            for more than 5,000 companies. My work centers on data integrity, consistency checks, and
-            structured QA workflows, delivering 99%+ accuracy in high-stakes reporting environments.
+            In my professional work at Institutional Shareholder Services (ISS), I validate and
+            quality-check sustainability data for more than 5,000 companies. That experience has
+            strengthened my attention to detail, structured QA workflows, and ability to work with
+            high-stakes reporting data.
           </p>
 
           <p class="muted mb-0">
-            I focus on turning complex, imperfect data into trusted insights that stakeholders can act on
-            through careful validation, clear analysis, and business-oriented storytelling. I am currently
-            building on that foundation as an aspiring data engineer focused on reliable pipelines,
-            data modeling, and analytics-ready datasets.
+            I hold a BS in Biology, Major in Zoology, from the University of the Philippines Los Baños
+            (UPLB). My research background shaped how I approach complex questions: understand the
+            context, validate the evidence, and communicate the result clearly. I’m currently focused
+            on growing as a data engineer through collaborative GitHub projects and practical pipeline work.
           </p>
         </div>
       </div>
