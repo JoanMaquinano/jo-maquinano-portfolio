@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">NYC Mobility pipeline placeholder</title>
+  <desc id="desc">A muted placeholder graphic for the NYC Mobility data pipeline.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#e8f1ef"/>
+      <stop offset="1" stop-color="#eee8f3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <path d="M155 470C290 360 335 445 455 320S650 360 755 245s180-10 290-105" fill="none" stroke="#83b8a8" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="270" cy="380" r="18" fill="#d98278"/>
+  <circle cx="505" cy="300" r="18" fill="#d6a84f"/>
+  <circle cx="790" cy="220" r="18" fill="#a99bc9"/>
+  <text x="600" y="545" fill="#665a76" font-family="Arial, sans-serif" font-size="38" font-weight="700" text-anchor="middle">NYC MOBILITY PIPELINE</text>
+</svg>
