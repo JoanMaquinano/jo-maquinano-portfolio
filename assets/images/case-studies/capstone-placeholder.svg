@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Capstone project placeholder</title>
+  <desc id="desc">A warm neutral placeholder graphic for the upcoming capstone project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#eee8f3"/>
+      <stop offset="1" stop-color="#f8eee8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect x="120" y="115" width="960" height="445" rx="28" fill="#fffdfa" stroke="#d9cbe0" stroke-width="5"/>
+  <circle cx="600" cy="280" r="72" fill="#a99bc9" opacity=".72"/>
+  <path d="M565 280h70M600 245v70" stroke="#fffdfa" stroke-width="12" stroke-linecap="round"/>
+  <text x="600" y="430" fill="#665a76" font-family="Arial, sans-serif" font-size="40" font-weight="700" text-anchor="middle">CAPSTONE PROJECT</text>
+  <text x="600" y="480" fill="#8f5961" font-family="Arial, sans-serif" font-size="25" text-anchor="middle">Coming October 2026</text>
+</svg>

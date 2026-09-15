@@ -616,8 +616,8 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#about">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#featured-case-studies">Case Studies</a></li>
-          <!-- <li class="nav-item"><a class="nav-link" href="#case-studies">Additional Case Studies</a></li> -->
+          <li class="nav-item"><a class="nav-link" href="#featured-case-studies">Featured Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="#case-studies">Case Studies</a></li>
           <!-- <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li> -->
           <li class="nav-item"><a class="nav-link" href="#academic-work">Academic Work</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
@@ -765,24 +765,63 @@
   <section id="featured-case-studies" class="py-5">
     <div class="container reveal">
       <div class="text-center mb-5">
-        <h2 class="section-title">Case Studies</h2>
+        <h2 class="section-title">Featured Case Studies</h2>
         <p class="muted">
-          An incremental data engineering portfolio: progressing from pipeline practice and
-          dashboarding to data quality, dimensional modeling, and medallion architecture.
-          All four featured case studies are end-to-end projects.
+          Current and upcoming portfolio work highlighting end-to-end data engineering,
+          ingestion, analytics, and production-minded workflows.
         </p>
       </div>
 
-      <!--
-      <div class="impact-strip mb-4" aria-label="Portfolio highlights">
-        <div class="impact-stat"><strong>4</strong><span>end-to-end case studies</span></div>
-        <div class="impact-stat"><strong>3,167</strong><span>retail transactions processed</span></div>
-        <div class="impact-stat"><strong>5,949</strong><span>loyalty records validated</span></div>
-        <div class="impact-stat"><strong>3</strong><span>core pipeline layers</span></div>
-      </div>
-      -->
-
       <div class="row g-4 justify-content-center">
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <div class="ratio ratio-16x9">
+              <img src="assets/images/case-studies/capstone-placeholder.svg" class="card-img-top" alt="Capstone project coming October 2026 placeholder" />
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="fw-semibold">Capstone Project</h5>
+              <p class="muted flex-grow-1">
+                A portfolio capstone project focused on applying end-to-end data engineering
+                practices to a production-minded analytics problem. Details, implementation,
+                and project outputs coming October 2026.
+              </p>
+              <div class="mt-2 d-flex gap-2 flex-wrap">
+                <span class="badge badge-tech">Coming October 2026</span>
+                <span class="badge badge-tech">Data Engineering</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <div class="ratio ratio-16x9">
+              <img src="assets/images/case-studies/nyc-mobility-placeholder.svg" class="card-img-top" alt="NYC Mobility data pipeline placeholder" />
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="fw-semibold">NYC Mobility Data Pipeline</h5>
+              <p class="muted flex-grow-1">
+                An end-to-end NYC mobility pipeline using Medallion Architecture to integrate
+                Green Taxi trips, weather, taxi zones, and traffic advisories into a trusted,
+                analytics-ready dataset. The project highlights ingestion from files, APIs, JSON
+                sources, and web scraping, with incremental loading, idempotency, deduplication,
+                and data-quality validation.
+              </p>
+              <div class="mt-2 d-flex gap-2 flex-wrap">
+                <span class="badge badge-tech">Python</span>
+                <span class="badge badge-tech">SQL</span>
+                <span class="badge badge-tech">Medallion Architecture</span>
+                <span class="badge badge-tech">API & JSON Ingestion</span>
+                <span class="badge badge-tech">Web Scraping</span>
+                <span class="badge badge-tech">Data Quality</span>
+              </div>
+              <div class="mt-3">
+                <a href="https://github.com/JoanMaquinano/NYC-Mobility" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">View Repository</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="col-md-6">
           <div class="card h-100 shadow-sm">
             <div class="ratio ratio-16x9">
@@ -801,12 +840,27 @@
                 <span class="badge badge-tech">Analytics</span>
               </div>
               <div class="mt-3">
-                <a href="https://github.com/catweyine/OULAD-Pipeline" target="_blank" class="btn btn-outline-primary btn-sm">View GitHub Collaboration</a>
+                <a href="https://github.com/catweyine/OULAD-Pipeline" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">View Repository</a>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- CASE STUDIES -->
+  <section id="case-studies" class="py-5">
+    <div class="container reveal">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Case Studies</h2>
+        <p class="muted">
+          Completed projects demonstrating dimensional modeling, data quality, dashboarding,
+          and medallion architecture across collaborative and independent workflows.
+        </p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
         <div class="col-md-6">
           <div class="card h-100 shadow-sm">
             <div class="ratio ratio-16x9">
@@ -828,7 +882,7 @@
               </div>
               <div class="mt-3 d-flex flex-wrap gap-2">
                 <a href="instacart-case.html" class="btn btn-outline-primary btn-sm">View Case Study</a>
-                <a href="https://github.com/jess-christine/instacart-pipeline" target="_blank" class="btn btn-outline-dark btn-sm">View Repository</a>
+                <a href="https://github.com/jess-christine/instacart-pipeline" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-sm">View Repository</a>
               </div>
             </div>
           </div>
@@ -855,7 +909,7 @@
               </div>
               <div class="mt-3 d-flex flex-wrap gap-2">
                 <a href="chinook-case.html" class="btn btn-outline-primary btn-sm">View Case Study</a>
-                <a href="https://github.com/JoanMaquinano/chinook-dimensional-model" target="_blank" class="btn btn-outline-dark btn-sm">View Repository</a>
+                <a href="https://github.com/JoanMaquinano/chinook-dimensional-model" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-sm">View Repository</a>
               </div>
             </div>
           </div>
@@ -887,31 +941,6 @@
             </div>
           </div>
         </div>
-
-        <!--
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="ratio ratio-16x9">
-              <img src="assets/images/case-studies/retail-loyalty-placeholder.svg" class="card-img-top" alt="Retail loyalty data pipeline placeholder" />
-            </div>
-            <div class="card-body d-flex flex-column">
-              <h5 class="fw-semibold">Retail Loyalty Data Pipeline</h5>
-              <p class="muted flex-grow-1">
-                End-to-end retail transaction pipeline organized through Bronze, Silver, and Gold
-                layers for dependable downstream analytics and reporting.
-              </p>
-              <div class="mt-2 d-flex gap-2 flex-wrap">
-                <span class="badge badge-tech">SQL</span>
-                <span class="badge badge-tech">Medallion Architecture</span>
-                <span class="badge badge-tech">Data Quality</span>
-              </div>
-              <div class="mt-3">
-                <a href="https://github.com/JoanMaquinano/retail-loyalty-data-pipeline" target="_blank" class="btn btn-outline-primary btn-sm">View Repository</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        -->
       </div>
     </div>
   </section>
@@ -1443,7 +1472,7 @@
       const aboutParagraphs = items("#about .about-copy p")
         .map((item) => item.textContent.trim())
         .filter((item) => item && !item.startsWith("Currently documenting"));
-      const caseStudies = items("#featured-case-studies .card").map((card) => ({
+      const caseStudies = items("#featured-case-studies .card, #case-studies .card").map((card) => ({
         title: card.querySelector("h5")?.textContent.trim() || "",
         description: card.querySelector("p")?.textContent.trim() || ""
       }));
