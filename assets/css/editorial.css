@@ -33,6 +33,31 @@ html {
   scroll-behavior: smooth;
 }
 
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 1100;
+  padding: 0.65rem 0.9rem;
+  transform: translateY(calc(-100% - 1rem));
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
 body {
   background-color: var(--bg) !important;
   background-image: none !important;
@@ -565,9 +590,9 @@ html[data-theme="dark"] .table > :not(caption) > * > * {
 }
 
 .reveal {
-  opacity: 0;
+  opacity: 1;
   transform: none !important;
-  transition: opacity 350ms linear !important;
+  transition: none !important;
 }
 
 .reveal.show {
@@ -600,5 +625,20 @@ html[data-theme="dark"] .table > :not(caption) > * > * {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero {
+    padding: 1.25rem !important;
+  }
+
+  .section-card,
+  .section-block {
+    padding: 1.15rem;
+  }
+
+  .theme-toggle {
+    min-height: 40px;
   }
 }
