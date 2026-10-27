@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Project AHON capstone case study: a Databricks data pipeline integrating Philippine public data to support disaster preparedness analysis." />
+  <title>Case Study | Project AHON Data Engineering Capstone</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="assets/css/editorial.css" />
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("portfolio-theme");
+      document.documentElement.dataset.theme = savedTheme === "dark" || savedTheme === "light"
+        ? savedTheme
+        : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    } catch {
+      document.documentElement.dataset.theme = "light";
+    }
+  </script>
+  <style>
+    .ahon-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      gap: clamp(1.5rem, 4vw, 3.5rem);
+      align-items: center;
+    }
+
+    .ahon-cover {
+      display: block;
+      width: 100%;
+      border: 1px solid var(--border);
+      object-fit: cover;
+    }
+
+    .ahon-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .ahon-stat {
+      padding: 1.25rem clamp(0.75rem, 2vw, 1.5rem);
+      border-right: 1px solid var(--border);
+    }
+
+    .ahon-stat:last-child {
+      border-right: 0;
+    }
+
+    .ahon-stat strong {
+      display: block;
+      color: var(--primary);
+      font: 500 clamp(1.45rem, 2.8vw, 2.2rem)/1.1 "Baskerville", "Palatino Linotype", Georgia, serif;
+    }
+
+    .ahon-stat span {
+      display: block;
+      margin-top: 0.4rem;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+
+    .ahon-section {
+      margin-top: clamp(2.5rem, 6vw, 4.5rem);
+    }
+
+    .ahon-section-heading {
+      max-width: 46rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .ahon-detail {
+      height: 100%;
+      padding: clamp(1.25rem, 2.6vw, 2rem);
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .ahon-detail h3 {
+      font-size: 1.35rem;
+    }
+
+    .ahon-detail ul {
+      padding-left: 1.1rem;
+      margin-bottom: 0;
+    }
+
+    .ahon-detail li + li {
+      margin-top: 0.55rem;
+    }
+
+    .architecture-frame {
+      overflow: hidden;
+      padding: clamp(0.5rem, 1.4vw, 1rem);
+      border: 1px solid var(--border);
+      background: #fffaf5;
+    }
+
+    .architecture-diagram {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .ahon-callout {
+      padding: 1.25rem 1.5rem;
+      border-left: 3px solid var(--primary);
+      background: var(--primary-soft);
+    }
+
+    .ahon-source-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .ahon-source-list li {
+      padding: 1rem;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .ahon-source-list strong,
+    .ahon-source-list span {
+      display: block;
+    }
+
+    .ahon-source-list span {
+      margin-top: 0.2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 767.98px) {
+      .ahon-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .ahon-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .ahon-stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      .ahon-stat:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .ahon-source-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .ahon-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .ahon-stat {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .ahon-stat:last-child {
+        border-bottom: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar top-nav sticky-top">
+    <div class="container d-flex justify-content-between align-items-center gap-3">
+      <a href="index.html#featured-case-studies" class="navbar-brand fw-semibold text-decoration-none">
+        &larr; Back to Featured Work
+      </a>
+      <button type="button" class="theme-toggle" aria-label="Switch to night mode" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true">☾</span><span>Night mode</span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="container py-4 py-md-5">
+    <header class="ahon-hero">
+      <div>
+        <span class="hero-chip">Team Capstone · Data Engineering</span>
+        <h1 class="display-5 fw-bold mt-2">Project AHON</h1>
+        <p class="lead">
+          Turning fragmented Philippine public data into a traceable foundation for
+          earthquake-preparedness analysis.
+        </p>
+        <p class="muted">
+          AHON is a Databricks-based data platform that brings together government datasets at the
+          city and municipality level. The project is designed to help local decision-makers compare
+          available information on earthquake observations, population, local capacity, and disaster
+          funding—while preserving the source lineage and limitations behind each measure.
+        </p>
+        <div class="d-flex flex-wrap gap-2 mt-4">
+          <a class="btn btn-primary" href="https://github.com/Project-AHON/AHON-Pipeline" target="_blank" rel="noopener noreferrer">View GitHub Repository</a>
+          <a class="btn btn-outline-primary" href="assets/documents/project-ahon-executive-summary.pdf" target="_blank" rel="noopener noreferrer">Read Executive Summary (PDF)</a>
+        </div>
+      </div>
+      <figure class="m-0">
+        <img
+          class="ahon-cover"
+          src="assets/images/case-studies/project-ahon-earthquake-preparedness.png"
+          alt="Project AHON cover image about earthquake preparedness in the Philippines"
+        />
+        <figcaption class="muted small mt-2">Project AHON · For The Women Foundation capstone</figcaption>
+      </figure>
+    </header>
+
+    <section class="ahon-section" aria-label="Project scale">
+      <div class="ahon-stats">
+        <div class="ahon-stat"><strong>35</strong><span>selected CMCI indicators</span></div>
+        <div class="ahon-stat"><strong>2014–24</strong><span>CMCI reporting years</span></div>
+        <div class="ahon-stat"><strong>1,634</strong><span>CMCI localities in the source</span></div>
+        <div class="ahon-stat"><strong>99.51%</strong><span>approved mapping coverage against 1,642 PSGC LGUs</span></div>
+      </div>
+    </section>
+
+    <section class="ahon-section" aria-labelledby="problem-heading">
+      <div class="ahon-section-heading">
+        <span class="hero-chip">01 · The problem</span>
+        <h2 id="problem-heading" class="section-title mt-2">Useful evidence existed, but lived in separate systems.</h2>
+      </div>
+      <p class="muted">
+        Earthquake observations, population figures, local-government indicators, and disaster-fund
+        reports are published by different agencies in different formats. Locality names can vary
+        between sources, making it difficult to compare information consistently without careful
+        reconciliation. AHON creates a shared data foundation so those measures can be explored
+        together—with provenance and data-quality findings visible along the way.
+      </p>
+      <ul class="ahon-source-list">
+        <li><strong>PSA</strong><span>Philippine Standard Geographic Code and population references</span></li>
+        <li><strong>PHIVOLCS</strong><span>Reported earthquake observations</span></li>
+        <li><strong>DTI · CMCI</strong><span>Local competitiveness and capacity indicators</span></li>
+        <li><strong>BLGF · LDRRMF</strong><span>Local disaster risk reduction fund reports</span></li>
+      </ul>
+    </section>
+
+    <section class="ahon-section" aria-labelledby="architecture-heading">
+      <div class="ahon-section-heading">
+        <span class="hero-chip">02 · The pipeline</span>
+        <h2 id="architecture-heading" class="section-title mt-2">An auditable path from source files to dashboard views.</h2>
+        <p class="muted">
+          The Databricks Asset Bundle orchestrates batch ingestion and processing. Original source
+          files are retained, transformations are layered, and data-quality checks record outcomes
+          before dependent steps proceed.
+        </p>
+      </div>
+      <figure class="m-0">
+        <div class="architecture-frame">
+          <img
+            src="assets/images/case-studies/project-ahon-data-flow.svg"
+            class="architecture-diagram"
+            alt="Pipeline diagram from PSA, PHIVOLCS, DTI CMCI, and BLGF source data through raw landing, Bronze, Silver, Gold, and Platinum layers to AHON dashboard views, with data quality monitoring."
+          />
+        </div>
+        <figcaption class="muted small mt-2">
+          Source and layer behavior summarized from the project repository’s architecture documentation.
+        </figcaption>
+      </figure>
+      <div class="row g-3 mt-2">
+        <div class="col-md-6">
+          <article class="ahon-detail">
+            <h3>Preserve before transforming</h3>
+            <p class="muted mb-0">
+              Source files are landed in a Unity Catalog reference volume and kept unchanged.
+              Bronze records source and batch provenance; later layers type, standardize, validate,
+              and model records for analysis.
+            </p>
+          </article>
+        </div>
+        <div class="col-md-6">
+          <article class="ahon-detail">
+            <h3>Use reviewed geographic keys</h3>
+            <p class="muted mb-0">
+              The 10-digit PSGC code is the shared identifier for supported local-government joins.
+              CMCI locality mappings are reviewed and stored rather than guessed with fuzzy matching
+              during each pipeline run.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ahon-section" aria-labelledby="contribution-heading">
+      <div class="ahon-section-heading">
+        <span class="hero-chip">03 · My contribution</span>
+        <h2 id="contribution-heading" class="section-title mt-2">CMCI data ownership, from portal to analytical layer.</h2>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-7">
+          <article class="ahon-detail">
+            <p>
+              I owned the CMCI dataset stream as part of the project team. The source portal serves
+              dynamically generated HTML tables, so the pipeline batches requests across localities,
+              reporting years, and selected indicators before shaping the results for downstream use.
+            </p>
+            <ul class="muted">
+              <li>Processed 35 selected indicators across 11 reporting years, 2014–2024.</li>
+              <li>Reconciled the 1,634 source localities to reviewed PSGC records, achieving 99.51% mapping coverage against the 1,642-city-and-municipality reference.</li>
+              <li>Prepared standardized indicator records and coverage outputs for the Gold and Platinum layers.</li>
+              <li>Documented source scope, indicator definitions, matching methods, and known gaps for the team.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="col-lg-5">
+          <article class="ahon-detail">
+            <h3>Why locality matching mattered</h3>
+            <p class="muted">
+              Names can repeat across provinces or differ by prefixes, punctuation, and spelling.
+              Approved mappings assign each source locality to one official PSGC code, with matching
+              evidence retained for review.
+            </p>
+            <p class="muted mb-0">
+              The eight PSGC localities without a live CMCI source match remain visible as coverage
+              gaps instead of being silently filled or treated as zero.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ahon-section" aria-labelledby="quality-heading">
+      <div class="ahon-section-heading">
+        <span class="hero-chip">04 · Reliability</span>
+        <h2 id="quality-heading" class="section-title mt-2">Quality checks are part of the pipeline, not an afterthought.</h2>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <article class="ahon-detail">
+            <h3>Validate and retain evidence</h3>
+            <p class="muted mb-0">
+              Silver processing standardizes fields and records quality issues. Problem rows can be
+              flagged or routed to reject outputs rather than silently dropped.
+            </p>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="ahon-detail">
+            <h3>Gate downstream work</h3>
+            <p class="muted mb-0">
+              Twelve layer-gate tasks check built tables. Blocking findings stop dependent tasks;
+              warnings remain visible for investigation.
+            </p>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="ahon-detail">
+            <h3>Monitor outcomes</h3>
+            <p class="muted mb-0">
+              Build and gate results are recorded in <code>monitoring.dq_result</code>, alongside
+              job-run visibility for failed, skipped, and completed tasks.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ahon-section" aria-labelledby="outputs-heading">
+      <div class="ahon-section-heading">
+        <span class="hero-chip">05 · Outputs &amp; interpretation</span>
+        <h2 id="outputs-heading" class="section-title mt-2">Make the available evidence useful—and be precise about what it cannot yet say.</h2>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-6">
+          <article class="ahon-detail">
+            <h3>Implemented analytical components</h3>
+            <ul class="muted">
+              <li>Reported population at city and municipality level.</li>
+              <li>Selected CMCI indicator measurements and indicator-coverage views.</li>
+              <li>Disaster-fund components and utilization ratios.</li>
+              <li>Monthly earthquake observation summaries.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="col-lg-6">
+          <article class="ahon-detail">
+            <h3>Current limitations</h3>
+            <ul class="muted">
+              <li>The pipeline does not currently publish composite LGU risk, preparedness, gap, or priority rankings.</li>
+              <li>Earthquake locality candidates are not yet assigned to PSGC codes; observations are not verified nearest-town locations.</li>
+              <li>CMCI coverage measures data completeness, not an official readiness score.</li>
+              <li>Dashboard export and live deployment require separate data, query, and visual validation before publication.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+      <div class="ahon-callout mt-3">
+        <strong>Interpretation note.</strong>
+        <span class="muted">
+          AHON is a decision-support foundation, not a replacement for expert assessment or local
+          validation. Individual indicators should not be combined into an unapproved score.
+        </span>
+      </div>
+    </section>
+
+    <footer class="ahon-section border-top pt-4 pb-3">
+      <p class="muted small">
+        Project facts and implementation scope are based on the
+        <a href="https://github.com/Project-AHON/AHON-Pipeline" target="_blank" rel="noopener noreferrer">AHON Pipeline repository</a>
+        and its architecture, CMCI profile, and analytics-method documentation. Project AHON is a
+        collaborative team capstone; the CMCI ownership detail follows the repository’s team records.
+      </p>
+      <a href="index.html#featured-case-studies" class="btn btn-outline-primary btn-sm">Back to Featured Work</a>
+    </footer>
+  </main>
+
+  <script src="assets/js/theme-toggle.js"></script>
+</body>
+</html>

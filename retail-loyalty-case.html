@@ -102,13 +102,26 @@
     .output-list li { margin-bottom: 0.6rem; }
   </style>
   <link rel="stylesheet" href="assets/css/editorial.css" />
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("portfolio-theme");
+      document.documentElement.dataset.theme = savedTheme === "dark" || savedTheme === "light"
+        ? savedTheme
+        : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    } catch {
+      document.documentElement.dataset.theme = "light";
+    }
+  </script>
 </head>
 <body>
   <nav class="navbar top-nav sticky-top">
-    <div class="container">
+    <div class="container d-flex justify-content-between align-items-center">
       <a href="index.html#case-studies" class="navbar-brand fw-semibold text-dark text-decoration-none">
         &larr; Back to Case Studies
       </a>
+      <button type="button" class="theme-toggle" aria-label="Switch to night mode" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true">☾</span><span>Night mode</span>
+      </button>
     </div>
   </nav>
 
@@ -252,5 +265,6 @@
       </div>
     </section>
   </main>
+  <script src="assets/js/theme-toggle.js"></script>
 </body>
 </html>

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 620" role="img" aria-labelledby="title description">
+  <title id="title">Project AHON data pipeline</title>
+  <desc id="description">Public Philippine government data moves through immutable raw landing, Bronze, Silver, Gold, and Platinum layers into dashboard views. Data-quality checks monitor the pipeline. Earthquake observations currently have no assigned local government code.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#8b0000"/>
+    </marker>
+    <style>
+      .title { font: 700 22px Arial, sans-serif; fill: #33211b; }
+      .label { font: 700 17px Arial, sans-serif; fill: #33211b; }
+      .body { font: 15px Arial, sans-serif; fill: #604d43; }
+      .small { font: 13px Arial, sans-serif; fill: #715b4f; }
+      .flow { fill: none; stroke: #8b0000; stroke-width: 3; marker-end: url(#arrow); }
+      .monitor { fill: none; stroke: #a0522d; stroke-width: 2.5; stroke-dasharray: 8 7; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1440" height="620" fill="#fffaf5"/>
+  <text x="54" y="52" class="title">From public source data to decision-support views</text>
+
+  <g transform="translate(48 104)">
+    <rect width="222" height="282" rx="4" fill="#fff5ee" stroke="#d2b48c" stroke-width="2"/>
+    <text x="20" y="36" class="label">Public sources</text>
+    <text x="20" y="80" class="body">PSA · PSGC &amp; population</text>
+    <text x="20" y="124" class="body">PHIVOLCS · earthquakes</text>
+    <text x="20" y="168" class="body">DTI · CMCI indicators</text>
+    <text x="20" y="212" class="body">BLGF · disaster fund reports</text>
+    <text x="20" y="258" class="small">API, HTML and file inputs</text>
+  </g>
+
+  <g transform="translate(314 142)">
+    <rect width="174" height="205" rx="4" fill="#fffaf5" stroke="#d2b48c" stroke-width="2"/>
+    <text x="18" y="42" class="label">Raw landing</text>
+    <text x="18" y="82" class="body">Unity Catalog</text>
+    <text x="18" y="112" class="body">reference volume</text>
+    <text x="18" y="160" class="small">Original files kept</text>
+    <text x="18" y="181" class="small">with batch provenance</text>
+  </g>
+
+  <g transform="translate(532 142)">
+    <rect width="150" height="205" rx="4" fill="#f5deb3" stroke="#d2b48c" stroke-width="2"/>
+    <text x="22" y="42" class="label">Bronze</text>
+    <text x="22" y="82" class="body">As received</text>
+    <text x="22" y="130" class="small">Source lineage</text>
+    <text x="22" y="151" class="small">and row identity</text>
+  </g>
+
+  <g transform="translate(726 142)">
+    <rect width="170" height="205" rx="4" fill="#f5e5dc" stroke="#d2b48c" stroke-width="2"/>
+    <text x="22" y="42" class="label">Silver</text>
+    <text x="22" y="82" class="body">Cleaned &amp; typed</text>
+    <text x="22" y="130" class="small">Validated values</text>
+    <text x="22" y="151" class="small">reviewed PSGC maps</text>
+  </g>
+
+  <g transform="translate(940 142)">
+    <rect width="150" height="205" rx="4" fill="#eadbd1" stroke="#d2b48c" stroke-width="2"/>
+    <text x="22" y="42" class="label">Gold</text>
+    <text x="22" y="82" class="body">Dimensions &amp; facts</text>
+    <text x="22" y="130" class="small">Conformed by</text>
+    <text x="22" y="151" class="small">10-digit PSGC code</text>
+  </g>
+
+  <g transform="translate(1134 142)">
+    <rect width="252" height="205" rx="4" fill="#f1e5d6" stroke="#d2b48c" stroke-width="2"/>
+    <text x="22" y="42" class="label">Platinum &amp; dashboard</text>
+    <text x="22" y="82" class="body">Prepared analysis views</text>
+    <text x="22" y="130" class="small">Population · CMCI</text>
+    <text x="22" y="151" class="small">Funding · earthquake summaries</text>
+  </g>
+
+  <path class="flow" d="M270 244h34"/>
+  <path class="flow" d="M488 244h34"/>
+  <path class="flow" d="M682 244h34"/>
+  <path class="flow" d="M896 244h36"/>
+  <path class="flow" d="M1090 244h36"/>
+
+  <g transform="translate(532 454)">
+    <rect width="564" height="94" rx="4" fill="#fff5ee" stroke="#a0522d" stroke-width="2"/>
+    <text x="24" y="38" class="label">Data quality monitoring</text>
+    <text x="24" y="69" class="body">Build checks and 12 layer gates record results and control dependent tasks.</text>
+  </g>
+  <path class="monitor" d="M608 357v52h145v35"/>
+  <path class="monitor" d="M811 357v52"/>
+  <path class="monitor" d="M1014 357v52h-145v35"/>
+  <text x="48" y="590" class="small">Important scope note: earthquake observations are summarized, but are not yet assigned to PSGC localities.</text>
+</svg>
