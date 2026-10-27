@@ -216,6 +216,16 @@ a:hover {
   box-shadow: none !important;
 }
 
+.certification-image {
+  display: block;
+  width: min(100%, 190px);
+  max-height: 270px;
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  object-fit: contain;
+  object-position: left center;
+}
+
 .preview-img:hover,
 .profile-img:hover {
   box-shadow: none !important;
