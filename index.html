@@ -13,17 +13,17 @@
 
   <style>
     :root {
-      --bg: #f7f4f1;
-      --card: #fffdfa;
-      --text: #0f172a;
-      --muted: #64748b;
-      --primary: #2563eb;
-      --primary-soft: #dbeafe;
-      --border: #e2e8f0;
-      --coral: #d98278;
-      --sunshine: #d6a84f;
-      --mint: #83b8a8;
-      --lavender: #a99bc9;
+      --bg: #f4f1eb;
+      --card: #fbfaf7;
+      --text: #292824;
+      --muted: #716e67;
+      --primary: #6e273d;
+      --primary-soft: #eee5e6;
+      --border: #d8d1c7;
+      --coral: #6e273d;
+      --sunshine: #9c8052;
+      --mint: #647466;
+      --lavender: #8a6670;
     }
 
     .about-contact-link {
@@ -125,28 +125,14 @@
 
     body {
       padding-top: 74px;
-      background:
-        radial-gradient(circle at 8% 8%, rgba(232, 180, 202, 0.28) 0%, transparent 28%),
-        radial-gradient(circle at 31% 24%, rgba(184, 171, 213, 0.24) 0%, transparent 29%),
-        radial-gradient(circle at 57% 42%, rgba(231, 207, 143, 0.22) 0%, transparent 31%),
-        radial-gradient(circle at 79% 68%, rgba(231, 182, 145, 0.24) 0%, transparent 30%),
-        radial-gradient(circle at 98% 94%, rgba(153, 201, 177, 0.24) 0%, transparent 29%),
-        linear-gradient(135deg, #f7f1f2 0%, #f3f0f6 28%, #f8f5e9 52%, #f8f1ea 75%, #f0f6f1 100%);
-      background-attachment: fixed;
+      background-color: var(--bg);
       color: var(--text);
-      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .section-title {
       font-weight: 700;
       letter-spacing: -0.01em;
-    }
-
-    .section-title::after {
-      content: " ✦";
-      color: var(--coral);
-      font-size: 0.72em;
-      vertical-align: 0.12em;
     }
 
     .muted {
@@ -591,6 +577,7 @@
       transform: translateY(0);
     }
   </style>
+  <link rel="stylesheet" href="assets/css/editorial.css" />
 </head>
 
 <body>
@@ -788,6 +775,31 @@
               <div class="mt-2 d-flex gap-2 flex-wrap">
                 <span class="badge badge-tech">Coming October 2026</span>
                 <span class="badge badge-tech">Data Engineering</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 shadow-sm">
+            <div class="ratio ratio-16x9">
+              <img src="assets/images/case-studies/ahon-platform.svg" class="card-img-top" alt="Project AHON disaster and hazard monitoring platform illustration" />
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="fw-semibold">Project AHON</h5>
+              <p class="muted flex-grow-1">
+                A data-driven disaster and hazard monitoring platform that turns timely information
+                into actionable insights, supporting stronger disaster preparedness and
+                better-informed decision-making.
+              </p>
+              <div class="mt-2 d-flex gap-2 flex-wrap">
+                <span class="badge badge-tech">Disaster Preparedness</span>
+                <span class="badge badge-tech">Hazard Monitoring</span>
+                <span class="badge badge-tech">Data Platform</span>
+                <span class="badge badge-tech">Decision Support</span>
+              </div>
+              <div class="mt-3">
+                <a href="https://github.com/Project-AHON/AHON-Pipeline" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">View Repository</a>
               </div>
             </div>
           </div>

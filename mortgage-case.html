@@ -12,20 +12,19 @@
 
   <style>
     :root {
-      --bg: #f6f3ef;
-      --card: #fffdfa;
-      --text: #0f172a;
-      --muted: #64748b;
-      --primary: #2563eb;
-      --primary-soft: #dbeafe;
-      --border: #e2e8f0;
+      --bg: #f4f1eb;
+      --card: #fbfaf7;
+      --text: #292824;
+      --muted: #716e67;
+      --primary: #6e273d;
+      --primary-soft: #eee5e6;
+      --border: #d8d1c7;
     }
 
     body {
-      background: linear-gradient(135deg, #f6f3ef 0%, #f3f0f5 48%, #f1f5f1 100%);
-      background-attachment: fixed;
+      background-color: var(--bg);
       color: var(--text);
-      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .top-nav {
@@ -44,25 +43,14 @@
     }
 
     .hero {
-      background: linear-gradient(135deg, #65789c 0%, #7f7899 100%);
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 18px;
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 3px;
       padding: 2rem;
-      box-shadow: 0 12px 34px rgba(83, 76, 110, 0.18);
+      box-shadow: none;
       position: relative;
       overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      right: -70px;
-      top: -90px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.15);
     }
 
     .hero-chip {
@@ -71,25 +59,11 @@
       gap: 8px;
       padding: 0.35rem 0.75rem;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.2);
+      background: #eeeae3;
+      color: var(--primary);
       font-size: 0.82rem;
       font-weight: 600;
       margin-bottom: 10px;
-    }
-
-    .hero-chip::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #22c55e;
-      animation: pulseDot 1.6s infinite;
-    }
-
-    @keyframes pulseDot {
-      0% { transform: scale(0.9); opacity: 0.8; }
-      70% { transform: scale(1.35); opacity: 0.2; }
-      100% { transform: scale(0.9); opacity: 0.8; }
     }
 
     .section-card {
@@ -162,6 +136,7 @@
       margin-bottom: 0.45rem;
     }
   </style>
+  <link rel="stylesheet" href="assets/css/editorial.css" />
 </head>
 
 <body>
