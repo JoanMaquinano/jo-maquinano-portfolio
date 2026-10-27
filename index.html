@@ -599,7 +599,7 @@
       transform: translateY(0);
     }
   </style>
-  <link rel="stylesheet" href="assets/css/editorial.css" />
+  <link rel="stylesheet" href="assets/css/editorial.css?v=2" />
   <script>
     try {
       const savedTheme = localStorage.getItem("portfolio-theme");
@@ -759,7 +759,7 @@
               </div>
             </div>
             <div class="about-action-divider" aria-hidden="true"></div>
-            <button type="button" class="btn btn-sm about-resume-button" id="download-resume">Download Resume</button>
+            <!-- <button type="button" class="btn btn-sm about-resume-button" id="download-resume">Download Resume</button> -->
           </div>
         </div>
       </div>
@@ -811,10 +811,9 @@
                 <h6 class="fw-semibold mb-1">Data Engineering Scholar · For The Women Foundation</h6>
                 <p class="muted small mb-2">June 2026 – October 2026</p>
                 <p class="muted small mb-0">
-                  Completed an industry-led data engineering program focused on Databricks, PySpark,
-                  SQL, data modeling, pipeline development, and data governance. Built five
-                  end-to-end data engineering projects and earned 131,000+ DataCamp XP through
-                  technical coursework and practical exercises.
+                  Completed an industry-led program focused on Databricks, PySpark, SQL, data modeling,
+                  pipeline development, and data governance. Delivered five end-to-end data engineering
+                  projects and earned 131,000+ DataCamp XP.
                 </p>
               </div>
             </div>
@@ -887,9 +886,11 @@
               </p>
               <div class="mt-2 d-flex gap-2 flex-wrap">
                 <span class="badge badge-tech">Databricks</span>
-                <span class="badge badge-tech">PySpark · SQL</span>
-                <span class="badge badge-tech">35 CMCI Indicators</span>
-                <span class="badge badge-tech">PSGC Data Quality</span>
+                <span class="badge badge-tech">PySpark</span>
+                <span class="badge badge-tech">Python</span>
+                <span class="badge badge-tech">SQL</span>
+                <span class="badge badge-tech">Medallion Architecture</span>
+                <span class="badge badge-tech">Data Quality</span>
               </div>
               <div class="mt-3 d-flex flex-wrap gap-2">
                 <a href="ahon-capstone-case.html" class="btn btn-outline-primary btn-sm">Read Case Study</a>
@@ -1362,6 +1363,7 @@
               <img src="assets/images/skills/python.png" alt="Python" class="skill-logo" />
               <img src="assets/images/skills/r.png" alt="R" class="skill-logo" />
               <img src="assets/images/skills/sql.png" alt="SQL" class="skill-logo" />
+              <img src="assets/images/skills/apache-spark.svg" alt="Apache Spark for PySpark and Spark SQL" class="skill-logo" />
             </div>
             <h6 class="fw-semibold">Programming Languages & Data Processing</h6>
             <p class="muted small mb-0">Python, SQL, R, PySpark, Spark SQL</p>
@@ -1372,6 +1374,8 @@
           <div class="p-4 skill-card h-100">
             <div class="d-flex justify-content-center gap-3 mb-3">
               <img src="assets/images/skills/databricks.png" alt="Databricks" class="skill-logo" />
+              <img src="assets/images/skills/postgresql.svg" alt="PostgreSQL" class="skill-logo" />
+              <img src="assets/images/skills/git.svg" alt="Git" class="skill-logo" />
               <img src="assets/images/skills/github.png" alt="GitHub" class="skill-logo" />
               <img src="assets/images/skills/jira.png" alt="Jira" class="skill-logo" />
               <img src="assets/images/skills/excel.png" alt="Excel" class="skill-logo" />
@@ -1423,6 +1427,7 @@
                   Certified in data ingestion and transformation, data modeling, Lakeflow Jobs,
                   CI/CD, performance optimization, governance, and security.
                 </p>
+                <button type="button" class="btn btn-secondary btn-sm mt-2" disabled aria-disabled="true">View certificate</button>
               </div>
             </div>
           </div>
@@ -1459,8 +1464,12 @@
                 <p class="muted small mb-2">
                   Completed an industry-led program focused on Databricks, PySpark, SQL, data modeling,
                   pipeline development, and data governance. Delivered five end-to-end data engineering
-                  projects and earned 131,000+ DataCamp XP.
+                  projects and earned 131,000+ DataCamp XP. The program culminated in Project AHON, a
+                  collaborative capstone for disaster-preparedness analytics. Presented the data
+                  pipeline, design decisions, and findings, demonstrating end-to-end data engineering
+                  for analytics and decision support.
                 </p>
+                <button type="button" class="btn btn-secondary btn-sm mt-2" disabled aria-disabled="true">View certificate</button>
               </div>
             </div>
           </div>
@@ -1546,7 +1555,7 @@
   <div id="resume-print" aria-hidden="true"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/theme-toggle.js"></script>
+  <script src="assets/js/theme-toggle.js?v=2"></script>
 
   <script>
     // Smooth reveal animation on scroll
@@ -1560,6 +1569,7 @@
 
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
+    /*
     const resumeButton = document.getElementById("download-resume");
     const resumePrint = document.getElementById("resume-print");
 
@@ -1669,6 +1679,7 @@
       document.body.classList.remove("printing-resume");
       resumePrint.innerHTML = "";
     });
+    */
   </script>
 </body>
 </html>
