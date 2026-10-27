@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maki | Data & ESG Analyst | Aspiring Data Engineer</title>
+  <title>Joan Maquinano | Data Engineer | Data & ESG Analyst</title>
 
   <!-- Bootstrap CSS -->
   <link
@@ -13,17 +13,17 @@
 
   <style>
     :root {
-      --bg: #f7f4f1;
-      --card: #fffdfa;
-      --text: #0f172a;
-      --muted: #64748b;
-      --primary: #2563eb;
-      --primary-soft: #dbeafe;
-      --border: #e2e8f0;
-      --coral: #d98278;
-      --sunshine: #d6a84f;
-      --mint: #83b8a8;
-      --lavender: #a99bc9;
+      --bg: #f4f1eb;
+      --card: #fbfaf7;
+      --text: #292824;
+      --muted: #716e67;
+      --primary: #6e273d;
+      --primary-soft: #eee5e6;
+      --border: #d8d1c7;
+      --coral: #6e273d;
+      --sunshine: #9c8052;
+      --mint: #647466;
+      --lavender: #8a6670;
     }
 
     .about-contact-link {
@@ -125,28 +125,14 @@
 
     body {
       padding-top: 74px;
-      background:
-        radial-gradient(circle at 8% 8%, rgba(232, 180, 202, 0.28) 0%, transparent 28%),
-        radial-gradient(circle at 31% 24%, rgba(184, 171, 213, 0.24) 0%, transparent 29%),
-        radial-gradient(circle at 57% 42%, rgba(231, 207, 143, 0.22) 0%, transparent 31%),
-        radial-gradient(circle at 79% 68%, rgba(231, 182, 145, 0.24) 0%, transparent 30%),
-        radial-gradient(circle at 98% 94%, rgba(153, 201, 177, 0.24) 0%, transparent 29%),
-        linear-gradient(135deg, #f7f1f2 0%, #f3f0f6 28%, #f8f5e9 52%, #f8f1ea 75%, #f0f6f1 100%);
-      background-attachment: fixed;
+      background-color: var(--bg);
       color: var(--text);
-      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .section-title {
       font-weight: 700;
       letter-spacing: -0.01em;
-    }
-
-    .section-title::after {
-      content: " ✦";
-      color: var(--coral);
-      font-size: 0.72em;
-      vertical-align: 0.12em;
     }
 
     .muted {
@@ -482,7 +468,7 @@
     @media print {
       @page {
         size: Letter;
-        margin: 0.35in;
+        margin: 0.5in;
       }
 
       body.printing-resume > *:not(#resume-print) {
@@ -494,80 +480,102 @@
       }
 
       body.printing-resume {
-        background: #fff;
-        color: #111827;
-        font-family: Arial, sans-serif;
+        background: #fff !important;
+        color: #111 !important;
+        font-family: Arial, Helvetica, sans-serif !important;
       }
 
       .resume-page {
         width: 100%;
-        max-height: 10.3in;
         margin: 0 auto;
-        overflow: hidden;
         padding: 0;
+        color: #111;
+        font: 10pt/1.12 Arial, Helvetica, sans-serif !important;
+      }
+
+      .resume-page * {
+        color: #111;
+        font-family: Arial, Helvetica, sans-serif !important;
       }
 
       .resume-header {
-        border-bottom: 1px solid #111827;
-        padding-bottom: 0.08in;
-        margin-bottom: 0.1in;
+        text-align: left;
+        margin-bottom: 0.12in;
       }
 
       .resume-header h1 {
         margin: 0;
-        color: #111827;
-        font-size: 19pt;
-      }
-
-      .resume-header p {
-        margin: 0.04in 0 0;
-        color: #111827;
-        font-size: 9pt;
+        font-family: Arial, Helvetica, sans-serif !important;
+        color: #2a7b89 !important;
+        font-size: 15pt;
         font-weight: 700;
       }
 
+      .resume-header p,
       .resume-contact {
-        margin-top: 0.03in;
-        color: #4b5563;
-        font-size: 7.5pt;
-      }
-
-      .resume-contact a {
-        color: inherit;
-        text-decoration: underline;
+        margin: 0.04in 0 0;
+        font-size: 10pt;
       }
 
       .resume-section {
-        margin-bottom: 0.09in;
+        margin: 0 0 0.11in;
       }
 
       .resume-section h2 {
-        margin: 0 0 0.05in;
-        color: #111827;
-        font-size: 9pt;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
+        margin: 0 0 0.045in;
+        font-size: 10.5pt;
+        font-weight: 700 !important;
       }
 
-      .resume-section p {
-        margin: 0 0 0.05in;
-        font-size: 7.5pt;
-        line-height: 1.2;
+      .resume-section p,
+      .resume-section li {
+        margin: 0 0 0.025in;
+        font-size: 10pt;
+        line-height: 1.12;
       }
 
-      .resume-item {
-        margin-bottom: 0.04in;
+      .resume-contact a,
+      .resume-project-link {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .resume-skills p {
+        margin: 0 0 0.025in;
+      }
+
+      .resume-project,
+      .resume-experience {
+        margin-bottom: 0.065in;
         break-inside: avoid;
       }
 
-      .resume-item h3 {
+      .resume-project h3,
+      .resume-experience h3 {
         margin: 0;
-        color: #1f2937;
-        font-size: 8pt;
+        font-size: 10pt;
+        font-weight: 700 !important;
+        text-transform: uppercase;
       }
 
-      .resume-item p {
-        color: #4b5563;
+      .resume-project-tech {
+        margin: 0.015in 0 0 !important;
+        font-size: 9pt !important;
+      }
+
+      .resume-meta {
+        display: inline;
+        margin: 0 !important;
+        font-size: 10pt !important;
+        font-style: normal;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+
+      .resume-project ul,
+      .resume-experience ul {
+        margin: 0.015in 0 0;
+        padding-left: 0.16in;
       }
 
       .resume-skills {
@@ -591,6 +599,7 @@
       transform: translateY(0);
     }
   </style>
+  <link rel="stylesheet" href="assets/css/editorial.css" />
 </head>
 
 <body>
@@ -647,18 +656,16 @@
 
           <div class="about-copy">
             <p class="about-lead">
-              <strong>BS Biology graduate from UPLB, DOST scholar, former researcher, current Data & ESG
-              Analyst, and aspiring Data Engineer. ✨</strong>
+              <strong>Data Engineer with 3+ years of experience across data analysis, SQL reporting, and
+              large-scale data quality assurance. A BS Biology graduate from UPLB and DOST scholar.</strong>
             </p>
             <p class="muted">
-              I started out studying fish, biodiversity, and ecological data. Somewhere between research
-              databases, species records, and sustainability reporting, I realized I enjoyed building and
-              improving data systems just as much as studying the things inside them.
+              I started out studying fish, biodiversity, and ecological data. My experience now spans
+              research databases, species records, sustainability reporting, and reliable data pipelines.
             </p>
             <p class="muted">
-              Today, I work with large-scale ESG datasets, obsess over data quality, and spend a
-              questionable amount of time cleaning, validating, and transforming data so other people
-              don’t have to.
+              I currently work with large-scale ESG datasets, improving data quality through careful
+              cleaning, validation, reconciliation, and clear documentation.
             </p>
           </div>
 
@@ -701,12 +708,29 @@
       <div class="text-center mb-5">
         <h2 class="section-title">Experience</h2>
         <p class="muted">
-          Data-quality, research, and reporting experience supporting a transition into
-          production-minded data engineering.
+          Data engineering, quality assurance, ESG reporting, and research experience.
         </p>
       </div>
 
       <div class="row g-3 justify-content-center">
+        <div class="col-md-10">
+          <div class="section-block">
+            <div class="experience-item">
+              <img src="assets/images/education/ftw.png" alt="For The Women Foundation logo" class="experience-logo" />
+              <div class="experience-content">
+                <h6 class="fw-semibold mb-1">Data Engineering Scholar · For The Women Foundation</h6>
+                <p class="muted small mb-2">June 2026 – October 2026</p>
+                <p class="muted small mb-0">
+                  Completed an industry-led data engineering program focused on Databricks, PySpark,
+                  SQL, data modeling, pipeline development, and data governance. Built five
+                  end-to-end data engineering projects and earned 131,000+ DataCamp XP through
+                  technical coursework and practical exercises.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="col-md-10">
           <div class="section-block">
             <div class="experience-item">
@@ -715,10 +739,17 @@
                 <h6 class="fw-semibold mb-1">Sustainability Data Analyst · Institutional Shareholder Services</h6>
                 <p class="muted small mb-2">April 2024 – Present</p>
                 <p class="muted small mb-0">
-                  Validate, clean, and reconcile EU Taxonomy sustainability data for 5,000+ companies,
-                  consistently delivering 99.07% accuracy against daily and weekly performance KPIs.
-                  Investigate discrepancies across systems, maintain audit-ready documentation, escalate
-                  Jira issues, and support post-publication data-quality checks.
+                  Processed and quality-checked EU Taxonomy data for 5,000+ companies, maintaining
+                  99.07% accuracy through structured validation and reconciliation.
+                </p>
+                <p class="muted small mb-0">
+                  Investigated and resolved data mismatches across systems and source disclosures,
+                  strengthening data integrity, methodology consistency, and audit readiness.
+                </p>
+                <p class="muted small mb-0">
+                  Improved downstream reliability through post-publication audits, workflow
+                  documentation, Jira issue tracking, and delivery of validated metrics for
+                  stakeholder reporting.
                 </p>
               </div>
             </div>
@@ -734,8 +765,11 @@
                 <p class="muted small mb-2">October 2022 – October 2023</p>
                 <p class="muted small mb-0">
                   Cleaned, validated, and standardized 1,000+ species records in the global FishBase
-                  database while collaborating with international researchers to resolve inconsistencies
-                  and improve cross-dataset reliability.
+                  database, improving data consistency and reliability.
+                </p>
+                <p class="muted small mb-0">
+                  Collaborated with international researchers to investigate and resolve cross-dataset
+                  inconsistencies, supporting global data standardization.
                 </p>
               </div>
             </div>
@@ -796,23 +830,54 @@
         <div class="col-lg-4 col-md-6">
           <div class="card h-100 shadow-sm">
             <div class="ratio ratio-16x9">
-              <img src="assets/images/case-studies/nyc-mobility-placeholder.svg" class="card-img-top" alt="NYC Mobility data pipeline placeholder" />
+              <img src="assets/images/case-studies/project-ahon-earthquake-preparedness.png" class="card-img-top" alt="Project AHON image about earthquake preparedness, provided by the project team" />
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="fw-semibold">Project AHON</h5>
+              <p class="muted flex-grow-1">
+                A Databricks lakehouse pipeline integrating CMCI, disaster-risk, and geographic data
+                with PySpark, SQL, and quality checks. Its dashboard brings together six datasets
+                covering 1,600+ local government units to compare local risk, preparedness, and
+                resilience for stronger disaster decision-making.
+              </p>
+              <div class="mt-2 d-flex gap-2 flex-wrap">
+                <span class="badge badge-tech">Databricks</span>
+                <span class="badge badge-tech">PySpark</span>
+                <span class="badge badge-tech">Delta Lake</span>
+                <span class="badge badge-tech">Disaster Preparedness</span>
+                <span class="badge badge-tech">Hazard Monitoring</span>
+                <span class="badge badge-tech">Six Datasets · 1,600+ LGUs</span>
+                <span class="badge badge-tech">Decision Support</span>
+              </div>
+              <div class="mt-3">
+                <a href="https://github.com/Project-AHON/AHON-Pipeline" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">View Repository</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 shadow-sm">
+            <div class="ratio ratio-16x9">
+              <img src="assets/images/case-studies/nyc-mobility-medallion-pipeline.png" class="card-img-top" alt="NYC Mobility medallion pipeline architecture" />
             </div>
             <div class="card-body d-flex flex-column">
               <h5 class="fw-semibold">NYC Mobility Data Pipeline</h5>
               <p class="muted flex-grow-1">
-                An end-to-end NYC mobility pipeline using Medallion Architecture to integrate
-                Green Taxi trips, weather, taxi zones, and traffic advisories into a trusted,
-                analytics-ready dataset. The project highlights ingestion from files, APIs, JSON
-                sources, and web scraping, with incremental loading, idempotency, deduplication,
-                and data-quality validation.
+                An end-to-end Medallion pipeline integrating Green Taxi trips, weather, taxi zones,
+                and traffic advisories from files, APIs, JSON, and web scraping. Led repository
+                management and CI/CD using Databricks Asset Bundles; the pipeline supports
+                incremental loading, idempotency, deduplication, and data-quality checks.
               </p>
               <div class="mt-2 d-flex gap-2 flex-wrap">
+                <span class="badge badge-tech">Databricks Asset Bundles</span>
+                <span class="badge badge-tech">PySpark</span>
                 <span class="badge badge-tech">Python</span>
                 <span class="badge badge-tech">SQL</span>
                 <span class="badge badge-tech">Medallion Architecture</span>
                 <span class="badge badge-tech">API & JSON Ingestion</span>
                 <span class="badge badge-tech">Web Scraping</span>
+                <span class="badge badge-tech">CI/CD</span>
                 <span class="badge badge-tech">Data Quality</span>
               </div>
               <div class="mt-3">
@@ -1245,50 +1310,42 @@
         </p>
       </div>
 
-      <div class="row text-center g-4 justify-content-center">
-        <div class="col-md-3 col-sm-6">
-          <div class="p-4 skill-card h-100">
-            <div class="d-flex justify-content-center gap-3 mb-3">
-              <img src="assets/images/skills/sql.png" alt="SQL" class="skill-logo" />
-              <img src="assets/images/skills/databricks.png" alt="Databricks" class="skill-logo" />
-            </div>
-            <h6 class="fw-semibold">Data Engineering</h6>
-            <p class="muted small mb-0">SQL, Databricks, Delta Lake, Apache Spark, ETL/ELT</p>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6">
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-4">
           <div class="p-4 skill-card h-100">
             <div class="d-flex justify-content-center gap-3 mb-3">
               <img src="assets/images/skills/python.png" alt="Python" class="skill-logo" />
               <img src="assets/images/skills/r.png" alt="R" class="skill-logo" />
+              <img src="assets/images/skills/sql.png" alt="SQL" class="skill-logo" />
             </div>
-            <h6 class="fw-semibold">Programming & Analysis</h6>
-            <p class="muted small mb-0">Python, R, exploratory analysis, statistics, data cleaning</p>
+            <h6 class="fw-semibold">Programming Languages & Data Processing</h6>
+            <p class="muted small mb-0">Python, SQL, R, PySpark, Spark SQL</p>
           </div>
         </div>
 
-        <div class="col-md-3 col-sm-6">
+        <div class="col-lg-4">
           <div class="p-4 skill-card h-100">
             <div class="d-flex justify-content-center gap-3 mb-3">
-              <img src="assets/images/skills/tableau.png" alt="Tableau" class="skill-logo" />
-              <img src="assets/images/skills/powerbi.png" alt="Power BI" class="skill-logo" />
-              <img src="assets/images/skills/excel.png" alt="Microsoft Excel" class="skill-logo" />
-            </div>
-            <h6 class="fw-semibold">Analytics & BI</h6>
-            <p class="muted small mb-0">Tableau, Power BI, Excel, Google Sheets, dashboards</p>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6">
-          <div class="p-4 skill-card h-100">
-            <div class="d-flex justify-content-center gap-3 mb-3">
-              <img src="assets/images/skills/esg.jpg" alt="ESG" class="skill-logo" />
+              <img src="assets/images/skills/databricks.png" alt="Databricks" class="skill-logo" />
               <img src="assets/images/skills/github.png" alt="GitHub" class="skill-logo" />
               <img src="assets/images/skills/jira.png" alt="Jira" class="skill-logo" />
+              <img src="assets/images/skills/excel.png" alt="Excel" class="skill-logo" />
+              <img src="assets/images/skills/powerbi.png" alt="Power BI" class="skill-logo" />
             </div>
-            <h6 class="fw-semibold">Data Quality & Tools</h6>
-            <p class="muted small mb-0">Validation, GitHub, Jira, documentation, ESG data</p>
+            <h6 class="fw-semibold">Tools & Platforms</h6>
+            <p class="muted small mb-0">Databricks, PostgreSQL, Git, GitHub, Excel, Power BI, Power Query, Jira</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="p-4 skill-card h-100">
+            <div class="d-flex justify-content-center gap-3 mb-3">
+              <img src="assets/images/skills/databricks.png" alt="Databricks" class="skill-logo" />
+              <img src="assets/images/skills/sql.png" alt="SQL" class="skill-logo" />
+              <img src="assets/images/skills/powerbi.png" alt="Power BI" class="skill-logo" />
+            </div>
+            <h6 class="fw-semibold">Data Engineering & Analytics</h6>
+            <p class="muted small mb-0">ETL/ELT pipeline development, Medallion Architecture, data cleaning, data validation, data quality assurance, data reconciliation, dimensional modeling, statistical analysis, dashboard development, business problem framing</p>
           </div>
         </div>
       </div>
@@ -1301,8 +1358,7 @@
       <div class="text-center mb-5">
         <h2 class="section-title">Education, Certifications & Learning</h2>
         <p class="muted">
-          Formal training and ongoing study supporting my transition from biology and ESG analysis
-          into data engineering.
+          Data engineering credentials, professional training, and a research-focused biology degree.
         </p>
       </div>
 
@@ -1314,8 +1370,8 @@
               <div>
                 <h6 class="fw-semibold mb-1">Current Learning Focus</h6>
                 <p class="muted small mb-0">
-                  Apache Spark, data quality engineering, CI/CD, data modeling, and production-oriented
-                  data engineering workflows.
+                  Advanced PySpark, Lakeflow, Databricks Asset Bundles, CI/CD, and production-grade
+                  data quality and governance.
                 </p>
               </div>
             </div>
@@ -1346,13 +1402,35 @@
         <div class="col-md-10">
           <div class="section-block">
             <div class="d-flex align-items-start gap-3">
+              <img src="assets/images/skills/databricks.png" alt="Databricks logo" width="48" />
+              <div>
+                <h6 class="fw-semibold mb-1">Databricks Certified Data Engineer Associate</h6>
+                <p class="muted mb-1">Databricks · October 2026 · Score: 96%</p>
+                <p class="muted small mb-0">
+                  Certified in data ingestion and transformation, data modeling, Lakeflow Jobs,
+                  CI/CD, performance optimization, governance, and security.
+                </p>
+                <img
+                  src="assets/images/certifications/databricks-data-engineer-associate.png"
+                  alt="Databricks Certified Data Engineer Associate certificate"
+                  class="certification-image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-10">
+          <div class="section-block">
+            <div class="d-flex align-items-start gap-3">
               <img src="assets/images/education/ftw.png" alt="FTW logo" width="48" />
               <div>
                 <h6 class="fw-semibold mb-1">Data Engineering Fellowship</h6>
-                <p class="muted mb-1">FTW Foundation Data Engineering Fellowship · July 2026</p>
+                <p class="muted mb-1">For The Women Foundation · June 2026 – October 2026</p>
                 <p class="muted small mb-2">
-                  Industry-led fellowship focused on SQL, Databricks, data modeling, medallion
-                  architecture, data quality, Git/GitHub, documentation, and data engineering practice.
+                  Completed an industry-led program focused on Databricks, PySpark, SQL, data modeling,
+                  pipeline development, and data governance. Delivered five end-to-end data engineering
+                  projects and earned 131,000+ DataCamp XP.
                 </p>
               </div>
             </div>
@@ -1456,7 +1534,6 @@
     const resumePrint = document.getElementById("resume-print");
 
     resumeButton.addEventListener("click", () => {
-      const text = (selector) => document.querySelector(selector)?.textContent.trim() || "";
       const items = (selector) => [...document.querySelectorAll(selector)];
       const escapeHtml = (value) => value.replace(/[&<>"']/g, (character) => ({
         "&": "&amp;",
@@ -1465,62 +1542,92 @@
         '"': "&quot;",
         "'": "&#039;"
       }[character]));
-      const compact = (value, limit) => {
-        const normalized = value.replace(/\s+/g, " ").trim();
-        return normalized.length > limit ? `${normalized.slice(0, limit).replace(/\s+\S*$/, "")}...` : normalized;
-      };
-      const aboutParagraphs = items("#about .about-copy p")
-        .map((item) => item.textContent.trim())
-        .filter((item) => item && !item.startsWith("Currently documenting"));
-      const caseStudies = items("#featured-case-studies .card, #case-studies .card").map((card) => ({
-        title: card.querySelector("h5")?.textContent.trim() || "",
-        description: card.querySelector("p")?.textContent.trim() || ""
-      }));
-      const experience = items("#experience .section-block").map((block) => ({
-        title: block.querySelector("h6")?.textContent.trim() || "",
-        description: [...block.querySelectorAll("p")].map((item) => item.textContent.trim()).join(" ")
-      }));
+      const sentences = (value) => value.split(/(?<=[.!?])\s+(?=[A-Z])/).map((part) => part.trim()).filter(Boolean);
       const skills = items("#skills .skill-card").map((card) => ({
         title: card.querySelector("h6")?.textContent.trim() || "",
         description: card.querySelector("p")?.textContent.trim() || ""
       }));
-      const education = items("#education .section-block").map((block) => ({
+      const projects = items("#featured-case-studies .card").map((card) => ({
+        title: card.querySelector("h5")?.textContent.trim() || "",
+        description: card.querySelector("p")?.textContent.trim() || "",
+        tags: [...card.querySelectorAll(".badge")].map((badge) => badge.textContent.trim()),
+        href: card.querySelector('a[href^="https://github.com"]')?.href || ""
+      })).filter((project) => /Project AHON|NYC Mobility/.test(project.title));
+      const experienceOrder = [
+        "Sustainability Data Analyst",
+        "Data Engineering Scholar",
+        "Research Assistant II"
+      ];
+      const experience = items("#experience .section-block").map((block) => {
+        const title = block.querySelector("h6")?.textContent.trim() || "";
+        const paragraphs = [...block.querySelectorAll("p")].map((paragraph) => paragraph.textContent.trim()).filter(Boolean);
+        const dateIndex = paragraphs.findIndex((paragraph) => /(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}/i.test(paragraph));
+        return {
+          title,
+          date: dateIndex >= 0 ? paragraphs[dateIndex] : "",
+          bullets: paragraphs.filter((_, index) => index !== dateIndex).flatMap(sentences)
+        };
+      }).filter((item) => experienceOrder.some((title) => item.title.includes(title)))
+        .sort((left, right) => experienceOrder.findIndex((title) => left.title.includes(title)) - experienceOrder.findIndex((title) => right.title.includes(title)));
+      const educationBlocks = items("#education .section-block").map((block) => ({
         title: block.querySelector("h6")?.textContent.trim() || "",
-        description: [...block.querySelectorAll("p")].map((item) => item.textContent.trim()).join(" ")
-      })).filter((item) => item.title).slice(-3);
+        paragraphs: [...block.querySelectorAll("p")].map((paragraph) => paragraph.textContent.trim()).filter(Boolean),
+        href: block.querySelector('a[href^="https://"]')?.href || block.querySelector("img.certification-image")?.src || ""
+      })).filter((item) => item.title);
+      const degree = educationBlocks.find((item) => item.title.includes("Bachelor of Science"));
+      const certifications = educationBlocks.filter((item) =>
+        /Data Engineer Associate|Data Engineering Fellowship|Data Analytics Professional Certificate/.test(item.title)
+      );
 
       resumePrint.innerHTML = `
         <div class="resume-page">
           <header class="resume-header">
             <h1>Joan Maquinano</h1>
             <div class="resume-contact">
-              <a href="tel:+639268918105">+63 926 891 8105</a> ·
-              <a href="mailto:jrmaquinano@alum.up.edu.ph">jrmaquinano@alum.up.edu.ph</a> ·
-              <a href="https://www.linkedin.com/in/jrmaquinano/" target="_blank" rel="noopener noreferrer">linkedin.com/in/jrmaquinano</a> ·
+              Taguig, Philippines |
+              <a href="mailto:jrmaquinano@alum.up.edu.ph">jrmaquinano@alum.up.edu.ph</a> |
+              <a href="tel:+639268918105">+63 926 891 8105</a> |
+              <a href="https://www.linkedin.com/in/jrmaquinano/" target="_blank" rel="noopener noreferrer">linkedin.com/in/jrmaquinano</a> |
               <a href="https://github.com/JoanMaquinano" target="_blank" rel="noopener noreferrer">github.com/JoanMaquinano</a>
             </div>
+            <p class="resume-portfolio-link">Projects | Portfolio:
+              <a href="https://joanmaquinano.github.io/jo-maquinano-portfolio" target="_blank" rel="noopener noreferrer">joanmaquinano.github.io/jo-maquinano-portfolio</a>
+            </p>
           </header>
           <section class="resume-section">
-            <h2>Profile</h2>
-            <p>${escapeHtml(compact(aboutParagraphs[0] || "Data analyst transitioning into data engineering with experience in ESG data quality, research data, SQL, and Databricks workflows.", 320))}</p>
+            <h2>Professional Summary</h2>
+            <p>Data Engineer with 3+ years of experience across data analysis, SQL reporting, and large-scale data quality assurance. Skilled in Databricks, PySpark, SQL, ETL pipelines, and dimensional modeling.</p>
+          </section>
+          <section class="resume-section">
+            <h2>Technical Skills &amp; Abilities</h2>
+            <div class="resume-skills">
+              ${skills.map((item) => `<p><strong>${escapeHtml(item.title)}:</strong> ${escapeHtml(item.description)}</p>`).join("")}
+            </div>
+          </section>
+          <section class="resume-section">
+            <h2>Projects</h2>
+            ${projects.map((project) => `
+              <div class="resume-project">
+                <h3>${project.href ? `<a class="resume-project-link" href="${escapeHtml(project.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(project.title)}</a>` : escapeHtml(project.title)} | ${project.title.includes("AHON") ? "FTW DATA ENGINEERING PROGRAM" : "GITHUB PROJECT"}</h3>
+                <p class="resume-project-tech">${escapeHtml(project.tags.join(", "))}</p>
+                <ul>${sentences(project.description).map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>
+              </div>`).join("")}
           </section>
           <section class="resume-section">
             <h2>Experience</h2>
-            ${experience.map((item) => `<div class="resume-item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(compact(item.description, 360))}</p></div>`).join("")}
+            ${experience.map((item) => `
+              <div class="resume-experience">
+                <h3>${escapeHtml(item.title.replace(" · ", " | "))}${item.date ? ` <span class="resume-meta">| ${escapeHtml(item.date.replace(" – ", " - "))}</span>` : ""}</h3>
+                <ul>${item.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>
+              </div>`).join("")}
           </section>
           <section class="resume-section">
-            <h2>Selected Case Studies</h2>
-            ${caseStudies.map((item) => `<div class="resume-item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></div>`).join("")}
+            <h2>Education</h2>
+            ${degree ? `<div class="resume-experience"><h3>${escapeHtml(degree.title.toUpperCase())} | ${escapeHtml((degree.paragraphs[0] || "").replace(" · ", " | "))}</h3><ul>${degree.paragraphs.slice(1).flatMap(sentences).map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul></div>` : ""}
           </section>
           <section class="resume-section">
-            <h2>Technical Skills</h2>
-            <div class="resume-skills">
-              ${skills.map((item) => `<p><strong>${escapeHtml(item.title)}:</strong> ${escapeHtml(compact(item.description, 130))}</p>`).join("")}
-            </div>
-          </section>
-          <section class="resume-section">
-            <h2>Education & Credentials</h2>
-            ${education.map((item) => `<div class="resume-item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(compact(item.description, 190))}</p></div>`).join("")}
+            <h2>Certifications and Training</h2>
+            ${certifications.map((item) => `<div class="resume-experience"><h3>${escapeHtml(item.title.toUpperCase())} | ${escapeHtml((item.paragraphs[0] || "").replace(" · Issued ", " | ").replace(" · Expires ", " - Expires ").replace(" · ", " | "))}</h3><ul>${item.paragraphs.slice(1).flatMap(sentences).map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>${item.href ? `<p><a class="resume-project-link" href="${escapeHtml(item.href)}" target="_blank" rel="noopener noreferrer">View credential</a></p>` : ""}</div>`).join("")}
           </section>
         </div>`;
 
