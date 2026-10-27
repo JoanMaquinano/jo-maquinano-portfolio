@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joan Maquinano | Data Engineer | Data & ESG Analyst</title>
+  <title>Joan Maquinano | Certified Data Engineer</title>
 
   <!-- Bootstrap CSS -->
   <link
@@ -324,7 +324,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center center;
+      object-position: center top;
       border: 1px solid var(--border);
       border-radius: 1rem;
       box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
@@ -343,7 +343,7 @@
 
       .profile-img {
         height: auto;
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 4 / 5;
       }
     }
 
@@ -600,9 +600,68 @@
     }
   </style>
   <link rel="stylesheet" href="assets/css/editorial.css" />
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("portfolio-theme");
+      document.documentElement.dataset.theme = savedTheme === "dark" || savedTheme === "light"
+        ? savedTheme
+        : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    } catch {
+      document.documentElement.dataset.theme = "light";
+    }
+  </script>
+  <style>
+    body.portfolio-home {
+      --bg: #fff5ee;
+      --card: #fffaf5;
+      --text: #33211b;
+      --muted: #715b4f;
+      --primary: #8b0000;
+      --primary-soft: #f5e5dc;
+      --border: #d2b48c;
+      --editorial-rule: #d2b48c;
+      --coral: #a0522d;
+      --sunshine: #d2b48c;
+      --mint: #806044;
+      --lavender: #a0522d;
+      background-color: var(--bg) !important;
+    }
+
+    body.portfolio-home a:hover {
+      color: #6f0000;
+    }
+
+    body.portfolio-home .btn-primary:hover,
+    body.portfolio-home .about-resume-button:hover {
+      background: #6f0000 !important;
+      border-color: #6f0000 !important;
+    }
+
+    body.portfolio-home .badge,
+    body.portfolio-home .badge-tech,
+    body.portfolio-home .hero .badge {
+      background: #f5deb3 !important;
+      border-color: #d2b48c !important;
+      color: #513326 !important;
+    }
+
+    body.portfolio-home .card:hover,
+    body.portfolio-home .section-card:hover,
+    body.portfolio-home .skill-card:hover {
+      border-color: #a0522d !important;
+    }
+
+    .certification-badge {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 auto;
+      object-fit: contain;
+      object-position: center;
+    }
+  </style>
 </head>
 
-<body>
+<body class="portfolio-home">
   <div id="top"></div>
 
   <!-- NAVBAR -->
@@ -632,6 +691,11 @@
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <button type="button" class="theme-toggle mt-2 mt-lg-0" aria-label="Switch to night mode" aria-pressed="false">
+              <span class="theme-toggle-icon" aria-hidden="true">☾</span><span>Night mode</span>
+            </button>
+          </li>
         </ul>
       </div>
     </div>
@@ -643,7 +707,7 @@
     <div class="row align-items-stretch g-4 reveal">
       <div class="col-md-5 text-center d-flex justify-content-center align-items-stretch">
         <div class="about-photo">
-          <img src="assets/images/about/profile.jpg" alt="Maki professional portrait" class="img-fluid profile-img" />
+          <img src="assets/images/about/joan-professional-portrait.jpg" alt="Joan Maquinano in a cream blazer" class="img-fluid profile-img" />
         </div>
       </div>
 
@@ -656,16 +720,17 @@
 
           <div class="about-copy">
             <p class="about-lead">
-              <strong>Data Engineer with 3+ years of experience across data analysis, SQL reporting, and
-              large-scale data quality assurance. A BS Biology graduate from UPLB and DOST scholar.</strong>
+              <strong>Data Engineer with 3+ years of experience across data analysis, SQL reporting,
+              and large-scale data quality assurance. Databricks Certified Data Engineer Associate
+              with a 96% certification score.</strong>
             </p>
             <p class="muted">
-              I started out studying fish, biodiversity, and ecological data. My experience now spans
-              research databases, species records, sustainability reporting, and reliable data pipelines.
+              I build reliable data workflows using Databricks, PySpark, SQL, ETL pipelines, and
+              dimensional modeling, with a focus on accurate, analytics-ready data.
             </p>
             <p class="muted">
-              I currently work with large-scale ESG datasets, improving data quality through careful
-              cleaning, validation, reconciliation, and clear documentation.
+              My background is in biology and ecological research, and I bring that evidence-first
+              approach to sustainability data, research databases, and data engineering.
             </p>
           </div>
 
@@ -716,27 +781,9 @@
         <div class="col-md-10">
           <div class="section-block">
             <div class="experience-item">
-              <img src="assets/images/education/ftw.png" alt="For The Women Foundation logo" class="experience-logo" />
+              <img src="assets/images/experience/iss.png" alt="ISS STOXX logo" class="experience-logo" />
               <div class="experience-content">
-                <h6 class="fw-semibold mb-1">Data Engineering Scholar · For The Women Foundation</h6>
-                <p class="muted small mb-2">June 2026 – October 2026</p>
-                <p class="muted small mb-0">
-                  Completed an industry-led data engineering program focused on Databricks, PySpark,
-                  SQL, data modeling, pipeline development, and data governance. Built five
-                  end-to-end data engineering projects and earned 131,000+ DataCamp XP through
-                  technical coursework and practical exercises.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-10">
-          <div class="section-block">
-            <div class="experience-item">
-              <img src="assets/images/experience/iss.png" alt="Institutional Shareholder Services logo" class="experience-logo" />
-              <div class="experience-content">
-                <h6 class="fw-semibold mb-1">Sustainability Data Analyst · Institutional Shareholder Services</h6>
+                <h6 class="fw-semibold mb-1">Sustainability Data Analyst · ISS STOXX</h6>
                 <p class="muted small mb-2">April 2024 – Present</p>
                 <p class="muted small mb-0">
                   Processed and quality-checked EU Taxonomy data for 5,000+ companies, maintaining
@@ -750,6 +797,24 @@
                   Improved downstream reliability through post-publication audits, workflow
                   documentation, Jira issue tracking, and delivery of validated metrics for
                   stakeholder reporting.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-10">
+          <div class="section-block">
+            <div class="experience-item">
+              <img src="assets/images/education/ftw.png" alt="For The Women Foundation logo" class="experience-logo" />
+              <div class="experience-content">
+                <h6 class="fw-semibold mb-1">Data Engineering Scholar · For The Women Foundation</h6>
+                <p class="muted small mb-2">June 2026 – October 2026</p>
+                <p class="muted small mb-0">
+                  Completed an industry-led data engineering program focused on Databricks, PySpark,
+                  SQL, data modeling, pipeline development, and data governance. Built five
+                  end-to-end data engineering projects and earned 131,000+ DataCamp XP through
+                  technical coursework and practical exercises.
                 </p>
               </div>
             </div>
@@ -810,47 +875,25 @@
         <div class="col-lg-4 col-md-6">
           <div class="card h-100 shadow-sm">
             <div class="ratio ratio-16x9">
-              <img src="assets/images/case-studies/capstone-placeholder.svg" class="card-img-top" alt="Capstone project coming October 2026 placeholder" />
+              <img src="assets/images/case-studies/project-ahon-earthquake-preparedness.png" class="card-img-top" alt="Project AHON team cover about earthquake preparedness in the Philippines" />
             </div>
             <div class="card-body d-flex flex-column">
-              <h5 class="fw-semibold">Capstone Project</h5>
+              <h5 class="fw-semibold">Project AHON · Data Engineering Capstone</h5>
               <p class="muted flex-grow-1">
-                A portfolio capstone project focused on applying end-to-end data engineering
-                practices to a production-minded analytics problem. Details, implementation,
-                and project outputs coming October 2026.
-              </p>
-              <div class="mt-2 d-flex gap-2 flex-wrap">
-                <span class="badge badge-tech">Coming October 2026</span>
-                <span class="badge badge-tech">Data Engineering</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-          <div class="card h-100 shadow-sm">
-            <div class="ratio ratio-16x9">
-              <img src="assets/images/case-studies/project-ahon-earthquake-preparedness.png" class="card-img-top" alt="Project AHON image about earthquake preparedness, provided by the project team" />
-            </div>
-            <div class="card-body d-flex flex-column">
-              <h5 class="fw-semibold">Project AHON</h5>
-              <p class="muted flex-grow-1">
-                A Databricks lakehouse pipeline integrating CMCI, disaster-risk, and geographic data
-                with PySpark, SQL, and quality checks. Its dashboard brings together six datasets
-                covering 1,600+ local government units to compare local risk, preparedness, and
-                resilience for stronger disaster decision-making.
+                A team-built Databricks platform that brings Philippine earthquake observations,
+                population, local-capacity indicators, and disaster-fund data into a traceable
+                analytics pipeline. I owned the CMCI data stream, from ingestion and locality
+                reconciliation through validated, analytics-ready outputs.
               </p>
               <div class="mt-2 d-flex gap-2 flex-wrap">
                 <span class="badge badge-tech">Databricks</span>
-                <span class="badge badge-tech">PySpark</span>
-                <span class="badge badge-tech">Delta Lake</span>
-                <span class="badge badge-tech">Disaster Preparedness</span>
-                <span class="badge badge-tech">Hazard Monitoring</span>
-                <span class="badge badge-tech">Six Datasets · 1,600+ LGUs</span>
-                <span class="badge badge-tech">Decision Support</span>
+                <span class="badge badge-tech">PySpark · SQL</span>
+                <span class="badge badge-tech">35 CMCI Indicators</span>
+                <span class="badge badge-tech">PSGC Data Quality</span>
               </div>
-              <div class="mt-3">
-                <a href="https://github.com/Project-AHON/AHON-Pipeline" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">View Repository</a>
+              <div class="mt-3 d-flex flex-wrap gap-2">
+                <a href="ahon-capstone-case.html" class="btn btn-outline-primary btn-sm">Read Case Study</a>
+                <a href="https://github.com/Project-AHON/AHON-Pipeline" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-sm">View Repository</a>
               </div>
             </div>
           </div>
@@ -881,7 +924,8 @@
                 <span class="badge badge-tech">Data Quality</span>
               </div>
               <div class="mt-3">
-                <a href="https://github.com/JoanMaquinano/NYC-Mobility" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">View Repository</a>
+                <a href="nyc-mobility-case.html" class="btn btn-outline-primary btn-sm">Read Case Study</a>
+                <a href="https://github.com/JoanMaquinano/NYC-Mobility" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-sm">View Repository</a>
               </div>
             </div>
           </div>
@@ -905,7 +949,8 @@
                 <span class="badge badge-tech">Analytics</span>
               </div>
               <div class="mt-3">
-                <a href="https://github.com/catweyine/OULAD-Pipeline" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">View Repository</a>
+                <a href="oulad-case.html" class="btn btn-outline-primary btn-sm">Read Case Study</a>
+                <a href="https://github.com/catweyine/OULAD-Pipeline" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-sm">View Repository</a>
               </div>
             </div>
           </div>
@@ -1356,7 +1401,7 @@
   <section id="education" class="py-5">
     <div class="container reveal">
       <div class="text-center mb-5">
-        <h2 class="section-title">Education, Certifications & Learning</h2>
+        <h2 class="section-title">Education &amp; Certifications</h2>
         <p class="muted">
           Data engineering credentials, professional training, and a research-focused biology degree.
         </p>
@@ -1366,12 +1411,17 @@
         <div class="col-md-10">
           <div class="section-block">
             <div class="d-flex align-items-start gap-3">
-              <div class="section-block p-2" aria-hidden="true">LEARN</div>
+              <img
+                src="assets/images/certifications/databricks-data-engineer-associate.png"
+                alt="Databricks Certified Data Engineer Associate badge"
+                class="certification-badge"
+              />
               <div>
-                <h6 class="fw-semibold mb-1">Current Learning Focus</h6>
+                <h6 class="fw-semibold mb-1">Databricks Certified Data Engineer Associate</h6>
+                <p class="muted mb-1">Databricks · October 2026 · Score: 96%</p>
                 <p class="muted small mb-0">
-                  Advanced PySpark, Lakeflow, Databricks Asset Bundles, CI/CD, and production-grade
-                  data quality and governance.
+                  Certified in data ingestion and transformation, data modeling, Lakeflow Jobs,
+                  CI/CD, performance optimization, governance, and security.
                 </p>
               </div>
             </div>
@@ -1384,7 +1434,7 @@
               <img src="assets/images/education/datacamp.jpg" alt="DataCamp logo" width="48" />
               <div>
                 <h6 class="fw-semibold mb-1">Data Engineer Associate</h6>
-                <p class="muted mb-1">DataCamp · Issued September 2026 · Expires September 2028</p>
+                <p class="muted mb-1">DataCamp · Issued September 2026</p>
                 <p class="muted small mb-2">
                   Credential ID: DEA0013147675139. Foundational skills in data engineering, SQL,
                   data transformation, and analytics-ready data workflows.
@@ -1394,27 +1444,6 @@
                   target="_blank"
                   class="btn btn-outline-primary btn-sm"
                 >Show credential <span aria-hidden="true">↗</span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-10">
-          <div class="section-block">
-            <div class="d-flex align-items-start gap-3">
-              <img src="assets/images/skills/databricks.png" alt="Databricks logo" width="48" />
-              <div>
-                <h6 class="fw-semibold mb-1">Databricks Certified Data Engineer Associate</h6>
-                <p class="muted mb-1">Databricks · October 2026 · Score: 96%</p>
-                <p class="muted small mb-0">
-                  Certified in data ingestion and transformation, data modeling, Lakeflow Jobs,
-                  CI/CD, performance optimization, governance, and security.
-                </p>
-                <img
-                  src="assets/images/certifications/databricks-data-engineer-associate.png"
-                  alt="Databricks Certified Data Engineer Associate certificate"
-                  class="certification-image"
-                />
               </div>
             </div>
           </div>
@@ -1477,7 +1506,7 @@
                 <p class="muted small mb-2">
                   Awardee, Department of Science and Technology (DOST) Merit Scholarship.
                 </p>
-                <a href="https://drive.google.com/file/d/17AIBUOZ9daZnIDzM9q6BNxEPBhBRr0Bf/view" target="_blank" class="btn btn-outline-dark btn-sm">View diploma <span aria-hidden="true">↗</span></a>
+                <a href="https://drive.google.com/file/d/17AIBUOZ9daZnIDzM9q6BNxEPBhBRr0Bf/view" target="_blank" class="btn btn-outline-primary btn-sm">View diploma <span aria-hidden="true">↗</span></a>
               </div>
             </div>
           </div>
@@ -1517,6 +1546,7 @@
   <div id="resume-print" aria-hidden="true"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme-toggle.js"></script>
 
   <script>
     // Smooth reveal animation on scroll

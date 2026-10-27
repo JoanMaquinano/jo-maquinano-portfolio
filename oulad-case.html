@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="OULAD Data Pipeline case study: a SQL-based Bronze, Silver, and Gold pipeline for learning analytics." />
+  <title>Case Study | OULAD Data Pipeline</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="assets/css/editorial.css" />
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("portfolio-theme");
+      document.documentElement.dataset.theme = savedTheme === "dark" || savedTheme === "light"
+        ? savedTheme
+        : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    } catch {
+      document.documentElement.dataset.theme = "light";
+    }
+  </script>
+  <style>
+    .project-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 1.15fr);
+      align-items: center;
+      gap: clamp(1.5rem, 4vw, 3.5rem);
+    }
+
+    .project-hero-image {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: #fffaf5;
+    }
+
+    .project-section {
+      margin-top: clamp(2.5rem, 6vw, 4.5rem);
+    }
+
+    .project-section-heading {
+      max-width: 46rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-panel {
+      height: 100%;
+      padding: clamp(1.25rem, 2.5vw, 2rem);
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .project-panel h3 {
+      font-size: 1.35rem;
+    }
+
+    .project-panel ul {
+      padding-left: 1.1rem;
+      margin-bottom: 0;
+    }
+
+    .project-panel li + li {
+      margin-top: 0.55rem;
+    }
+
+    .project-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .project-stat {
+      padding: 1.25rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .project-stat:last-child {
+      border-right: 0;
+    }
+
+    .project-stat strong {
+      display: block;
+      color: var(--primary);
+      font: 500 clamp(1.4rem, 2.5vw, 2rem)/1.1 "Baskerville", "Palatino Linotype", Georgia, serif;
+    }
+
+    .project-stat span {
+      display: block;
+      margin-top: 0.4rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+
+    .project-callout {
+      padding: 1.25rem 1.5rem;
+      border-left: 3px solid var(--primary);
+      background: var(--primary-soft);
+    }
+
+    @media (max-width: 767.98px) {
+      .project-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .project-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .project-stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      .project-stat:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--border);
+      }
+    }
+
+    @media (max-width: 420px) {
+      .project-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .project-stat {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .project-stat:last-child {
+        border-bottom: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar top-nav sticky-top">
+    <div class="container d-flex justify-content-between align-items-center gap-3">
+      <a href="index.html#featured-case-studies" class="navbar-brand fw-semibold text-decoration-none">
+        &larr; Back to Featured Work
+      </a>
+      <button type="button" class="theme-toggle" aria-label="Switch to night mode" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true">☾</span><span>Night mode</span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="container py-4 py-md-5">
+    <header class="project-hero">
+      <div>
+        <span class="hero-chip">FTW Activity · Learning Analytics</span>
+        <h1 class="display-5 fw-bold mt-2">OULAD Data Pipeline</h1>
+        <p class="lead">
+          Transforming student, assessment, course, and learning-platform records into analysis-ready
+          models.
+        </p>
+        <p class="muted">
+          This collaborative Week 7 FTW activity builds a SQL pipeline for the Open University
+          Learning Analytics Dataset. Bronze preserves source tables, Silver applies cleaning and
+          validation, and Gold organizes learning activity and performance into dimensional models.
+        </p>
+        <div class="d-flex flex-wrap gap-2 mt-4">
+          <a class="btn btn-primary" href="https://github.com/catweyine/OULAD-Pipeline" target="_blank" rel="noopener noreferrer">View GitHub Repository</a>
+          <a class="btn btn-outline-primary" href="#data-model">Explore the Data Model</a>
+        </div>
+      </div>
+      <figure class="m-0">
+        <img
+          src="assets/images/case-studies/oulad.png"
+          class="project-hero-image"
+          alt="Open University Learning Analytics Dataset overview, covering students, courses, and Virtual Learning Environment interactions"
+        />
+        <figcaption class="muted small mt-2">The OULAD includes seven selected courses and more than 30,000 students.</figcaption>
+      </figure>
+    </header>
+
+    <section class="project-section" aria-label="Project scale">
+      <div class="project-stats">
+        <div class="project-stat"><strong>7</strong><span>source tables in the Bronze and Silver layers</span></div>
+        <div class="project-stat"><strong>8</strong><span>Gold dimensions for learning context</span></div>
+        <div class="project-stat"><strong>2</strong><span>Gold facts for performance and engagement</span></div>
+        <div class="project-stat"><strong>3</strong><span>layer-level validation stages</span></div>
+      </div>
+    </section>
+
+    <section class="project-section" aria-labelledby="questions-heading">
+      <div class="project-section-heading">
+        <span class="hero-chip">01 · The analytical questions</span>
+        <h2 id="questions-heading" class="section-title mt-2">Understand engagement alongside student outcomes.</h2>
+        <p class="muted">
+          OULAD combines student demographics, course and assessment records, registration, and daily
+          Virtual Learning Environment activity. The pipeline is structured to support questions
+          about how learners interact with course materials and how those patterns relate to outcomes.
+        </p>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <article class="project-panel">
+            <h3>Engagement &amp; performance</h3>
+            <p class="muted mb-0">How does learning-platform activity relate to assessment results and course completion?</p>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="project-panel">
+            <h3>Withdrawal patterns</h3>
+            <p class="muted mb-0">What changes in activity or performance appear among students who withdraw?</p>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="project-panel">
+            <h3>Activity over time</h3>
+            <p class="muted mb-0">When do students access resources, and how does activity change across a course?</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="data-model" class="project-section" aria-labelledby="model-heading">
+      <div class="project-section-heading">
+        <span class="hero-chip">02 · SQL pipeline &amp; model</span>
+        <h2 id="model-heading" class="section-title mt-2">Seven source tables become a star-schema learning model.</h2>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-4">
+          <article class="project-panel layer-source">
+            <h3>Bronze · source tables</h3>
+            <p class="muted mb-0">
+              Loads the seven OULAD tables as received: courses, assessments, student assessments,
+              student information, registrations, VLE interactions, and VLE resource metadata.
+            </p>
+          </article>
+        </div>
+        <div class="col-lg-4">
+          <article class="project-panel layer-clean">
+            <h3>Silver · cleaned tables</h3>
+            <p class="muted mb-0">
+              Applies type casting, whitespace and empty-string cleanup, valid-range handling, and
+              referential-integrity checks to prepare consistent records.
+            </p>
+          </article>
+        </div>
+        <div class="col-lg-4">
+          <article class="project-panel layer-mart">
+            <h3>Gold · dimensional model</h3>
+            <p class="muted mb-0">
+              Organizes student, course, assessment, VLE resource, enrollment, course-phase, and
+              course-week context around two analysis facts.
+            </p>
+          </article>
+        </div>
+      </div>
+      <div class="row g-3 mt-1">
+        <div class="col-md-6">
+          <article class="project-panel">
+            <h3>Fact · student performance</h3>
+            <p class="muted mb-0">
+              Connects students, courses, and assessments with submitted outcomes for performance
+              and completion analysis.
+            </p>
+          </article>
+        </div>
+        <div class="col-md-6">
+          <article class="project-panel">
+            <h3>Fact · VLE engagement</h3>
+            <p class="muted mb-0">
+              Models learner interactions with course resources over time to support engagement
+              analysis across weeks and course phases.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section" aria-labelledby="quality-heading">
+      <div class="project-section-heading">
+        <span class="hero-chip">03 · Data quality</span>
+        <h2 id="quality-heading" class="section-title mt-2">Validate the data as it moves through each layer.</h2>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <article class="project-panel">
+            <h3>Bronze checks</h3>
+            <p class="muted mb-0">Validate source loading, expected structures, row counts, and basic integrity.</p>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="project-panel">
+            <h3>Silver checks</h3>
+            <p class="muted mb-0">Check cleaned types, standardized text, valid ranges, and relationships between records.</p>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="project-panel">
+            <h3>Gold checks</h3>
+            <p class="muted mb-0">Verify the dimensional structures and fact-table outputs used for analysis.</p>
+          </article>
+        </div>
+      </div>
+      <div class="project-callout mt-3">
+        <strong>Collaborative learning project.</strong>
+        <span class="muted">
+          The repository identifies this as a Week 7 FTW activity. The case study describes the
+          shared pipeline scope and does not assign individual ownership to specific tables or tasks.
+        </span>
+      </div>
+    </section>
+
+    <footer class="project-section border-top pt-4 pb-3">
+      <p class="muted small">
+        Project scope, table counts, and pipeline steps are summarized from the
+        <a href="https://github.com/catweyine/OULAD-Pipeline" target="_blank" rel="noopener noreferrer">OULAD-Pipeline repository</a>
+        README.
+      </p>
+      <a href="index.html#featured-case-studies" class="btn btn-outline-primary btn-sm">Back to Featured Work</a>
+    </footer>
+  </main>
+
+  <script src="assets/js/theme-toggle.js"></script>
+</body>
+</html>

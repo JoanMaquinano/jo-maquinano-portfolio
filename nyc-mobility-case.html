@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NYC Mobility Data Pipeline case study: a Databricks Medallion pipeline integrating taxi, weather, zone, and traffic data." />
+  <title>Case Study | NYC Mobility Data Pipeline</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="assets/css/editorial.css" />
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("portfolio-theme");
+      document.documentElement.dataset.theme = savedTheme === "dark" || savedTheme === "light"
+        ? savedTheme
+        : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    } catch {
+      document.documentElement.dataset.theme = "light";
+    }
+  </script>
+  <style>
+    .project-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      align-items: center;
+      gap: clamp(1.5rem, 4vw, 3.5rem);
+    }
+
+    .project-hero-image {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: #fffaf5;
+    }
+
+    .project-section {
+      margin-top: clamp(2.5rem, 6vw, 4.5rem);
+    }
+
+    .project-section-heading {
+      max-width: 46rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-panel {
+      height: 100%;
+      padding: clamp(1.25rem, 2.5vw, 2rem);
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .project-panel h3 {
+      font-size: 1.35rem;
+    }
+
+    .project-panel ul {
+      padding-left: 1.1rem;
+      margin-bottom: 0;
+    }
+
+    .project-panel li + li {
+      margin-top: 0.55rem;
+    }
+
+    .project-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .project-stat {
+      padding: 1.25rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .project-stat:last-child {
+      border-right: 0;
+    }
+
+    .project-stat strong {
+      display: block;
+      color: var(--primary);
+      font: 500 clamp(1.4rem, 2.5vw, 2rem)/1.1 "Baskerville", "Palatino Linotype", Georgia, serif;
+    }
+
+    .project-stat span {
+      display: block;
+      margin-top: 0.4rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+
+    .source-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .source-flow-item {
+      padding: 1rem;
+      border: 1px solid var(--border);
+      background: var(--primary-soft);
+    }
+
+    .source-flow-item strong,
+    .source-flow-item span {
+      display: block;
+    }
+
+    .source-flow-item span {
+      margin-top: 0.25rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .project-callout {
+      padding: 1.25rem 1.5rem;
+      border-left: 3px solid var(--primary);
+      background: var(--primary-soft);
+    }
+
+    @media (max-width: 767.98px) {
+      .project-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .project-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .project-stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      .project-stat:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .source-flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 420px) {
+      .project-stats,
+      .source-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .project-stat {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .project-stat:last-child {
+        border-bottom: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar top-nav sticky-top">
+    <div class="container d-flex justify-content-between align-items-center gap-3">
+      <a href="index.html#featured-case-studies" class="navbar-brand fw-semibold text-decoration-none">
+        &larr; Back to Featured Work
+      </a>
+      <button type="button" class="theme-toggle" aria-label="Switch to night mode" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true">☾</span><span>Night mode</span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="container py-4 py-md-5">
+    <header class="project-hero">
+      <div>
+        <span class="hero-chip">End-to-End Data Engineering · NYC</span>
+        <h1 class="display-5 fw-bold mt-2">NYC Mobility Data Pipeline</h1>
+        <p class="lead">
+          Integrating trips, weather, geography, and traffic context into a trusted,
+          analytics-ready mobility dataset.
+        </p>
+        <p class="muted">
+          This Databricks project brings together NYC Green Taxi trips, historical weather, taxi
+          zone reference data, and traffic advisories. Its Medallion pipeline is designed for
+          repeatable incremental processing, explicit quality validation, and dependable downstream
+          analysis.
+        </p>
+        <div class="d-flex flex-wrap gap-2 mt-4">
+          <a class="btn btn-primary" href="https://github.com/JoanMaquinano/NYC-Mobility" target="_blank" rel="noopener noreferrer">View GitHub Repository</a>
+          <a class="btn btn-outline-primary" href="#pipeline">Explore the Pipeline</a>
+        </div>
+      </div>
+      <figure class="m-0">
+        <img
+          src="assets/images/case-studies/nyc-mobility-medallion-pipeline.png"
+          class="project-hero-image"
+          alt="NYC Mobility Databricks workflow from pre-load checks through Bronze, Silver, and Gold layers"
+        />
+        <figcaption class="muted small mt-2">Project workflow and Medallion layer dependencies</figcaption>
+      </figure>
+    </header>
+
+    <section class="project-section" aria-label="Pipeline characteristics">
+      <div class="project-stats">
+        <div class="project-stat"><strong>4</strong><span>complementary mobility data domains</span></div>
+        <div class="project-stat"><strong>3</strong><span>Bronze · Silver · Gold layers</span></div>
+        <div class="project-stat"><strong>Incremental</strong><span>repeatable trip and weather ingestion</span></div>
+        <div class="project-stat"><strong>Validated</strong><span>deduplication and data-quality controls</span></div>
+      </div>
+    </section>
+
+    <section id="pipeline" class="project-section" aria-labelledby="pipeline-heading">
+      <div class="project-section-heading">
+        <span class="hero-chip">01 · Data sources</span>
+        <h2 id="pipeline-heading" class="section-title mt-2">Different formats, one mobility context.</h2>
+        <p class="muted">
+          Source-specific ingestion handles the format each provider publishes, then the pipeline
+          brings the domains into a consistent model for analysis.
+        </p>
+      </div>
+      <div class="source-flow">
+        <div class="source-flow-item"><strong>Green Taxi trips</strong><span>Monthly NYC TLC Parquet files</span></div>
+        <div class="source-flow-item"><strong>Historical weather</strong><span>Open-Meteo API · JSON responses</span></div>
+        <div class="source-flow-item"><strong>Taxi zones</strong><span>Reference CSV with borough and zone details</span></div>
+        <div class="source-flow-item"><strong>Traffic advisories</strong><span>Web-sourced context for mobility analysis</span></div>
+      </div>
+    </section>
+
+    <section class="project-section" aria-labelledby="layers-heading">
+      <div class="project-section-heading">
+        <span class="hero-chip">02 · Architecture</span>
+        <h2 id="layers-heading" class="section-title mt-2">Medallion layers with checks between transformations.</h2>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <article class="project-panel">
+            <h3>Bronze · land</h3>
+            <p class="muted mb-0">
+              Load source records with audit context and minimal transformations, keeping the
+              original inputs available as a traceable starting point.
+            </p>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="project-panel">
+            <h3>Silver · standardize</h3>
+            <p class="muted mb-0">
+              Clean fields, standardize formats, deduplicate records, and apply quality rules before
+              data moves into curated models.
+            </p>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="project-panel">
+            <h3>Gold · serve</h3>
+            <p class="muted mb-0">
+              Publish fact and dimension tables that align trips with date, taxi-zone, and weather
+              context for trusted analytics.
+            </p>
+          </article>
+        </div>
+      </div>
+      <div class="project-callout mt-3">
+        <strong>Repeatable runs.</strong>
+        <span class="muted">
+          Incremental loading and idempotent write patterns are designed to make reruns safe and
+          avoid duplicate output when processing the same inputs again.
+        </span>
+      </div>
+    </section>
+
+    <section class="project-section" aria-labelledby="analysis-heading">
+      <div class="project-section-heading">
+        <span class="hero-chip">03 · Analytical use</span>
+        <h2 id="analysis-heading" class="section-title mt-2">A foundation for asking better mobility questions.</h2>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-6">
+          <article class="project-panel">
+            <h3>Questions the integrated data can support</h3>
+            <ul class="muted">
+              <li>When and where is taxi demand highest?</li>
+              <li>How do trip patterns vary with weather conditions?</li>
+              <li>Which pickup and drop-off zones show the most activity?</li>
+              <li>How can traffic advisories add context to observed mobility patterns?</li>
+            </ul>
+          </article>
+        </div>
+        <div class="col-lg-6">
+          <article class="project-panel">
+            <h3>Engineering practices in focus</h3>
+            <ul class="muted">
+              <li>Databricks Asset Bundles for repeatable project deployment.</li>
+              <li>Incremental source loading and idempotent processing.</li>
+              <li>Deduplication and validation at the appropriate data layers.</li>
+              <li>Repository-based CI/CD and collaborative review workflows.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="project-section border-top pt-4 pb-3">
+      <p class="muted small">
+        Project details are summarized from the
+        <a href="https://github.com/JoanMaquinano/NYC-Mobility" target="_blank" rel="noopener noreferrer">NYC Mobility repository</a>
+        and its project description. The repository documents the initial pipeline scope; no
+        production deployment or quantified business impact is claimed here.
+      </p>
+      <a href="index.html#featured-case-studies" class="btn btn-outline-primary btn-sm">Back to Featured Work</a>
+    </footer>
+  </main>
+
+  <script src="assets/js/theme-toggle.js"></script>
+</body>
+</html>
