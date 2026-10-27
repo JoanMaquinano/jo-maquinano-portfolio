@@ -468,7 +468,7 @@
     @media print {
       @page {
         size: Letter;
-        margin: 0.35in;
+        margin: 0.5in;
       }
 
       body.printing-resume > *:not(#resume-print) {
@@ -480,80 +480,102 @@
       }
 
       body.printing-resume {
-        background: #fff;
-        color: #111827;
-        font-family: Arial, sans-serif;
+        background: #fff !important;
+        color: #111 !important;
+        font-family: Arial, Helvetica, sans-serif !important;
       }
 
       .resume-page {
         width: 100%;
-        max-height: 10.3in;
         margin: 0 auto;
-        overflow: hidden;
         padding: 0;
+        color: #111;
+        font: 10pt/1.12 Arial, Helvetica, sans-serif !important;
+      }
+
+      .resume-page * {
+        color: #111;
+        font-family: Arial, Helvetica, sans-serif !important;
       }
 
       .resume-header {
-        border-bottom: 1px solid #111827;
-        padding-bottom: 0.08in;
-        margin-bottom: 0.1in;
+        text-align: left;
+        margin-bottom: 0.12in;
       }
 
       .resume-header h1 {
         margin: 0;
-        color: #111827;
-        font-size: 19pt;
-      }
-
-      .resume-header p {
-        margin: 0.04in 0 0;
-        color: #111827;
-        font-size: 9pt;
+        font-family: Arial, Helvetica, sans-serif !important;
+        color: #2a7b89 !important;
+        font-size: 15pt;
         font-weight: 700;
       }
 
+      .resume-header p,
       .resume-contact {
-        margin-top: 0.03in;
-        color: #4b5563;
-        font-size: 7.5pt;
-      }
-
-      .resume-contact a {
-        color: inherit;
-        text-decoration: underline;
+        margin: 0.04in 0 0;
+        font-size: 10pt;
       }
 
       .resume-section {
-        margin-bottom: 0.09in;
+        margin: 0 0 0.11in;
       }
 
       .resume-section h2 {
-        margin: 0 0 0.05in;
-        color: #111827;
-        font-size: 9pt;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
+        margin: 0 0 0.045in;
+        font-size: 10.5pt;
+        font-weight: 700 !important;
       }
 
-      .resume-section p {
-        margin: 0 0 0.05in;
-        font-size: 7.5pt;
-        line-height: 1.2;
+      .resume-section p,
+      .resume-section li {
+        margin: 0 0 0.025in;
+        font-size: 10pt;
+        line-height: 1.12;
       }
 
-      .resume-item {
-        margin-bottom: 0.04in;
+      .resume-contact a,
+      .resume-project-link {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .resume-skills p {
+        margin: 0 0 0.025in;
+      }
+
+      .resume-project,
+      .resume-experience {
+        margin-bottom: 0.065in;
         break-inside: avoid;
       }
 
-      .resume-item h3 {
+      .resume-project h3,
+      .resume-experience h3 {
         margin: 0;
-        color: #1f2937;
-        font-size: 8pt;
+        font-size: 10pt;
+        font-weight: 700 !important;
+        text-transform: uppercase;
       }
 
-      .resume-item p {
-        color: #4b5563;
+      .resume-project-tech {
+        margin: 0.015in 0 0 !important;
+        font-size: 9pt !important;
+      }
+
+      .resume-meta {
+        display: inline;
+        margin: 0 !important;
+        font-size: 10pt !important;
+        font-style: normal;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+
+      .resume-project ul,
+      .resume-experience ul {
+        margin: 0.015in 0 0;
+        padding-left: 0.16in;
       }
 
       .resume-skills {
@@ -717,10 +739,17 @@
                 <h6 class="fw-semibold mb-1">Sustainability Data Analyst · Institutional Shareholder Services</h6>
                 <p class="muted small mb-2">April 2024 – Present</p>
                 <p class="muted small mb-0">
-                  Validate, clean, and reconcile EU Taxonomy sustainability data for 5,000+ companies,
-                  consistently delivering 99.07% accuracy against daily and weekly performance KPIs.
-                  Investigate discrepancies across systems, maintain audit-ready documentation, escalate
-                  Jira issues, and support post-publication data-quality checks.
+                  Processed and quality-checked EU Taxonomy data for 5,000+ companies, maintaining
+                  99.07% accuracy through structured validation and reconciliation.
+                </p>
+                <p class="muted small mb-0">
+                  Investigated and resolved data mismatches across systems and source disclosures,
+                  strengthening data integrity, methodology consistency, and audit readiness.
+                </p>
+                <p class="muted small mb-0">
+                  Improved downstream reliability through post-publication audits, workflow
+                  documentation, Jira issue tracking, and delivery of validated metrics for
+                  stakeholder reporting.
                 </p>
               </div>
             </div>
@@ -736,8 +765,11 @@
                 <p class="muted small mb-2">October 2022 – October 2023</p>
                 <p class="muted small mb-0">
                   Cleaned, validated, and standardized 1,000+ species records in the global FishBase
-                  database while collaborating with international researchers to resolve inconsistencies
-                  and improve cross-dataset reliability.
+                  database, improving data consistency and reliability.
+                </p>
+                <p class="muted small mb-0">
+                  Collaborated with international researchers to investigate and resolve cross-dataset
+                  inconsistencies, supporting global data standardization.
                 </p>
               </div>
             </div>
@@ -1278,48 +1310,42 @@
         </p>
       </div>
 
-      <div class="row text-center g-4 justify-content-center">
-        <div class="col-md-3 col-sm-6">
-          <div class="p-4 skill-card h-100">
-            <div class="d-flex justify-content-center gap-3 mb-3">
-              <img src="assets/images/skills/sql.png" alt="SQL" class="skill-logo" />
-              <img src="assets/images/skills/databricks.png" alt="Databricks" class="skill-logo" />
-            </div>
-            <h6 class="fw-semibold">Data Engineering</h6>
-            <p class="muted small mb-0">Databricks, PySpark, Spark SQL, Delta Lake, ETL/ELT pipelines, Medallion Architecture, dimensional modeling</p>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6">
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-4">
           <div class="p-4 skill-card h-100">
             <div class="d-flex justify-content-center gap-3 mb-3">
               <img src="assets/images/skills/python.png" alt="Python" class="skill-logo" />
               <img src="assets/images/skills/r.png" alt="R" class="skill-logo" />
+              <img src="assets/images/skills/sql.png" alt="SQL" class="skill-logo" />
             </div>
-            <h6 class="fw-semibold">Programming & Analysis</h6>
-            <p class="muted small mb-0">Python, SQL, R, PySpark, Spark SQL, data processing</p>
+            <h6 class="fw-semibold">Programming Languages & Data Processing</h6>
+            <p class="muted small mb-0">Python, SQL, R, PySpark, Spark SQL</p>
           </div>
         </div>
 
-        <div class="col-md-3 col-sm-6">
+        <div class="col-lg-4">
           <div class="p-4 skill-card h-100">
             <div class="d-flex justify-content-center gap-3 mb-3">
-              <img src="assets/images/skills/powerbi.png" alt="Power BI" class="skill-logo" />
-              <img src="assets/images/skills/excel.png" alt="Microsoft Excel" class="skill-logo" />
-            </div>
-            <h6 class="fw-semibold">Analytics & BI</h6>
-            <p class="muted small mb-0">Power BI, Power Query, Excel, statistical analysis, dashboards, business problem framing</p>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6">
-          <div class="p-4 skill-card h-100">
-            <div class="d-flex justify-content-center gap-3 mb-3">
+              <img src="assets/images/skills/databricks.png" alt="Databricks" class="skill-logo" />
               <img src="assets/images/skills/github.png" alt="GitHub" class="skill-logo" />
               <img src="assets/images/skills/jira.png" alt="Jira" class="skill-logo" />
+              <img src="assets/images/skills/excel.png" alt="Excel" class="skill-logo" />
+              <img src="assets/images/skills/powerbi.png" alt="Power BI" class="skill-logo" />
             </div>
-            <h6 class="fw-semibold">Data Quality & Platforms</h6>
-            <p class="muted small mb-0">PostgreSQL, Git, GitHub, Jira, data cleaning, validation, quality assurance, reconciliation, governance</p>
+            <h6 class="fw-semibold">Tools & Platforms</h6>
+            <p class="muted small mb-0">Databricks, PostgreSQL, Git, GitHub, Excel, Power BI, Power Query, Jira</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="p-4 skill-card h-100">
+            <div class="d-flex justify-content-center gap-3 mb-3">
+              <img src="assets/images/skills/databricks.png" alt="Databricks" class="skill-logo" />
+              <img src="assets/images/skills/sql.png" alt="SQL" class="skill-logo" />
+              <img src="assets/images/skills/powerbi.png" alt="Power BI" class="skill-logo" />
+            </div>
+            <h6 class="fw-semibold">Data Engineering & Analytics</h6>
+            <p class="muted small mb-0">ETL/ELT pipeline development, Medallion Architecture, data cleaning, data validation, data quality assurance, data reconciliation, dimensional modeling, statistical analysis, dashboard development, business problem framing</p>
           </div>
         </div>
       </div>
@@ -1508,7 +1534,6 @@
     const resumePrint = document.getElementById("resume-print");
 
     resumeButton.addEventListener("click", () => {
-      const text = (selector) => document.querySelector(selector)?.textContent.trim() || "";
       const items = (selector) => [...document.querySelectorAll(selector)];
       const escapeHtml = (value) => value.replace(/[&<>"']/g, (character) => ({
         "&": "&amp;",
@@ -1517,62 +1542,92 @@
         '"': "&quot;",
         "'": "&#039;"
       }[character]));
-      const compact = (value, limit) => {
-        const normalized = value.replace(/\s+/g, " ").trim();
-        return normalized.length > limit ? `${normalized.slice(0, limit).replace(/\s+\S*$/, "")}...` : normalized;
-      };
-      const aboutParagraphs = items("#about .about-copy p")
-        .map((item) => item.textContent.trim())
-        .filter((item) => item && !item.startsWith("Currently documenting"));
-      const caseStudies = items("#featured-case-studies .card, #case-studies .card").map((card) => ({
-        title: card.querySelector("h5")?.textContent.trim() || "",
-        description: card.querySelector("p")?.textContent.trim() || ""
-      }));
-      const experience = items("#experience .section-block").map((block) => ({
-        title: block.querySelector("h6")?.textContent.trim() || "",
-        description: [...block.querySelectorAll("p")].map((item) => item.textContent.trim()).join(" ")
-      }));
+      const sentences = (value) => value.split(/(?<=[.!?])\s+(?=[A-Z])/).map((part) => part.trim()).filter(Boolean);
       const skills = items("#skills .skill-card").map((card) => ({
         title: card.querySelector("h6")?.textContent.trim() || "",
         description: card.querySelector("p")?.textContent.trim() || ""
       }));
-      const education = items("#education .section-block").map((block) => ({
+      const projects = items("#featured-case-studies .card").map((card) => ({
+        title: card.querySelector("h5")?.textContent.trim() || "",
+        description: card.querySelector("p")?.textContent.trim() || "",
+        tags: [...card.querySelectorAll(".badge")].map((badge) => badge.textContent.trim()),
+        href: card.querySelector('a[href^="https://github.com"]')?.href || ""
+      })).filter((project) => /Project AHON|NYC Mobility/.test(project.title));
+      const experienceOrder = [
+        "Sustainability Data Analyst",
+        "Data Engineering Scholar",
+        "Research Assistant II"
+      ];
+      const experience = items("#experience .section-block").map((block) => {
+        const title = block.querySelector("h6")?.textContent.trim() || "";
+        const paragraphs = [...block.querySelectorAll("p")].map((paragraph) => paragraph.textContent.trim()).filter(Boolean);
+        const dateIndex = paragraphs.findIndex((paragraph) => /(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}/i.test(paragraph));
+        return {
+          title,
+          date: dateIndex >= 0 ? paragraphs[dateIndex] : "",
+          bullets: paragraphs.filter((_, index) => index !== dateIndex).flatMap(sentences)
+        };
+      }).filter((item) => experienceOrder.some((title) => item.title.includes(title)))
+        .sort((left, right) => experienceOrder.findIndex((title) => left.title.includes(title)) - experienceOrder.findIndex((title) => right.title.includes(title)));
+      const educationBlocks = items("#education .section-block").map((block) => ({
         title: block.querySelector("h6")?.textContent.trim() || "",
-        description: [...block.querySelectorAll("p")].map((item) => item.textContent.trim()).join(" ")
-      })).filter((item) => /Data Engineer Associate|Data Engineering Fellowship|Bachelor of Science/.test(item.title));
+        paragraphs: [...block.querySelectorAll("p")].map((paragraph) => paragraph.textContent.trim()).filter(Boolean),
+        href: block.querySelector('a[href^="https://"]')?.href || block.querySelector("img.certification-image")?.src || ""
+      })).filter((item) => item.title);
+      const degree = educationBlocks.find((item) => item.title.includes("Bachelor of Science"));
+      const certifications = educationBlocks.filter((item) =>
+        /Data Engineer Associate|Data Engineering Fellowship|Data Analytics Professional Certificate/.test(item.title)
+      );
 
       resumePrint.innerHTML = `
         <div class="resume-page">
           <header class="resume-header">
             <h1>Joan Maquinano</h1>
             <div class="resume-contact">
-              <a href="tel:+639268918105">+63 926 891 8105</a> ·
-              <a href="mailto:jrmaquinano@alum.up.edu.ph">jrmaquinano@alum.up.edu.ph</a> ·
-              <a href="https://www.linkedin.com/in/jrmaquinano/" target="_blank" rel="noopener noreferrer">linkedin.com/in/jrmaquinano</a> ·
+              Taguig, Philippines |
+              <a href="mailto:jrmaquinano@alum.up.edu.ph">jrmaquinano@alum.up.edu.ph</a> |
+              <a href="tel:+639268918105">+63 926 891 8105</a> |
+              <a href="https://www.linkedin.com/in/jrmaquinano/" target="_blank" rel="noopener noreferrer">linkedin.com/in/jrmaquinano</a> |
               <a href="https://github.com/JoanMaquinano" target="_blank" rel="noopener noreferrer">github.com/JoanMaquinano</a>
             </div>
+            <p class="resume-portfolio-link">Projects | Portfolio:
+              <a href="https://joanmaquinano.github.io/jo-maquinano-portfolio" target="_blank" rel="noopener noreferrer">joanmaquinano.github.io/jo-maquinano-portfolio</a>
+            </p>
           </header>
           <section class="resume-section">
-            <h2>Profile</h2>
-            <p>${escapeHtml(compact(aboutParagraphs[0] || "Data analyst transitioning into data engineering with experience in ESG data quality, research data, SQL, and Databricks workflows.", 320))}</p>
+            <h2>Professional Summary</h2>
+            <p>Data Engineer with 3+ years of experience across data analysis, SQL reporting, and large-scale data quality assurance. Skilled in Databricks, PySpark, SQL, ETL pipelines, and dimensional modeling.</p>
+          </section>
+          <section class="resume-section">
+            <h2>Technical Skills &amp; Abilities</h2>
+            <div class="resume-skills">
+              ${skills.map((item) => `<p><strong>${escapeHtml(item.title)}:</strong> ${escapeHtml(item.description)}</p>`).join("")}
+            </div>
+          </section>
+          <section class="resume-section">
+            <h2>Projects</h2>
+            ${projects.map((project) => `
+              <div class="resume-project">
+                <h3>${project.href ? `<a class="resume-project-link" href="${escapeHtml(project.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(project.title)}</a>` : escapeHtml(project.title)} | ${project.title.includes("AHON") ? "FTW DATA ENGINEERING PROGRAM" : "GITHUB PROJECT"}</h3>
+                <p class="resume-project-tech">${escapeHtml(project.tags.join(", "))}</p>
+                <ul>${sentences(project.description).map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>
+              </div>`).join("")}
           </section>
           <section class="resume-section">
             <h2>Experience</h2>
-            ${experience.map((item) => `<div class="resume-item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(compact(item.description, 360))}</p></div>`).join("")}
+            ${experience.map((item) => `
+              <div class="resume-experience">
+                <h3>${escapeHtml(item.title.replace(" · ", " | "))}${item.date ? ` <span class="resume-meta">| ${escapeHtml(item.date.replace(" – ", " - "))}</span>` : ""}</h3>
+                <ul>${item.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>
+              </div>`).join("")}
           </section>
           <section class="resume-section">
-            <h2>Selected Case Studies</h2>
-            ${caseStudies.map((item) => `<div class="resume-item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></div>`).join("")}
+            <h2>Education</h2>
+            ${degree ? `<div class="resume-experience"><h3>${escapeHtml(degree.title.toUpperCase())} | ${escapeHtml((degree.paragraphs[0] || "").replace(" · ", " | "))}</h3><ul>${degree.paragraphs.slice(1).flatMap(sentences).map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul></div>` : ""}
           </section>
           <section class="resume-section">
-            <h2>Technical Skills</h2>
-            <div class="resume-skills">
-              ${skills.map((item) => `<p><strong>${escapeHtml(item.title)}:</strong> ${escapeHtml(compact(item.description, 130))}</p>`).join("")}
-            </div>
-          </section>
-          <section class="resume-section">
-            <h2>Education & Credentials</h2>
-            ${education.map((item) => `<div class="resume-item"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(compact(item.description, 190))}</p></div>`).join("")}
+            <h2>Certifications and Training</h2>
+            ${certifications.map((item) => `<div class="resume-experience"><h3>${escapeHtml(item.title.toUpperCase())} | ${escapeHtml((item.paragraphs[0] || "").replace(" · Issued ", " | ").replace(" · Expires ", " - Expires ").replace(" · ", " | "))}</h3><ul>${item.paragraphs.slice(1).flatMap(sentences).map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>${item.href ? `<p><a class="resume-project-link" href="${escapeHtml(item.href)}" target="_blank" rel="noopener noreferrer">View credential</a></p>` : ""}</div>`).join("")}
           </section>
         </div>`;
 
